@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto & Macro Trends — Bubble Map 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;600;700;900&display=swap');
+
+  :root {
+    --bg: #050a08;
+    --grid: rgba(0,255,100,0.04);
+    --neon-green: #00ff64;
+    --neon-cyan: #00e5ff;
+    --gold: #C9A84C;
+    --gold-bright: #f0c060;
+    --red: #ff3c5a;
+    --purple: #a855f7;
+    --white: #e8f0eb;
+    --muted: #4a6655;
+    --panel-bg: rgba(5,15,10,0.97);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ── SCANLINES + GRID ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,255,100,0.015) 3px, rgba(0,255,100,0.015) 4px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,255,100,0.02) 39px, rgba(0,255,100,0.02) 40px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ── CRT VIGNETTE ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    padding: 14px 24px 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,255,100,0.12);
+    background: linear-gradient(to bottom, rgba(5,10,8,0.95), transparent);
+  }
+
+  .header-left { display: flex; flex-direction: column; gap: 2px; }
+
+  .eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .header-title {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+
+  .header-title span { color: var(--gold); }
+
+  .header-right {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon-green);
+    text-align: right;
+    line-height: 1.6;
+    opacity: 0.7;
+  }
+
+  .blink { animation: blink 1.2s step-end infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* ── LEGEND ── */
+  .legend {
+    position: fixed;
+    bottom: 20px;
+    left: 24px;
+    z-index: 10;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── HINT ── */
+  .hint {
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    z-index: 10;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* ── SVG CONTAINER ── */
+  #chart {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+  }
+
+  /* ── BUBBLE STYLES (SVG) ── */
+  .bubble-group { cursor: pointer; }
+  .bubble-group:hover .bubble-circle { filter: brightness(1.3); }
+
+  /* ── DETAIL PANEL ── */
+  #panel {
+    position: fixed;
+    right: -500px;
+    top: 60px;
+    bottom: 20px;
+    width: 420px;
+    max-width: calc(100vw - 32px);
+    background: var(--panel-bg);
+    border: 1px solid rgba(0,255,100,0.2);
+    border-right: none;
+    z-index: 20;
+    overflow-y: auto;
+    transition: right 0.4s cubic-bezier(0.22,1,0.36,1);
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #panel.open { right: 0; }
+
+  .panel-inner { padding: 24px 24px 32px; }
+
+  .panel-close {
+    position: absolute;
+    top: 12px; right: 16px;
+    background: none;
+    border: 1px solid rgba(0,255,100,0.3);
+    color: var(--neon-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .panel-close:hover { background: rgba(0,255,100,0.1); }
+
+  .panel-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+
+  .panel-title {
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+
+  .panel-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .panel-divider {
+    height: 1px;
+    background: linear-gradient(to right, rgba(0,255,100,0.3), transparent);
+    margin-bottom: 20px;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .stat-box {
+    background: rgba(0,255,100,0.04);
+    border: 1px solid rgba(0,255,100,0.12);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .stat-box .num {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-box .label {
+    font-size: 10px;
+    color: var(--muted);
+    line-height: 1.4;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  .bullets-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .bullet-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .bullet-arrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .bullet-text {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(232,240,235,0.85);
+  }
+
+  .signal-box {
+    margin-top: 20px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .signal-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .signal-text {
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(232,240,235,0.8);
+  }
+
+  /* Scrollbar */
+  #panel::-webkit-scrollbar { width: 4px; }
+  #panel::-webkit-scrollbar-track { background: transparent; }
+  #panel::-webkit-scrollbar-thumb { background: rgba(0,255,100,0.2); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="eyebrow">Crypto &amp; Macro · 50+ afleveringen · Apr–Mei 2026</div>
+    <div class="header-title">Dominante <span>Trends</span></div>
+  </div>
+  <div class="header-right">
+    <span class="blink">●</span> LIVE SYNTHESE<br>
+    VAN LANSCHOT KEMPEN
+  </div>
+</header>
+
+<svg id="chart"></svg>
+
+<div id="panel">
+  <div class="panel-inner">
+    <button class="panel-close" onclick="closePanel()">✕</button>
+    <div id="panel-content"></div>
+  </div>
+</div>
+
+<div class="legend">
+  <div><span class="legend-dot" style="background:#00ff64"></span>BULLISH / KANS</div>
+  <div><span class="legend-dot" style="background:#C9A84C"></span>MACRO / STRUCTUREEL</div>
+  <div><span class="legend-dot" style="background:#ff3c5a"></span>RISICO / CRISIS</div>
+  <div><span class="legend-dot" style="background:#a855f7"></span>TECH / INNOVATIE</div>
+  <div><span class="legend-dot" style="background:#00e5ff"></span>REGULERING</div>
+</div>
+
+<div class="hint">KLIK OP EEN BOL →</div>
+
+<script>
+const TRENDS = [
+  {
+    id: 'bitcoin',
+    label: 'Bitcoin',
+    sublabel: 'Staatsactivum',
+    size: 95,
+    color: '#C9A84C',
+    glow: '#f0c060',
+    tag: 'MACRO · BULLISH',
+    tagColor: '#C9A84C',
+    title: 'Bitcoin: K-shaped Markt',
+    subtitle: 'Institutioneel koopt. Retail afwezig. Twee markten in één asset.',
+    stats: [
+      { num: '$77,5K', label: 'Prijs — bearmarkt-gedrag terwijl TradFi optimistisch is' },
+      { num: '97 dagen', label: 'Zonder nieuwe bodem — historisch uitzonderlijk' },
+      { num: '$150K', label: 'Bernstein target einde 2026' },
+      { num: '10/11 weken', label: 'Instroom cryptofondsen — beste Bitwise-kwartaal ooit' },
+    ],
+    bullets: [
+      'Retail afgeleid door AI-hype; institutionelen accumuleren via ETF\'s',
+      'SpaceX heeft 18.712 BTC op de balans — corporate treasury trend zet door',
+      'Bitcoin concurreert nu met AI-aandelen om risicokapitaal — nieuwe katalysator gezocht',
+      'Mining decentraliseert: grote VS-miners stoppen door AI-energieconcurrentie',
+      'Bankless-capitulatie (Hoffman verkocht ETH) historisch gezien bullish signaal voor BTC',
+    ],
+    signal: 'WAARSCHUWING: K-shaped markt. Institutioneel BTC ≠ retail BTC. Bij macro-schok kan retail snel verkopen terwijl sovereign holders vasthouden.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'ai-crypto',
+    label: 'AI × Crypto',
+    sublabel: 'Convergentie',
+    size: 88,
+    color: '#a855f7',
+    glow: '#c084fc',
+    tag: 'TECH · DISRUPTIEF',
+    tagColor: '#a855f7',
+    title: 'AI × Crypto: De Convergentie',
+    subtitle: 'Crypto is de enige betaalinfrastructuur voor AI-agents — geen KYC, geen bank nodig.',
+    stats: [
+      { num: '90%', label: 'X402 protocol (Coinbase) marktaandeel in AI-agent transacties' },
+      { num: '$222M', label: 'Circle Arc opgehaald — USDC als gas-token voor AI' },
+      { num: '$3,2B', label: 'Hut 8 datacenter-deal voor 16,5 jaar' },
+      { num: '0', label: 'Zero Human Companies — volledig AI, betaald in Base ETH' },
+    ],
+    bullets: [
+      'X402 protocol (Coinbase) — Stripe en Google zijn concurrenten, maar Coinbase leidt',
+      'Circle Arc blockchain — eerste tokensale door beursgenoteerd bedrijf',
+      'Stablecoins vs geldmarktfondsen — AI-agents kiezen wat rendement geeft',
+      'Hut 8 transformeert van Bitcoin-miner naar AI-datacenter met investment-grade rating',
+      'Gensyn: gedecentraliseerde AI-compute via crypto-beloningen',
+      'JP Morgan (330K FTE) vs Jane Street (3.500 FTE) met vergelijkbare winst — zo transformeert AI het bankwezen',
+    ],
+    signal: 'KANS: Crypto is de rails voor de AI-economie. Platforms die naadloos schakelen tussen stablecoins en geldmarktfondsen winnen van pure stablecoin-spelers.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'tokenisatie',
+    label: 'Tokenisatie',
+    sublabel: 'TradFi on-chain',
+    size: 82,
+    color: '#00ff64',
+    glow: '#00ff64',
+    tag: 'STRUCTUREEL · BULLISH',
+    tagColor: '#00ff64',
+    title: 'Tokenisatie: TradFi gaat On-Chain',
+    subtitle: 'BlackRock, JPMorgan en Fidelity kiezen Ethereum als settlement layer.',
+    stats: [
+      { num: '$16T', label: 'Repo-markt die on-chain gaat via tokenisatie' },
+      { num: '$250K', label: 'ETH target als monetaire premie van goud + BTC gevangen wordt' },
+      { num: '12 sec', label: 'L2\'s settlen elke 12 sec. met Ethereum L1 — atomische cross-chain' },
+      { num: 'Zomer \'26', label: 'Eerste EEZ-rollup live verwacht' },
+    ],
+    bullets: [
+      'BlackRock, JPM en Fidelity kiezen Ethereum als settlement layer — geen concurrent, maar fundament',
+      'Ethereum Economic Zone (EEZ): gefragmenteerde liquiditeit van 15+ mini-Ethereums herenigd',
+      'ETH combineert schaarsheid + rendement — uniek t.o.v. BTC en goud (Productive Money These)',
+      'Circle Arc bewijst: Ethereum is de standaard voor institutional DeFi én AI-betalingen',
+      'Stablecoin-gebruik buiten VS: +422% in 2025 op jaarbasis',
+    ],
+    signal: 'VOOR VLK: Tokenisatie van bankdeposito\'s, vastgoed en fondsen is niet meer hypothetisch. Klanten vragen actief naar exposure. TradFi-deelname legitimeert het narratief.',
+    signalColor: '#00ff64',
+  },
+  {
+    id: 'defi-security',
+    label: 'DeFi Crisis',
+    sublabel: 'Veiligheid',
+    size: 75,
+    color: '#ff3c5a',
+    glow: '#ff6080',
+    tag: 'RISICO · STRUCTUREEL',
+    tagColor: '#ff3c5a',
+    title: 'DeFi Veiligheidscrisis',
+    subtitle: 'Record-hackmaand april 2026. AI maakt aanvallen exponentieel geavanceerder.',
+    stats: [
+      { num: '$625M', label: 'Gestolen in april 2026 — absoluut record, 30 incidenten' },
+      { num: '$300M', label: 'Kelp DAO hack — Lazarus Group (Noord-Korea)' },
+      { num: '$285M', label: 'Drift hack via social engineering op multisig-holders' },
+      { num: '$1M', label: 'Morpho\'s schade — isolatie-architectuur redde het protocol' },
+    ],
+    bullets: [
+      'Layer Zero bridge: één validator kwetsbaar — 40% van alle deployments getroffen',
+      'Leverage loops: 98% onderpand in één asset type (LST\'s) — systemisch risico',
+      'Google ontdekte AI-gebouwde Python-exploit die 2FA omzeilde (supply chain-aanval)',
+      'Arbitrum bevroor $70M van hackers — \'code is law\' heeft een schaalbaarheidslimiet bereikt',
+      'Toekomst: eenvoudig, formeel geverifieerd, modulair — DeFi 2.0',
+    ],
+    signal: 'RISICO: Retail-exposure via DeFi zonder due diligence op architectuur is gevaarlijk. Isolatie-modellen (Morpho) zijn de nieuwe standaard — beoordeel protocols hierop.',
+    signalColor: '#ff3c5a',
+  },
+  {
+    id: 'regulering',
+    label: 'Regulering',
+    sublabel: 'GENIUS & Clarity Act',
+    size: 72,
+    color: '#00e5ff',
+    glow: '#00e5ff',
+    tag: 'REGULERING · CATALYST',
+    tagColor: '#00e5ff',
+    title: 'Regelgeving: GENIUS & Clarity Act',
+    subtitle: 'GENIUS door Senaat. Clarity Act op 35–40% kans — impasse door partijpolitiek.',
+    stats: [
+      { num: 'GENIUS', label: 'Stablecoin-wet door Senaat — historische mijlpaal' },
+      { num: '35–40%', label: 'Kans Clarity Act — gedaald van 75% na Senaatsimpasse' },
+      { num: '+422%', label: 'Stablecoin-gebruik buiten VS in 2025 YoY' },
+      { num: 'MiCA', label: 'ZeroHash eerste crypto-EMI-vergunning van DNB — essentieel' },
+    ],
+    bullets: [
+      'GENIUS Act vergelijkt met Securities Acts van 1933–1934 — decennia aan innovatie vastleggen',
+      'ZeroHash: eerste crypto-EMI-vergunning van DNB — essentieel voor stablecoins onder MiCA',
+      'Grote banken bouwen crypto-infrastructuur terwijl lobbyisten in Washington tegenwerken',
+      'Clarity Act-impasse door Senaatspolitiek — niet door inhoudelijke bezwaren',
+      'Regulering komt, de vraag is timing — maar fundament ligt er',
+    ],
+    signal: 'VOOR VLK: GENIUS geeft stablecoins een rechtskader. MiCA + DNB-vergunning openen de weg voor Euro-stablecoin dienstverlening. Timing: H2 2026.',
+    signalColor: '#00e5ff',
+  },
+  {
+    id: 'geopolitiek',
+    label: 'Geopolitiek',
+    sublabel: 'Iran · Olie · Macro',
+    size: 65,
+    color: '#C9A84C',
+    glow: '#f0c060',
+    tag: 'MACRO · RISICO',
+    tagColor: '#C9A84C',
+    title: 'Geopolitiek: Iran, Olie & Macro',
+    subtitle: 'Hormuz-risico, rente boven 5%, AI-populisme groeit — macro wordt grilliger.',
+    stats: [
+      { num: '5%+', label: 'Rente — Fed rentelast $1,4 biljoen/jaar (was $600M in 2022)' },
+      { num: '4,2%', label: 'CPI gestegen van 3,8% — boven 4% is historisch negatief voor S&P' },
+      { num: '1999', label: 'Obligatie vs aandelen-divergentie doet denken aan dotcom-top' },
+      { num: 'BLISS', label: 'Markten verwachten altijd overheidssteun — vangnet én risico' },
+    ],
+    bullets: [
+      'Hormuz-dreiging: olieprijs-shock treft cryptomarkten indirect via risicosentiment',
+      'Fed-rentelast $1,4 biljoen/jaar — verhogen is structureel pijnlijk, verlagen inflatoir',
+      'Kevin Warsh wil minder persconferenties — grotere marktvolatiliteit verwacht',
+      'Jordi Visser: zilver + Bitcoin breakout voor zomer — rotatie uit AI-chiphandel',
+      'Arthur Hayes: oorlog + AI-investeringen → inflatie → bijdrukken → Bitcoin bull',
+    ],
+    signal: 'MACRO-SCENARIO: CPI boven 4% historisch negatief voor S&P, positief voor grondstoffen en crypto. Zilver als hedge op AI-infrastructuur en energietransitie.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'privacy',
+    label: 'Privacy &',
+    sublabel: 'Quantum',
+    size: 58,
+    color: '#a855f7',
+    glow: '#c084fc',
+    tag: 'TECH · LANGETERMIJN',
+    tagColor: '#a855f7',
+    title: 'Privacy & Quantumdreiging',
+    subtitle: 'Q-Day 2029 (Google\'s eigen deadline). 6,9M BTC kwetsbaar. Zcash als hedge.',
+    stats: [
+      { num: '2029', label: 'Google\'s eigen deadline voor quantum-transitie' },
+      { num: '6,9M', label: 'BTC-adressen kwetsbaar voor quantum-aanval' },
+      { num: 'ZK-snarks', label: 'Zcash cryptografisch sterker dan Monero tegen AI-analyse' },
+      { num: 'BIP360', label: 'Bitcoin\'s quantum-antwoord — \'security by obfuscation\'' },
+    ],
+    bullets: [
+      'Zcash al quantum-recoverable; volledig quantum-proof verwacht als eerste blockchain',
+      'Ethereum heeft concrete post-quantum roadmap vs Bitcoin\'s bestuurloos BIP360-proces',
+      'Nick Carter: "ETH/BTC ratio zal het quantum-governance-verschil weerspiegelen"',
+      'AI-tracking maakt privacy-coins niet langer paranoia maar institutioneel relevant',
+      'Fungibiliteit: Bitcoin-coins kunnen "besmet" raken — Zcash heeft shielded pool als Trojaans paard',
+    ],
+    signal: 'LANGETERMIJN: Quantum is een echte deadline, geen theoretisch risico. Blockchains met governance-capaciteit (ETH, ZEC) zijn beter gepositioneerd dan BTC voor de quantum-transitie.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'ethereum',
+    label: 'Ethereum',
+    sublabel: 'Wall Street ETH',
+    size: 68,
+    color: '#00ff64',
+    glow: '#00ff64',
+    tag: 'BULLISH · STRUCTUREEL',
+    tagColor: '#00ff64',
+    title: 'Ethereum: Wall Street kiest ETH',
+    subtitle: 'Van speculatief asset naar settlement layer van het globale financiële systeem.',
+    stats: [
+      { num: '$250K', label: 'ETH target (extreme bull case: monetaire premie goud + BTC)' },
+      { num: '<1000', label: 'Regels code voor Ethereum Economic Zone (EEZ)' },
+      { num: '15+', label: 'Mini-Ethereums (L2\'s) die herenigd worden via EEZ' },
+      { num: 'Zomer \'26', label: 'Eerste EEZ-rollup live — institutionele on-ramp' },
+    ],
+    bullets: [
+      'L2\'s settlen elke 12 sec. met L1 — atomische cross-chain transacties mogelijk',
+      'ETH combineert schaarsheid + rendement (staking) — uniek in de crypto-wereld',
+      'BlackRock, JPM en Fidelity kozen Ethereum als settlement layer voor tokenisatie',
+      'Bankless-capitulatie (Hoffman verkocht ETH op $1.800) historisch gezien bodem-signaal',
+      'Circle Arc kiest Ethereum — bewijst dat het de standaard is voor institutional DeFi',
+    ],
+    signal: 'VOOR VLK: Ethereum is het fundament, geen concurrent van TradFi. Als $16T repo-markt on-chain gaat, gaat dat via Ethereum. ETH-exposure is settlement-layer-exposure.',
+    signalColor: '#00ff64',
+  },
+  {
+    id: 'macro',
+    label: 'Macro',
+    sublabel: 'Megatrends',
+    size: 55,
+    color: '#00e5ff',
+    glow: '#00e5ff',
+    tag: 'MACRO · STRUCTUREEL',
+    tagColor: '#00e5ff',
+    title: 'Macro Megatrends',
+    subtitle: 'Zilver, energie, AI-populisme en de grote rotatie. De rode draad door 50+ afleveringen.',
+    stats: [
+      { num: 'Zilver', label: 'Cruciaal voor zonnepanelen, AI-infra en solid-state batterijen' },
+      { num: 'DRAM', label: 'AI-chiphandel uitgeput na jaar sterke winsten — rotatie begint' },
+      { num: 'AI-pop.', label: 'AI-populisme groeit snel — politieke risicopremie stijgt' },
+      { num: '2026', label: 'Jordi Visser: zilver + Bitcoin breakout voor de zomer' },
+    ],
+    bullets: [
+      'China importeerde recordhoeveelheden zilver — strategische grondstof voor AI-infrastructuur',
+      'Rotatie van AI-chiphandel (Micron verkocht) naar crypto en zilver — Jordi Visser thesis',
+      'Bij CPI boven 4%: S&P historisch negatief — grondstoffen en crypto profiteren structureel',
+      'AI-populisme: politieke bewegingen gebruiken AI als sündenbock voor ongelijkheid',
+      'Energietransitie versnelt vraag naar zilver — 2x multiplicator op zonnepanelen en EV-batterijen',
+    ],
+    signal: 'DE RODE DRAAD: Inflatie + AI + geopolitiek = structureel hogere rente + hogere grondstofprijzen. Bitcoin en zilver als hedge op monetaire degeneratie en geopolitieke spanning.',
+    signalColor: '#00e5ff',
+  },
+];
+
+let activeId = null;
+
+function closePanel() {
+  document.getElementById('panel').classList.remove('open');
+  activeId = null;
+  // de-highlight
+  d3.selectAll('.bubble-circle')
+    .transition().duration(300)
+    .attr('opacity', 1)
+    .attr('stroke-width', 1.5);
+}
+
+function openPanel(trend) {
+  activeId = trend.id;
+  const el = document.getElementById('panel-content');
+
+  const statsHtml = trend.stats.map(s => `
+    <div class="stat-box">
+      <div class="num" style="color:${trend.color}">${s.num}</div>
+      <div class="label">${s.label}</div>
+    </div>
+  `).join('');
+
+  const bulletsHtml = trend.bullets.map(b => `
+    <div class="bullet-item">
+      <div class="bullet-arrow" style="color:${trend.color}">→</div>
+      <div class="bullet-text">${b}</div>
+    </div>
+  `).join('');
+
+  el.innerHTML = `
+    <div class="panel-tag" style="color:${trend.color}">${trend.tag}</div>
+    <div class="panel-title">${trend.title}</div>
+    <div class="panel-subtitle">${trend.subtitle}</div>
+    <div class="panel-divider"></div>
+    <div class="stat-row">${statsHtml}</div>
+    <div class="bullets-label">KEY SIGNALEN</div>
+    ${bulletsHtml}
+    <div class="signal-box" style="border-color:${trend.color}33; background:${trend.color}08">
+      <div class="signal-label" style="color:${trend.color}">SYNTHESE SIGNAAL</div>
+      <div class="signal-text">${trend.signal}</div>
+    </div>
+  `;
+
+  document.getElementById('panel').classList.add('open');
+
+  // highlight active, fade others
+  d3.selectAll('.bubble-circle')
+    .transition().duration(300)
+    .attr('opacity', d => d.id === trend.id ? 1 : 0.35)
+    .attr('stroke-width', d => d.id === trend.id ? 3 : 1);
+}
+
+// ── D3 FORCE SIMULATION ──
+const svg = d3.select('#chart');
+let W = window.innerWidth;
+let H = window.innerHeight;
+svg.attr('width', W).attr('height', H);
+
+// Scale bubble sizes to viewport
+const maxSize = Math.min(W, H) * 0.14;
+const sizeScale = d3.scaleLinear()
+  .domain([d3.min(TRENDS, d => d.size), d3.max(TRENDS, d => d.size)])
+  .range([maxSize * 0.55, maxSize]);
+
+const data = TRENDS.map(d => ({ ...d, r: sizeScale(d.size) }));
+
+// Gradient defs + glow filters
+const defs = svg.append('defs');
+
+data.forEach(d => {
+  // radial gradient
+  const g = defs.append('radialGradient')
+    .attr('id', `grad-${d.id}`)
+    .attr('cx', '35%').attr('cy', '35%')
+    .attr('r', '65%');
+  g.append('stop').attr('offset', '0%').attr('stop-color', d.glow).attr('stop-opacity', 0.9);
+  g.append('stop').attr('offset', '60%').attr('stop-color', d.color).attr('stop-opacity', 0.55);
+  g.append('stop').attr('offset', '100%').attr('stop-color', d.color).attr('stop-opacity', 0.15);
+
+  // glow filter
+  const f = defs.append('filter').attr('id', `glow-${d.id}`).attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
+  f.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', '6').attr('result', 'blur');
+  const merge = f.append('feMerge');
+  merge.append('feMergeNode').attr('in', 'blur');
+  merge.append('feMergeNode').attr('in', 'blur');
+  merge.append('feMergeNode').attr('in', 'SourceGraphic');
+});
+
+const simulation = d3.forceSimulation(data)
+  .force('center', d3.forceCenter(W / 2, H / 2).strength(0.08))
+  .force('charge', d3.forceManyBody().strength(d => -d.r * 2.5))
+  .force('collision', d3.forceCollide(d => d.r + 8).strength(0.85))
+  .force('x', d3.forceX(W / 2).strength(0.04))
+  .force('y', d3.forceY(H / 2).strength(0.06))
+  .alphaDecay(0.02)
+  .velocityDecay(0.35);
+
+const nodes = svg.selectAll('.bubble-group')
+  .data(data)
+  .enter()
+  .append('g')
+  .attr('class', 'bubble-group')
+  .call(d3.drag()
+    .on('start', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.15).restart();
+      d.fx = d.x; d.fy = d.y;
+    })
+    .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+    .on('end', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null; d.fy = null;
+    })
+  )
+  .on('click', (event, d) => { event.stopPropagation(); openPanel(d); });
+
+// Outer glow ring
+nodes.append('circle')
+  .attr('class', 'bubble-glow')
+  .attr('r', d => d.r + 12)
+  .attr('fill', 'none')
+  .attr('stroke', d => d.color)
+  .attr('stroke-width', 1)
+  .attr('opacity', 0.15)
+  .attr('filter', d => `url(#glow-${d.id})`);
+
+// Main bubble
+nodes.append('circle')
+  .attr('class', 'bubble-circle')
+  .attr('r', d => d.r)
+  .attr('fill', d => `url(#grad-${d.id})`)
+  .attr('stroke', d => d.color)
+  .attr('stroke-width', 1.5)
+  .attr('stroke-opacity', 0.6)
+  .attr('filter', d => `url(#glow-${d.id})`);
+
+// Inner ring detail
+nodes.append('circle')
+  .attr('r', d => d.r * 0.85)
+  .attr('fill', 'none')
+  .attr('stroke', d => d.color)
+  .attr('stroke-width', 0.5)
+  .attr('stroke-opacity', 0.25)
+  .attr('stroke-dasharray', '3,4');
+
+// Label (main)
+nodes.append('text')
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => d.r > 70 ? '-6px' : '-3px')
+  .attr('font-family', 'Inter, sans-serif')
+  .attr('font-weight', 900)
+  .attr('font-size', d => Math.max(11, d.r * 0.22))
+  .attr('fill', '#e8f0eb')
+  .attr('pointer-events', 'none')
+  .text(d => d.label);
+
+// Sublabel
+nodes.append('text')
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => d.r > 70 ? '12px' : '10px')
+  .attr('font-family', "'Share Tech Mono', monospace")
+  .attr('font-size', d => Math.max(8, d.r * 0.13))
+  .attr('fill', d => d.color)
+  .attr('opacity', 0.85)
+  .attr('pointer-events', 'none')
+  .text(d => d.sublabel);
+
+// Size indicator dots (small circles at bottom of bubble)
+nodes.filter(d => d.r > 65)
+  .append('text')
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => d.r * 0.65)
+  .attr('font-family', "'Share Tech Mono', monospace")
+  .attr('font-size', d => Math.max(7, d.r * 0.1))
+  .attr('fill', d => d.color)
+  .attr('opacity', 0.5)
+  .attr('pointer-events', 'none')
+  .text(d => '● '.repeat(Math.round(d.size / 25)).trim());
+
+simulation.on('tick', () => {
+  nodes.attr('transform', d => {
+    // keep bubbles inside viewport with padding
+    d.x = Math.max(d.r + 10, Math.min(W - d.r - 10, d.x));
+    d.y = Math.max(d.r + 60, Math.min(H - d.r - 50, d.y));
+    return `translate(${d.x},${d.y})`;
+  });
+});
+
+// Click outside to close
+svg.on('click', closePanel);
+
+// Resize
+window.addEventListener('resize', () => {
+  W = window.innerWidth;
+  H = window.innerHeight;
+  svg.attr('width', W).attr('height', H);
+  simulation.force('center', d3.forceCenter(W / 2, H / 2))
+    .force('x', d3.forceX(W / 2).strength(0.04))
+    .force('y', d3.forceY(H / 2).strength(0.06))
+    .alpha(0.3).restart();
+});
+
+// Pulse animation on bubbles
+function pulseGlow() {
+  d3.selectAll('.bubble-glow')
+    .transition()
+    .duration(2000 + Math.random() * 1000)
+    .attr('opacity', 0.08 + Math.random() * 0.12)
+    .attr('r', function(d) { return d.r + 8 + Math.random() * 8; })
+    .transition()
+    .duration(2000 + Math.random() * 1000)
+    .attr('opacity', 0.12)
+    .attr('r', d => d.r + 12)
+    .on('end', pulseGlow);
+}
+setTimeout(pulseGlow, 1000);
+</script>
+</body>
+</html>
