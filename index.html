@@ -10,7 +10,6 @@
 
   :root {
     --bg: #050a08;
-    --grid: rgba(0,255,100,0.04);
     --neon-green: #00ff64;
     --neon-cyan: #00e5ff;
     --gold: #C9A84C;
@@ -33,7 +32,6 @@
     position: relative;
   }
 
-  /* ── SCANLINES + GRID ── */
   body::before {
     content: '';
     position: fixed;
@@ -45,7 +43,6 @@
     z-index: 1;
   }
 
-  /* ── CRT VIGNETTE ── */
   body::after {
     content: '';
     position: fixed;
@@ -60,27 +57,28 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 10;
-    padding: 14px 24px 10px;
+    padding: 12px 20px 8px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid rgba(0,255,100,0.12);
-    background: linear-gradient(to bottom, rgba(5,10,8,0.95), transparent);
+    background: linear-gradient(to bottom, rgba(5,10,8,0.97), transparent);
+    gap: 12px;
   }
 
-  .header-left { display: flex; flex-direction: column; gap: 2px; }
+  .header-left { display: flex; flex-direction: column; gap: 2px; flex-shrink: 0; }
 
   .eyebrow {
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: var(--neon-green);
     text-transform: uppercase;
     opacity: 0.8;
   }
 
   .header-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     color: var(--white);
     letter-spacing: -0.5px;
@@ -89,13 +87,101 @@
 
   .header-title span { color: var(--gold); }
 
-  .header-right {
+  /* ── SEARCH ── */
+  .search-wrap {
+    flex: 1;
+    max-width: 260px;
+    position: relative;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    background: rgba(0,255,100,0.05);
+    border: 1px solid rgba(0,255,100,0.2);
+    border-radius: 6px;
+    color: var(--white);
     font-family: 'Share Tech Mono', monospace;
     font-size: 11px;
+    padding: 6px 10px 6px 28px;
+    outline: none;
+    letter-spacing: 1px;
+  }
+
+  .search-wrap input::placeholder { color: var(--muted); }
+  .search-wrap input:focus { border-color: rgba(0,255,100,0.5); }
+
+  .search-icon {
+    position: absolute;
+    left: 8px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 11px;
+    pointer-events: none;
+  }
+
+  .search-clear {
+    position: absolute;
+    right: 8px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 13px;
+    cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+
+  /* ── WEEK SELECTOR ── */
+  .week-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .week-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .week-tabs {
+    display: flex;
+    gap: 3px;
+  }
+
+  .week-tab {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    padding: 3px 7px;
+    border: 1px solid rgba(0,255,100,0.2);
+    border-radius: 4px;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+
+  .week-tab.active {
+    background: rgba(0,255,100,0.1);
+    border-color: rgba(0,255,100,0.5);
+    color: var(--neon-green);
+  }
+
+  .week-tab:hover:not(.active) { border-color: rgba(0,255,100,0.35); color: rgba(232,240,235,0.6); }
+
+  .header-right {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
     color: var(--neon-green);
     text-align: right;
     line-height: 1.6;
     opacity: 0.7;
+    flex-shrink: 0;
   }
 
   .blink { animation: blink 1.2s step-end infinite; }
@@ -105,10 +191,10 @@
   .legend {
     position: fixed;
     bottom: 20px;
-    left: 24px;
+    left: 20px;
     z-index: 10;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     color: var(--muted);
     display: flex;
     flex-direction: column;
@@ -117,41 +203,35 @@
 
   .legend-dot {
     display: inline-block;
-    width: 8px; height: 8px;
+    width: 7px; height: 7px;
     border-radius: 50%;
-    margin-right: 6px;
+    margin-right: 5px;
     vertical-align: middle;
   }
 
-  /* ── HINT ── */
   .hint {
     position: fixed;
     bottom: 20px;
-    right: 24px;
+    right: 20px;
     z-index: 10;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     color: var(--muted);
     text-align: right;
   }
 
-  /* ── SVG CONTAINER ── */
   #chart {
     position: fixed;
     inset: 0;
     z-index: 3;
   }
 
-  /* ── BUBBLE STYLES (SVG) ── */
-  .bubble-group { cursor: pointer; }
-  .bubble-group:hover .bubble-circle { filter: brightness(1.3); }
-
   /* ── DETAIL PANEL ── */
   #panel {
     position: fixed;
     right: -500px;
-    top: 60px;
-    bottom: 20px;
+    top: 58px;
+    bottom: 16px;
     width: 420px;
     max-width: calc(100vw - 32px);
     background: var(--panel-bg);
@@ -160,24 +240,23 @@
     z-index: 20;
     overflow-y: auto;
     transition: right 0.4s cubic-bezier(0.22,1,0.36,1);
-    padding: 0;
     -webkit-overflow-scrolling: touch;
   }
 
   #panel.open { right: 0; }
 
-  .panel-inner { padding: 24px 24px 32px; }
+  .panel-inner { padding: 20px 20px 28px; }
 
   .panel-close {
     position: absolute;
-    top: 12px; right: 16px;
+    top: 10px; right: 14px;
     background: none;
     border: 1px solid rgba(0,255,100,0.3);
     color: var(--neon-green);
     font-family: 'Share Tech Mono', monospace;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    width: 32px; height: 32px;
+    width: 28px; height: 28px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 4px;
     transition: all 0.2s;
@@ -187,58 +266,71 @@
 
   .panel-tag {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trend-arrow {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .trend-delta {
+    font-size: 9px;
     opacity: 0.8;
   }
 
   .panel-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
     line-height: 1.2;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     letter-spacing: -0.5px;
   }
 
   .panel-subtitle {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--muted);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     line-height: 1.5;
   }
 
   .panel-divider {
     height: 1px;
     background: linear-gradient(to right, rgba(0,255,100,0.3), transparent);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .stat-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 16px;
   }
 
   .stat-box {
     background: rgba(0,255,100,0.04);
-    border: 1px solid rgba(0,255,100,0.12);
-    border-radius: 8px;
-    padding: 12px 14px;
+    border: 1px solid rgba(0,255,100,0.1);
+    border-radius: 7px;
+    padding: 10px 12px;
   }
 
   .stat-box .num {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .stat-box .label {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--muted);
     line-height: 1.4;
     font-family: 'Share Tech Mono', monospace;
@@ -246,59 +338,107 @@
 
   .bullets-label {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 3px;
     color: var(--muted);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .bullet-item {
     display: flex;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 10px;
     align-items: flex-start;
   }
 
   .bullet-arrow {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 12px;
+    font-size: 11px;
     flex-shrink: 0;
     margin-top: 1px;
   }
 
   .bullet-text {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.55;
     color: rgba(232,240,235,0.85);
   }
 
   .signal-box {
-    margin-top: 20px;
-    background: rgba(0,0,0,0.4);
+    margin-top: 16px;
     border: 1px solid;
-    border-radius: 8px;
-    padding: 14px 16px;
+    border-radius: 7px;
+    padding: 12px 14px;
   }
 
   .signal-label {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
   }
 
   .signal-text {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.6;
     color: rgba(232,240,235,0.8);
   }
 
+  /* ── SHARE BUTTON ── */
+  .share-btn {
+    margin-top: 14px;
+    width: 100%;
+    background: none;
+    border: 1px solid rgba(0,255,100,0.25);
+    border-radius: 6px;
+    color: var(--neon-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+  }
+
+  .share-btn:hover { background: rgba(0,255,100,0.08); border-color: rgba(0,255,100,0.5); }
+  .share-btn.copied { color: var(--gold); border-color: rgba(201,168,76,0.5); }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(0,255,100,0.12);
+    border: 1px solid rgba(0,255,100,0.3);
+    color: var(--neon-green);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    z-index: 50;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
   /* Scrollbar */
-  #panel::-webkit-scrollbar { width: 4px; }
+  #panel::-webkit-scrollbar { width: 3px; }
   #panel::-webkit-scrollbar-track { background: transparent; }
   #panel::-webkit-scrollbar-thumb { background: rgba(0,255,100,0.2); border-radius: 2px; }
+
+  /* ── DIM for search ── */
+  .bubble-group.search-dim { opacity: 0.12 !important; }
+  .bubble-group.search-match { opacity: 1 !important; }
 </style>
 </head>
 <body>
@@ -308,6 +448,18 @@
     <div class="eyebrow">Crypto &amp; Macro · 50+ afleveringen · Apr–Mei 2026</div>
     <div class="header-title">Dominante <span>Trends</span></div>
   </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input type="text" id="search" placeholder="ZOEK TREND..." autocomplete="off" spellcheck="false">
+    <button class="search-clear" id="search-clear" onclick="clearSearch()">×</button>
+  </div>
+
+  <div class="week-wrap">
+    <span class="week-label">WEEK</span>
+    <div class="week-tabs" id="week-tabs"></div>
+  </div>
+
   <div class="header-right">
     <span class="blink">●</span> WEEKLY SIGNAL<br>
     DENIS CAPITAL RESEARCH
@@ -331,15 +483,25 @@
   <div><span class="legend-dot" style="background:#00e5ff"></span>REGULERING</div>
 </div>
 
-<div class="hint">KLIK OP EEN BOL →</div>
+<div class="hint">KLIK · SLEEP · ZOEK</div>
+
+<div id="toast"></div>
 
 <script>
-const TRENDS = [
+// ── HISTORISCHE DATA (per week) ──────────────────────────────────────────────
+// De wekelijkse taak voegt hier automatisch nieuwe weken aan toe.
+// Formaat: { week: 'W23', date: '2 jun', trends: [...TRENDS array...] }
+const HISTORY = [
+  {
+    week: 'W23',
+    date: '2 jun',
+    trends: [
   {
     id: 'bitcoin',
     label: 'Bitcoin',
     sublabel: 'Staatsactivum',
     size: 95,
+    prevSize: null,
     color: '#C9A84C',
     glow: '#f0c060',
     tag: 'MACRO · BULLISH',
@@ -367,6 +529,7 @@ const TRENDS = [
     label: 'AI × Crypto',
     sublabel: 'Convergentie',
     size: 88,
+    prevSize: null,
     color: '#a855f7',
     glow: '#c084fc',
     tag: 'TECH · DISRUPTIEF',
@@ -395,6 +558,7 @@ const TRENDS = [
     label: 'Tokenisatie',
     sublabel: 'TradFi on-chain',
     size: 82,
+    prevSize: null,
     color: '#00ff64',
     glow: '#00ff64',
     tag: 'STRUCTUREEL · BULLISH',
@@ -422,6 +586,7 @@ const TRENDS = [
     label: 'DeFi Crisis',
     sublabel: 'Veiligheid',
     size: 75,
+    prevSize: null,
     color: '#ff3c5a',
     glow: '#ff6080',
     tag: 'RISICO · STRUCTUREEL',
@@ -449,6 +614,7 @@ const TRENDS = [
     label: 'Regulering',
     sublabel: 'GENIUS & Clarity Act',
     size: 72,
+    prevSize: null,
     color: '#00e5ff',
     glow: '#00e5ff',
     tag: 'REGULERING · CATALYST',
@@ -476,6 +642,7 @@ const TRENDS = [
     label: 'Geopolitiek',
     sublabel: 'Iran · Olie · Macro',
     size: 65,
+    prevSize: null,
     color: '#C9A84C',
     glow: '#f0c060',
     tag: 'MACRO · RISICO',
@@ -503,6 +670,7 @@ const TRENDS = [
     label: 'Privacy &',
     sublabel: 'Quantum',
     size: 58,
+    prevSize: null,
     color: '#a855f7',
     glow: '#c084fc',
     tag: 'TECH · LANGETERMIJN',
@@ -530,6 +698,7 @@ const TRENDS = [
     label: 'Ethereum',
     sublabel: 'Wall Street ETH',
     size: 68,
+    prevSize: null,
     color: '#00ff64',
     glow: '#00ff64',
     tag: 'BULLISH · STRUCTUREEL',
@@ -557,6 +726,7 @@ const TRENDS = [
     label: 'Macro',
     sublabel: 'Megatrends',
     size: 55,
+    prevSize: null,
     color: '#00e5ff',
     glow: '#00e5ff',
     tag: 'MACRO · STRUCTUREEL',
@@ -579,23 +749,58 @@ const TRENDS = [
     signal: 'DE RODE DRAAD: Inflatie + AI + geopolitiek = structureel hogere rente + hogere grondstofprijzen. Bitcoin en zilver als hedge op monetaire degeneratie en geopolitieke spanning.',
     signalColor: '#00e5ff',
   },
+    ]
+  }
 ];
 
+// ── STATE ──────────────────────────────────────────────────────────────────────
+let activeWeekIdx = 0;
 let activeId = null;
+let searchQuery = '';
 
+function getTrends() { return HISTORY[activeWeekIdx].trends; }
+
+// ── WEEK TABS ──────────────────────────────────────────────────────────────────
+function buildWeekTabs() {
+  const container = document.getElementById('week-tabs');
+  container.innerHTML = '';
+  HISTORY.forEach((h, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'week-tab' + (i === activeWeekIdx ? ' active' : '');
+    btn.textContent = h.date;
+    btn.title = h.week;
+    btn.onclick = () => {
+      activeWeekIdx = i;
+      closePanel();
+      buildWeekTabs();
+      rebuildChart();
+    };
+    container.appendChild(btn);
+  });
+}
+
+// ── PANEL ──────────────────────────────────────────────────────────────────────
 function closePanel() {
   document.getElementById('panel').classList.remove('open');
   activeId = null;
-  // de-highlight
   d3.selectAll('.bubble-circle')
     .transition().duration(300)
     .attr('opacity', 1)
     .attr('stroke-width', 1.5);
 }
 
+function getArrow(trend) {
+  if (trend.prevSize === null) return { symbol: '—', color: '#4a6655', delta: 'nieuw' };
+  const diff = trend.size - trend.prevSize;
+  if (diff > 5) return { symbol: '▲', color: '#00ff64', delta: `+${diff}` };
+  if (diff < -5) return { symbol: '▼', color: '#ff3c5a', delta: `${diff}` };
+  return { symbol: '◆', color: '#C9A84C', delta: '=' };
+}
+
 function openPanel(trend) {
   activeId = trend.id;
   const el = document.getElementById('panel-content');
+  const arrow = getArrow(trend);
 
   const statsHtml = trend.stats.map(s => `
     <div class="stat-box">
@@ -612,7 +817,11 @@ function openPanel(trend) {
   `).join('');
 
   el.innerHTML = `
-    <div class="panel-tag" style="color:${trend.color}">${trend.tag}</div>
+    <div class="panel-tag" style="color:${trend.color}">
+      ${trend.tag}
+      <span class="trend-arrow" style="color:${arrow.color}">${arrow.symbol}</span>
+      <span class="trend-delta" style="color:${arrow.color}">${arrow.delta}</span>
+    </div>
     <div class="panel-title">${trend.title}</div>
     <div class="panel-subtitle">${trend.subtitle}</div>
     <div class="panel-divider"></div>
@@ -623,180 +832,245 @@ function openPanel(trend) {
       <div class="signal-label" style="color:${trend.color}">SYNTHESE SIGNAAL</div>
       <div class="signal-text">${trend.signal}</div>
     </div>
+    <button class="share-btn" onclick="shareSignal(event, '${trend.id}')">
+      ⬡ DEEL DIT SIGNAAL
+    </button>
   `;
 
   document.getElementById('panel').classList.add('open');
 
-  // highlight active, fade others
   d3.selectAll('.bubble-circle')
     .transition().duration(300)
     .attr('opacity', d => d.id === trend.id ? 1 : 0.35)
     .attr('stroke-width', d => d.id === trend.id ? 3 : 1);
 }
 
-// ── D3 FORCE SIMULATION ──
+function shareSignal(e, id) {
+  const trend = getTrends().find(t => t.id === id);
+  if (!trend) return;
+  const week = HISTORY[activeWeekIdx];
+  const arrow = getArrow(trend);
+  const topBullets = trend.bullets.slice(0, 3).map(b => `• ${b}`).join('\n');
+  const text = `📡 Denis Capital Research — ${week.week} (${week.date})\n\n${trend.title} ${arrow.symbol}\n\n${topBullets}\n\n💡 ${trend.signal}\n\nhttps://dvb1974.github.io/trends-bubbles/`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = e.currentTarget;
+    btn.classList.add('copied');
+    btn.textContent = '✓ GEKOPIEERD';
+    showToast('SIGNAAL GEKOPIEERD');
+    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '⬡ DEEL DIT SIGNAAL'; }, 2500);
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ── SEARCH ─────────────────────────────────────────────────────────────────────
+document.getElementById('search').addEventListener('input', function() {
+  searchQuery = this.value.trim().toLowerCase();
+  document.getElementById('search-clear').style.display = searchQuery ? 'block' : 'none';
+  applySearch();
+});
+
+function clearSearch() {
+  document.getElementById('search').value = '';
+  document.getElementById('search-clear').style.display = 'none';
+  searchQuery = '';
+  applySearch();
+}
+
+function applySearch() {
+  if (!searchQuery) {
+    d3.selectAll('.bubble-group').classed('search-dim', false).classed('search-match', false);
+    return;
+  }
+  d3.selectAll('.bubble-group').each(function(d) {
+    const text = [d.title, d.subtitle, d.label, d.sublabel, ...(d.bullets||[]), d.signal].join(' ').toLowerCase();
+    const match = text.includes(searchQuery);
+    d3.select(this).classed('search-dim', !match).classed('search-match', match);
+  });
+}
+
+// ── D3 CHART ───────────────────────────────────────────────────────────────────
 const svg = d3.select('#chart');
 let W = window.innerWidth;
 let H = window.innerHeight;
 svg.attr('width', W).attr('height', H);
 
-// Scale bubble sizes to viewport
-const maxSize = Math.min(W, H) * 0.14;
-const sizeScale = d3.scaleLinear()
-  .domain([d3.min(TRENDS, d => d.size), d3.max(TRENDS, d => d.size)])
-  .range([maxSize * 0.55, maxSize]);
+let simulation, nodesSelection;
 
-const data = TRENDS.map(d => ({ ...d, r: sizeScale(d.size) }));
+function rebuildChart() {
+  svg.selectAll('*').remove();
+  const trends = getTrends();
 
-// Gradient defs + glow filters
-const defs = svg.append('defs');
+  const maxSize = Math.min(W, H) * 0.14;
+  const sizeScale = d3.scaleLinear()
+    .domain([d3.min(trends, d => d.size), d3.max(trends, d => d.size)])
+    .range([maxSize * 0.55, maxSize]);
 
-data.forEach(d => {
-  // radial gradient
-  const g = defs.append('radialGradient')
-    .attr('id', `grad-${d.id}`)
-    .attr('cx', '35%').attr('cy', '35%')
-    .attr('r', '65%');
-  g.append('stop').attr('offset', '0%').attr('stop-color', d.glow).attr('stop-opacity', 0.9);
-  g.append('stop').attr('offset', '60%').attr('stop-color', d.color).attr('stop-opacity', 0.55);
-  g.append('stop').attr('offset', '100%').attr('stop-color', d.color).attr('stop-opacity', 0.15);
+  const data = trends.map(d => ({ ...d, r: sizeScale(d.size) }));
 
-  // glow filter
-  const f = defs.append('filter').attr('id', `glow-${d.id}`).attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
-  f.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', '6').attr('result', 'blur');
-  const merge = f.append('feMerge');
-  merge.append('feMergeNode').attr('in', 'blur');
-  merge.append('feMergeNode').attr('in', 'blur');
-  merge.append('feMergeNode').attr('in', 'SourceGraphic');
-});
+  const defs = svg.append('defs');
 
-const simulation = d3.forceSimulation(data)
-  .force('center', d3.forceCenter(W / 2, H / 2).strength(0.08))
-  .force('charge', d3.forceManyBody().strength(d => -d.r * 2.5))
-  .force('collision', d3.forceCollide(d => d.r + 8).strength(0.85))
-  .force('x', d3.forceX(W / 2).strength(0.04))
-  .force('y', d3.forceY(H / 2).strength(0.06))
-  .alphaDecay(0.02)
-  .velocityDecay(0.35);
+  data.forEach(d => {
+    const g = defs.append('radialGradient')
+      .attr('id', `grad-${d.id}`)
+      .attr('cx', '35%').attr('cy', '35%').attr('r', '65%');
+    g.append('stop').attr('offset', '0%').attr('stop-color', d.glow).attr('stop-opacity', 0.9);
+    g.append('stop').attr('offset', '60%').attr('stop-color', d.color).attr('stop-opacity', 0.55);
+    g.append('stop').attr('offset', '100%').attr('stop-color', d.color).attr('stop-opacity', 0.15);
 
-const nodes = svg.selectAll('.bubble-group')
-  .data(data)
-  .enter()
-  .append('g')
-  .attr('class', 'bubble-group')
-  .call(d3.drag()
-    .on('start', (event, d) => {
-      if (!event.active) simulation.alphaTarget(0.15).restart();
-      d.fx = d.x; d.fy = d.y;
-    })
-    .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
-    .on('end', (event, d) => {
-      if (!event.active) simulation.alphaTarget(0);
-      d.fx = null; d.fy = null;
-    })
-  )
-  .on('click', (event, d) => { event.stopPropagation(); openPanel(d); });
-
-// Outer glow ring
-nodes.append('circle')
-  .attr('class', 'bubble-glow')
-  .attr('r', d => d.r + 12)
-  .attr('fill', 'none')
-  .attr('stroke', d => d.color)
-  .attr('stroke-width', 1)
-  .attr('opacity', 0.15)
-  .attr('filter', d => `url(#glow-${d.id})`);
-
-// Main bubble
-nodes.append('circle')
-  .attr('class', 'bubble-circle')
-  .attr('r', d => d.r)
-  .attr('fill', d => `url(#grad-${d.id})`)
-  .attr('stroke', d => d.color)
-  .attr('stroke-width', 1.5)
-  .attr('stroke-opacity', 0.6)
-  .attr('filter', d => `url(#glow-${d.id})`);
-
-// Inner ring detail
-nodes.append('circle')
-  .attr('r', d => d.r * 0.85)
-  .attr('fill', 'none')
-  .attr('stroke', d => d.color)
-  .attr('stroke-width', 0.5)
-  .attr('stroke-opacity', 0.25)
-  .attr('stroke-dasharray', '3,4');
-
-// Label (main)
-nodes.append('text')
-  .attr('text-anchor', 'middle')
-  .attr('dy', d => d.r > 70 ? '-6px' : '-3px')
-  .attr('font-family', 'Inter, sans-serif')
-  .attr('font-weight', 900)
-  .attr('font-size', d => Math.max(11, d.r * 0.22))
-  .attr('fill', '#e8f0eb')
-  .attr('pointer-events', 'none')
-  .text(d => d.label);
-
-// Sublabel
-nodes.append('text')
-  .attr('text-anchor', 'middle')
-  .attr('dy', d => d.r > 70 ? '12px' : '10px')
-  .attr('font-family', "'Share Tech Mono', monospace")
-  .attr('font-size', d => Math.max(8, d.r * 0.13))
-  .attr('fill', d => d.color)
-  .attr('opacity', 0.85)
-  .attr('pointer-events', 'none')
-  .text(d => d.sublabel);
-
-// Size indicator dots (small circles at bottom of bubble)
-nodes.filter(d => d.r > 65)
-  .append('text')
-  .attr('text-anchor', 'middle')
-  .attr('dy', d => d.r * 0.65)
-  .attr('font-family', "'Share Tech Mono', monospace")
-  .attr('font-size', d => Math.max(7, d.r * 0.1))
-  .attr('fill', d => d.color)
-  .attr('opacity', 0.5)
-  .attr('pointer-events', 'none')
-  .text(d => '● '.repeat(Math.round(d.size / 25)).trim());
-
-simulation.on('tick', () => {
-  nodes.attr('transform', d => {
-    // keep bubbles inside viewport with padding
-    d.x = Math.max(d.r + 10, Math.min(W - d.r - 10, d.x));
-    d.y = Math.max(d.r + 60, Math.min(H - d.r - 50, d.y));
-    return `translate(${d.x},${d.y})`;
+    const f = defs.append('filter').attr('id', `glow-${d.id}`).attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
+    f.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', '6').attr('result', 'blur');
+    const merge = f.append('feMerge');
+    merge.append('feMergeNode').attr('in', 'blur');
+    merge.append('feMergeNode').attr('in', 'blur');
+    merge.append('feMergeNode').attr('in', 'SourceGraphic');
   });
-});
 
-// Click outside to close
-svg.on('click', closePanel);
+  if (simulation) simulation.stop();
 
-// Resize
-window.addEventListener('resize', () => {
-  W = window.innerWidth;
-  H = window.innerHeight;
-  svg.attr('width', W).attr('height', H);
-  simulation.force('center', d3.forceCenter(W / 2, H / 2))
+  simulation = d3.forceSimulation(data)
+    .force('center', d3.forceCenter(W / 2, H / 2).strength(0.08))
+    .force('charge', d3.forceManyBody().strength(d => -d.r * 2.5))
+    .force('collision', d3.forceCollide(d => d.r + 8).strength(0.85))
     .force('x', d3.forceX(W / 2).strength(0.04))
     .force('y', d3.forceY(H / 2).strength(0.06))
-    .alpha(0.3).restart();
+    .alphaDecay(0.02)
+    .velocityDecay(0.35);
+
+  nodesSelection = svg.selectAll('.bubble-group')
+    .data(data)
+    .enter()
+    .append('g')
+    .attr('class', 'bubble-group')
+    .call(d3.drag()
+      .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.15).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+    )
+    .on('click', (event, d) => { event.stopPropagation(); openPanel(d); });
+
+  // Glow ring
+  nodesSelection.append('circle')
+    .attr('class', 'bubble-glow')
+    .attr('r', d => d.r + 12)
+    .attr('fill', 'none')
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', 1)
+    .attr('opacity', 0.15)
+    .attr('filter', d => `url(#glow-${d.id})`);
+
+  // Main circle
+  nodesSelection.append('circle')
+    .attr('class', 'bubble-circle')
+    .attr('r', d => d.r)
+    .attr('fill', d => `url(#grad-${d.id})`)
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', 1.5)
+    .attr('stroke-opacity', 0.6)
+    .attr('filter', d => `url(#glow-${d.id})`);
+
+  // Inner ring
+  nodesSelection.append('circle')
+    .attr('r', d => d.r * 0.85)
+    .attr('fill', 'none')
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', 0.5)
+    .attr('stroke-opacity', 0.25)
+    .attr('stroke-dasharray', '3,4');
+
+  // Trend arrow indicator (top-right of bubble)
+  nodesSelection.filter(d => d.prevSize !== null)
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dx', d => d.r * 0.62)
+    .attr('dy', d => -d.r * 0.62)
+    .attr('font-size', d => Math.max(9, d.r * 0.16))
+    .attr('fill', d => {
+      const diff = d.size - d.prevSize;
+      return diff > 5 ? '#00ff64' : diff < -5 ? '#ff3c5a' : '#C9A84C';
+    })
+    .attr('pointer-events', 'none')
+    .attr('font-weight', 900)
+    .text(d => {
+      const diff = d.size - d.prevSize;
+      return diff > 5 ? '▲' : diff < -5 ? '▼' : '◆';
+    });
+
+  // Label
+  nodesSelection.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => d.r > 70 ? '-6px' : '-3px')
+    .attr('font-family', 'Inter, sans-serif')
+    .attr('font-weight', 900)
+    .attr('font-size', d => Math.max(11, d.r * 0.22))
+    .attr('fill', '#e8f0eb')
+    .attr('pointer-events', 'none')
+    .text(d => d.label);
+
+  // Sublabel
+  nodesSelection.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => d.r > 70 ? '12px' : '10px')
+    .attr('font-family', "'Share Tech Mono', monospace")
+    .attr('font-size', d => Math.max(8, d.r * 0.13))
+    .attr('fill', d => d.color)
+    .attr('opacity', 0.85)
+    .attr('pointer-events', 'none')
+    .text(d => d.sublabel);
+
+  // Size dots
+  nodesSelection.filter(d => d.r > 65)
+    .append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => d.r * 0.65)
+    .attr('font-family', "'Share Tech Mono', monospace")
+    .attr('font-size', d => Math.max(7, d.r * 0.1))
+    .attr('fill', d => d.color)
+    .attr('opacity', 0.5)
+    .attr('pointer-events', 'none')
+    .text(d => '● '.repeat(Math.round(d.size / 25)).trim());
+
+  simulation.on('tick', () => {
+    nodesSelection.attr('transform', d => {
+      d.x = Math.max(d.r + 10, Math.min(W - d.r - 10, d.x));
+      d.y = Math.max(d.r + 60, Math.min(H - d.r - 50, d.y));
+      return `translate(${d.x},${d.y})`;
+    });
+  });
+
+  // reapply search if active
+  if (searchQuery) applySearch();
+
+  // Pulse animation
+  function pulseGlow() {
+    svg.selectAll('.bubble-glow')
+      .transition().duration(2000 + Math.random() * 1000)
+      .attr('opacity', 0.08 + Math.random() * 0.12)
+      .attr('r', function(d) { return d.r + 8 + Math.random() * 8; })
+      .transition().duration(2000 + Math.random() * 1000)
+      .attr('opacity', 0.12)
+      .attr('r', d => d.r + 12)
+      .on('end', pulseGlow);
+  }
+  setTimeout(pulseGlow, 800);
+}
+
+svg.on('click', closePanel);
+
+window.addEventListener('resize', () => {
+  W = window.innerWidth; H = window.innerHeight;
+  svg.attr('width', W).attr('height', H);
+  rebuildChart();
 });
 
-// Pulse animation on bubbles
-function pulseGlow() {
-  d3.selectAll('.bubble-glow')
-    .transition()
-    .duration(2000 + Math.random() * 1000)
-    .attr('opacity', 0.08 + Math.random() * 0.12)
-    .attr('r', function(d) { return d.r + 8 + Math.random() * 8; })
-    .transition()
-    .duration(2000 + Math.random() * 1000)
-    .attr('opacity', 0.12)
-    .attr('r', d => d.r + 12)
-    .on('end', pulseGlow);
-}
-setTimeout(pulseGlow, 1000);
+// Init
+buildWeekTabs();
+rebuildChart();
 </script>
 </body>
 </html>
