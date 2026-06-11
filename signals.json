@@ -1,0 +1,16 @@
+{
+  "schema": "denis-capital.signals.v1",
+  "source": "Trends Bubble Map",
+  "generated_at": "2026-06-11T00:00:00+02:00",
+  "signals": [
+    {
+      "id": "trend-radar-ready",
+      "title": "Trend radar available",
+      "summary": "Growing macro and crypto clusters can be promoted to Chief of Staff theses and watchlist actions.",
+      "type": "trend",
+      "impact": "medium",
+      "confidence": 70,
+      "url": "https://dvb1974.github.io/trends-bubbles/"
+    }
+  ]
+}
