@@ -88,11 +88,7 @@
   .header-title span { color: var(--gold); }
 
   /* ── SEARCH ── */
-  .search-wrap {
-    flex: 1;
-    max-width: 260px;
-    position: relative;
-  }
+  .search-wrap { flex: 1; max-width: 260px; position: relative; }
 
   .search-wrap input {
     width: 100%;
@@ -133,12 +129,7 @@
   }
 
   /* ── WEEK SELECTOR ── */
-  .week-wrap {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-shrink: 0;
-  }
+  .week-wrap { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 
   .week-label {
     font-family: 'Share Tech Mono', monospace;
@@ -148,10 +139,7 @@
     text-transform: uppercase;
   }
 
-  .week-tabs {
-    display: flex;
-    gap: 3px;
-  }
+  .week-tabs { display: flex; gap: 3px; }
 
   .week-tab {
     font-family: 'Share Tech Mono', monospace;
@@ -220,11 +208,7 @@
     text-align: right;
   }
 
-  #chart {
-    position: fixed;
-    inset: 0;
-    z-index: 3;
-  }
+  #chart { position: fixed; inset: 0; z-index: 3; }
 
   /* ── DETAIL PANEL ── */
   #panel {
@@ -275,24 +259,10 @@
     gap: 8px;
   }
 
-  .trend-arrow {
-    font-size: 13px;
-    font-weight: 900;
-    line-height: 1;
-  }
+  .trend-arrow { font-size: 13px; font-weight: 900; line-height: 1; }
+  .trend-delta { font-size: 9px; opacity: 0.8; }
 
-  .trend-delta {
-    font-size: 9px;
-    opacity: 0.8;
-  }
-
-  .panel-title {
-    font-size: 20px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 5px;
-    letter-spacing: -0.5px;
-  }
+  .panel-title { font-size: 20px; font-weight: 900; line-height: 1.2; margin-bottom: 5px; letter-spacing: -0.5px; }
 
   .panel-subtitle {
     font-family: 'Share Tech Mono', monospace;
@@ -308,12 +278,7 @@
     margin-bottom: 16px;
   }
 
-  .stat-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 16px;
-  }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
 
   .stat-box {
     background: rgba(0,255,100,0.04);
@@ -322,12 +287,7 @@
     padding: 10px 12px;
   }
 
-  .stat-box .num {
-    font-size: 18px;
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 3px;
-  }
+  .stat-box .num { font-size: 18px; font-weight: 900; line-height: 1; margin-bottom: 3px; }
 
   .stat-box .label {
     font-size: 9px;
@@ -345,12 +305,7 @@
     margin-bottom: 10px;
   }
 
-  .bullet-item {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 10px;
-    align-items: flex-start;
-  }
+  .bullet-item { display: flex; gap: 8px; margin-bottom: 10px; align-items: flex-start; }
 
   .bullet-arrow {
     font-family: 'Share Tech Mono', monospace;
@@ -359,18 +314,9 @@
     margin-top: 1px;
   }
 
-  .bullet-text {
-    font-size: 12px;
-    line-height: 1.55;
-    color: rgba(232,240,235,0.85);
-  }
+  .bullet-text { font-size: 12px; line-height: 1.55; color: rgba(232,240,235,0.85); }
 
-  .signal-box {
-    margin-top: 16px;
-    border: 1px solid;
-    border-radius: 7px;
-    padding: 12px 14px;
-  }
+  .signal-box { margin-top: 16px; border: 1px solid; border-radius: 7px; padding: 12px 14px; }
 
   .signal-label {
     font-family: 'Share Tech Mono', monospace;
@@ -380,11 +326,7 @@
     margin-bottom: 7px;
   }
 
-  .signal-text {
-    font-size: 11px;
-    line-height: 1.6;
-    color: rgba(232,240,235,0.8);
-  }
+  .signal-text { font-size: 11px; line-height: 1.6; color: rgba(232,240,235,0.8); }
 
   /* ── SHARE BUTTON ── */
   .share-btn {
@@ -445,7 +387,7 @@
 
 <header>
   <div class="header-left">
-    <div class="eyebrow">Crypto &amp; Macro · 50+ afleveringen · Apr–Mei 2026</div>
+    <div class="eyebrow">Crypto &amp; Macro · 17 nieuwe afleveringen · Week van 27 jul 2026</div>
     <div class="header-title">Dominante <span>Trends</span></div>
   </div>
 
@@ -488,7 +430,7 @@
 <div id="toast"></div>
 
 <script>
-// ── HISTORISCHE DATA (per week) ──────────────────────────────────────────────
+// ── HISTORISCHE DATA (per week) ──────────────────────────────────────
 // De wekelijkse taak voegt hier automatisch nieuwe weken aan toe.
 // Formaat: { week: 'W23', date: '2 jun', trends: [...TRENDS array...] }
 const HISTORY = [
@@ -496,271 +438,165 @@ const HISTORY = [
     week: 'W23',
     date: '2 jun',
     trends: [
-  {
-    id: 'bitcoin',
-    label: 'Bitcoin',
-    sublabel: 'Staatsactivum',
-    size: 95,
-    prevSize: null,
-    color: '#C9A84C',
-    glow: '#f0c060',
-    tag: 'MACRO · BULLISH',
-    tagColor: '#C9A84C',
-    title: 'Bitcoin: K-shaped Markt',
-    subtitle: 'Institutioneel koopt. Retail afwezig. Twee markten in één asset.',
-    stats: [
-      { num: '$77,5K', label: 'Prijs — bearmarkt-gedrag terwijl TradFi optimistisch is' },
-      { num: '97 dagen', label: 'Zonder nieuwe bodem — historisch uitzonderlijk' },
-      { num: '$150K', label: 'Bernstein target einde 2026' },
-      { num: '10/11 weken', label: 'Instroom cryptofondsen — beste Bitwise-kwartaal ooit' },
-    ],
-    bullets: [
-      'Retail afgeleid door AI-hype; institutionelen accumuleren via ETF\'s',
-      'SpaceX heeft 18.712 BTC op de balans — corporate treasury trend zet door',
-      'Bitcoin concurreert nu met AI-aandelen om risicokapitaal — nieuwe katalysator gezocht',
-      'Mining decentraliseert: grote VS-miners stoppen door AI-energieconcurrentie',
-      'Bankless-capitulatie (Hoffman verkocht ETH) historisch gezien bullish signaal voor BTC',
-    ],
-    signal: 'WAARSCHUWING: K-shaped markt. Institutioneel BTC ≠ retail BTC. Bij macro-schok kan retail snel verkopen terwijl sovereign holders vasthouden.',
-    signalColor: '#C9A84C',
-  },
-  {
-    id: 'ai-crypto',
-    label: 'AI × Crypto',
-    sublabel: 'Convergentie',
-    size: 88,
-    prevSize: null,
-    color: '#a855f7',
-    glow: '#c084fc',
-    tag: 'TECH · DISRUPTIEF',
-    tagColor: '#a855f7',
-    title: 'AI × Crypto: De Convergentie',
-    subtitle: 'Crypto is de enige betaalinfrastructuur voor AI-agents — geen KYC, geen bank nodig.',
-    stats: [
-      { num: '90%', label: 'X402 protocol (Coinbase) marktaandeel in AI-agent transacties' },
-      { num: '$222M', label: 'Circle Arc opgehaald — USDC als gas-token voor AI' },
-      { num: '$3,2B', label: 'Hut 8 datacenter-deal voor 16,5 jaar' },
-      { num: '0', label: 'Zero Human Companies — volledig AI, betaald in Base ETH' },
-    ],
-    bullets: [
-      'X402 protocol (Coinbase) — Stripe en Google zijn concurrenten, maar Coinbase leidt',
-      'Circle Arc blockchain — eerste tokensale door beursgenoteerd bedrijf',
-      'Stablecoins vs geldmarktfondsen — AI-agents kiezen wat rendement geeft',
-      'Hut 8 transformeert van Bitcoin-miner naar AI-datacenter met investment-grade rating',
-      'Gensyn: gedecentraliseerde AI-compute via crypto-beloningen',
-      'JP Morgan (330K FTE) vs Jane Street (3.500 FTE) met vergelijkbare winst — zo transformeert AI het bankwezen',
-    ],
-    signal: 'KANS: Crypto is de rails voor de AI-economie. Platforms die naadloos schakelen tussen stablecoins en geldmarktfondsen winnen van pure stablecoin-spelers.',
-    signalColor: '#a855f7',
-  },
-  {
-    id: 'tokenisatie',
-    label: 'Tokenisatie',
-    sublabel: 'TradFi on-chain',
-    size: 82,
-    prevSize: null,
-    color: '#00ff64',
-    glow: '#00ff64',
-    tag: 'STRUCTUREEL · BULLISH',
-    tagColor: '#00ff64',
-    title: 'Tokenisatie: TradFi gaat On-Chain',
-    subtitle: 'BlackRock, JPMorgan en Fidelity kiezen Ethereum als settlement layer.',
-    stats: [
-      { num: '$16T', label: 'Repo-markt die on-chain gaat via tokenisatie' },
-      { num: '$250K', label: 'ETH target als monetaire premie van goud + BTC gevangen wordt' },
-      { num: '12 sec', label: 'L2\'s settlen elke 12 sec. met Ethereum L1 — atomische cross-chain' },
-      { num: 'Zomer \'26', label: 'Eerste EEZ-rollup live verwacht' },
-    ],
-    bullets: [
-      'BlackRock, JPM en Fidelity kiezen Ethereum als settlement layer — geen concurrent, maar fundament',
-      'Ethereum Economic Zone (EEZ): gefragmenteerde liquiditeit van 15+ mini-Ethereums herenigd',
-      'ETH combineert schaarsheid + rendement — uniek t.o.v. BTC en goud (Productive Money These)',
-      'Circle Arc bewijst: Ethereum is de standaard voor institutional DeFi én AI-betalingen',
-      'Stablecoin-gebruik buiten VS: +422% in 2025 op jaarbasis',
-    ],
-    signal: 'VOOR VLK: Tokenisatie van bankdeposito\'s, vastgoed en fondsen is niet meer hypothetisch. Klanten vragen actief naar exposure. TradFi-deelname legitimeert het narratief.',
-    signalColor: '#00ff64',
-  },
-  {
-    id: 'defi-security',
-    label: 'DeFi Crisis',
-    sublabel: 'Veiligheid',
-    size: 75,
-    prevSize: null,
-    color: '#ff3c5a',
-    glow: '#ff6080',
-    tag: 'RISICO · STRUCTUREEL',
-    tagColor: '#ff3c5a',
-    title: 'DeFi Veiligheidscrisis',
-    subtitle: 'Record-hackmaand april 2026. AI maakt aanvallen exponentieel geavanceerder.',
-    stats: [
-      { num: '$625M', label: 'Gestolen in april 2026 — absoluut record, 30 incidenten' },
-      { num: '$300M', label: 'Kelp DAO hack — Lazarus Group (Noord-Korea)' },
-      { num: '$285M', label: 'Drift hack via social engineering op multisig-holders' },
-      { num: '$1M', label: 'Morpho\'s schade — isolatie-architectuur redde het protocol' },
-    ],
-    bullets: [
-      'Layer Zero bridge: één validator kwetsbaar — 40% van alle deployments getroffen',
-      'Leverage loops: 98% onderpand in één asset type (LST\'s) — systemisch risico',
-      'Google ontdekte AI-gebouwde Python-exploit die 2FA omzeilde (supply chain-aanval)',
-      'Arbitrum bevroor $70M van hackers — \'code is law\' heeft een schaalbaarheidslimiet bereikt',
-      'Toekomst: eenvoudig, formeel geverifieerd, modulair — DeFi 2.0',
-    ],
-    signal: 'RISICO: Retail-exposure via DeFi zonder due diligence op architectuur is gevaarlijk. Isolatie-modellen (Morpho) zijn de nieuwe standaard — beoordeel protocols hierop.',
-    signalColor: '#ff3c5a',
-  },
-  {
-    id: 'regulering',
-    label: 'Regulering',
-    sublabel: 'GENIUS & Clarity Act',
-    size: 72,
-    prevSize: null,
-    color: '#00e5ff',
-    glow: '#00e5ff',
-    tag: 'REGULERING · CATALYST',
-    tagColor: '#00e5ff',
-    title: 'Regelgeving: GENIUS & Clarity Act',
-    subtitle: 'GENIUS door Senaat. Clarity Act op 35–40% kans — impasse door partijpolitiek.',
-    stats: [
-      { num: 'GENIUS', label: 'Stablecoin-wet door Senaat — historische mijlpaal' },
-      { num: '35–40%', label: 'Kans Clarity Act — gedaald van 75% na Senaatsimpasse' },
-      { num: '+422%', label: 'Stablecoin-gebruik buiten VS in 2025 YoY' },
-      { num: 'MiCA', label: 'ZeroHash eerste crypto-EMI-vergunning van DNB — essentieel' },
-    ],
-    bullets: [
-      'GENIUS Act vergelijkt met Securities Acts van 1933–1934 — decennia aan innovatie vastleggen',
-      'ZeroHash: eerste crypto-EMI-vergunning van DNB — essentieel voor stablecoins onder MiCA',
-      'Grote banken bouwen crypto-infrastructuur terwijl lobbyisten in Washington tegenwerken',
-      'Clarity Act-impasse door Senaatspolitiek — niet door inhoudelijke bezwaren',
-      'Regulering komt, de vraag is timing — maar fundament ligt er',
-    ],
-    signal: 'VOOR VLK: GENIUS geeft stablecoins een rechtskader. MiCA + DNB-vergunning openen de weg voor Euro-stablecoin dienstverlening. Timing: H2 2026.',
-    signalColor: '#00e5ff',
-  },
-  {
-    id: 'geopolitiek',
-    label: 'Geopolitiek',
-    sublabel: 'Iran · Olie · Macro',
-    size: 65,
-    prevSize: null,
-    color: '#C9A84C',
-    glow: '#f0c060',
-    tag: 'MACRO · RISICO',
-    tagColor: '#C9A84C',
-    title: 'Geopolitiek: Iran, Olie & Macro',
-    subtitle: 'Hormuz-risico, rente boven 5%, AI-populisme groeit — macro wordt grilliger.',
-    stats: [
-      { num: '5%+', label: 'Rente — Fed rentelast $1,4 biljoen/jaar (was $600M in 2022)' },
-      { num: '4,2%', label: 'CPI gestegen van 3,8% — boven 4% is historisch negatief voor S&P' },
-      { num: '1999', label: 'Obligatie vs aandelen-divergentie doet denken aan dotcom-top' },
-      { num: 'BLISS', label: 'Markten verwachten altijd overheidssteun — vangnet én risico' },
-    ],
-    bullets: [
-      'Hormuz-dreiging: olieprijs-shock treft cryptomarkten indirect via risicosentiment',
-      'Fed-rentelast $1,4 biljoen/jaar — verhogen is structureel pijnlijk, verlagen inflatoir',
-      'Kevin Warsh wil minder persconferenties — grotere marktvolatiliteit verwacht',
-      'Jordi Visser: zilver + Bitcoin breakout voor zomer — rotatie uit AI-chiphandel',
-      'Arthur Hayes: oorlog + AI-investeringen → inflatie → bijdrukken → Bitcoin bull',
-    ],
-    signal: 'MACRO-SCENARIO: CPI boven 4% historisch negatief voor S&P, positief voor grondstoffen en crypto. Zilver als hedge op AI-infrastructuur en energietransitie.',
-    signalColor: '#C9A84C',
-  },
-  {
-    id: 'privacy',
-    label: 'Privacy &',
-    sublabel: 'Quantum',
-    size: 58,
-    prevSize: null,
-    color: '#a855f7',
-    glow: '#c084fc',
-    tag: 'TECH · LANGETERMIJN',
-    tagColor: '#a855f7',
-    title: 'Privacy & Quantumdreiging',
-    subtitle: 'Q-Day 2029 (Google\'s eigen deadline). 6,9M BTC kwetsbaar. Zcash als hedge.',
-    stats: [
-      { num: '2029', label: 'Google\'s eigen deadline voor quantum-transitie' },
-      { num: '6,9M', label: 'BTC-adressen kwetsbaar voor quantum-aanval' },
-      { num: 'ZK-snarks', label: 'Zcash cryptografisch sterker dan Monero tegen AI-analyse' },
-      { num: 'BIP360', label: 'Bitcoin\'s quantum-antwoord — \'security by obfuscation\'' },
-    ],
-    bullets: [
-      'Zcash al quantum-recoverable; volledig quantum-proof verwacht als eerste blockchain',
-      'Ethereum heeft concrete post-quantum roadmap vs Bitcoin\'s bestuurloos BIP360-proces',
-      'Nick Carter: "ETH/BTC ratio zal het quantum-governance-verschil weerspiegelen"',
-      'AI-tracking maakt privacy-coins niet langer paranoia maar institutioneel relevant',
-      'Fungibiliteit: Bitcoin-coins kunnen "besmet" raken — Zcash heeft shielded pool als Trojaans paard',
-    ],
-    signal: 'LANGETERMIJN: Quantum is een echte deadline, geen theoretisch risico. Blockchains met governance-capaciteit (ETH, ZEC) zijn beter gepositioneerd dan BTC voor de quantum-transitie.',
-    signalColor: '#a855f7',
-  },
-  {
-    id: 'ethereum',
-    label: 'Ethereum',
-    sublabel: 'Wall Street ETH',
-    size: 68,
-    prevSize: null,
-    color: '#00ff64',
-    glow: '#00ff64',
-    tag: 'BULLISH · STRUCTUREEL',
-    tagColor: '#00ff64',
-    title: 'Ethereum: Wall Street kiest ETH',
-    subtitle: 'Van speculatief asset naar settlement layer van het globale financiële systeem.',
-    stats: [
-      { num: '$250K', label: 'ETH target (extreme bull case: monetaire premie goud + BTC)' },
-      { num: '<1000', label: 'Regels code voor Ethereum Economic Zone (EEZ)' },
-      { num: '15+', label: 'Mini-Ethereums (L2\'s) die herenigd worden via EEZ' },
-      { num: 'Zomer \'26', label: 'Eerste EEZ-rollup live — institutionele on-ramp' },
-    ],
-    bullets: [
-      'L2\'s settlen elke 12 sec. met L1 — atomische cross-chain transacties mogelijk',
-      'ETH combineert schaarsheid + rendement (staking) — uniek in de crypto-wereld',
-      'BlackRock, JPM en Fidelity kozen Ethereum als settlement layer voor tokenisatie',
-      'Bankless-capitulatie (Hoffman verkocht ETH op $1.800) historisch gezien bodem-signaal',
-      'Circle Arc kiest Ethereum — bewijst dat het de standaard is voor institutional DeFi',
-    ],
-    signal: 'VOOR VLK: Ethereum is het fundament, geen concurrent van TradFi. Als $16T repo-markt on-chain gaat, gaat dat via Ethereum. ETH-exposure is settlement-layer-exposure.',
-    signalColor: '#00ff64',
-  },
-  {
-    id: 'macro',
-    label: 'Macro',
-    sublabel: 'Megatrends',
-    size: 55,
-    prevSize: null,
-    color: '#00e5ff',
-    glow: '#00e5ff',
-    tag: 'MACRO · STRUCTUREEL',
-    tagColor: '#00e5ff',
-    title: 'Macro Megatrends',
-    subtitle: 'Zilver, energie, AI-populisme en de grote rotatie. De rode draad door 50+ afleveringen.',
-    stats: [
-      { num: 'Zilver', label: 'Cruciaal voor zonnepanelen, AI-infra en solid-state batterijen' },
-      { num: 'DRAM', label: 'AI-chiphandel uitgeput na jaar sterke winsten — rotatie begint' },
-      { num: 'AI-pop.', label: 'AI-populisme groeit snel — politieke risicopremie stijgt' },
-      { num: '2026', label: 'Jordi Visser: zilver + Bitcoin breakout voor de zomer' },
-    ],
-    bullets: [
-      'China importeerde recordhoeveelheden zilver — strategische grondstof voor AI-infrastructuur',
-      'Rotatie van AI-chiphandel (Micron verkocht) naar crypto en zilver — Jordi Visser thesis',
-      'Bij CPI boven 4%: S&P historisch negatief — grondstoffen en crypto profiteren structureel',
-      'AI-populisme: politieke bewegingen gebruiken AI als sündenbock voor ongelijkheid',
-      'Energietransitie versnelt vraag naar zilver — 2x multiplicator op zonnepanelen en EV-batterijen',
-    ],
-    signal: 'DE RODE DRAAD: Inflatie + AI + geopolitiek = structureel hogere rente + hogere grondstofprijzen. Bitcoin en zilver als hedge op monetaire degeneratie en geopolitieke spanning.',
-    signalColor: '#00e5ff',
-  },
+      { id: 'bitcoin', label: 'Bitcoin', sublabel: 'Staatsactivum', size: 95, prevSize: null, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
+        title: 'Bitcoin: K-shaped Markt', subtitle: 'Institutioneel koopt. Retail afwezig. Twee markten in één asset.',
+        stats: [ { num: '$77,5K', label: 'Prijs — bearmarkt-gedrag terwijl TradFi optimistisch is' }, { num: '97 dagen', label: 'Zonder nieuwe bodem — historisch uitzonderlijk' }, { num: '$150K', label: 'Bernstein target einde 2026' }, { num: '10/11 weken', label: 'Instroom cryptofondsen — beste Bitwise-kwartaal ooit' } ],
+        bullets: [ 'Retail afgeleid door AI-hype; institutionelen accumuleren via ETF\'s', 'SpaceX heeft 18.712 BTC op de balans — corporate treasury trend zet door', 'Mining decentraliseert: grote VS-miners stoppen door AI-energieconcurrentie' ],
+        signal: 'WAARSCHUWING: K-shaped markt. Institutioneel BTC ≠ retail BTC. Bij macro-schok kan retail snel verkopen terwijl sovereign holders vasthouden.', signalColor: '#C9A84C' },
+      { id: 'ai-crypto', label: 'AI × Crypto', sublabel: 'Convergentie', size: 88, prevSize: null, color: '#a855f7', glow: '#c084fc', tag: 'TECH · DISRUPTIEF', tagColor: '#a855f7',
+        title: 'AI × Crypto: De Convergentie', subtitle: 'Crypto is de enige betaalinfrastructuur voor AI-agents — geen KYC, geen bank nodig.',
+        stats: [ { num: '90%', label: 'X402-protocol (Coinbase) marktaandeel in AI-agent transacties' }, { num: '$222M', label: 'Circle Arc opgehaald — USDC als gas-token voor AI' }, { num: '$3,2B', label: 'Hut 8 datacenter-deal voor 16,5 jaar' } ],
+        bullets: [ 'X402 protocol (Coinbase) — Stripe en Google zijn concurrenten', 'Circle Arc blockchain — eerste tokensale door beursgenoteerd bedrijf', 'Hut 8 transformeert van Bitcoin-miner naar AI-datacenter' ],
+        signal: 'KANS: Crypto is de rails voor de AI-economie. Platforms die naadloos schakelen tussen stablecoins en geldmarktfondsen winnen.', signalColor: '#a855f7' },
+      { id: 'tokenisatie', label: 'Tokenisatie', sublabel: 'TradFi on-chain', size: 82, prevSize: null, color: '#00ff64', glow: '#00ff64', tag: 'STRUCTUREEL · BULLISH', tagColor: '#00ff64',
+        title: 'Tokenisatie: TradFi gaat On-Chain', subtitle: 'BlackRock, JPMorgan en Fidelity kiezen Ethereum als settlement layer.',
+        stats: [ { num: '$16T', label: 'Repo-markt die on-chain gaat via tokenisatie' }, { num: '$250K', label: 'ETH target als monetaire premie van goud + BTC gevangen wordt' }, { num: '12 sec', label: 'L2\'s settlen elke 12 sec. met Ethereum L1' } ],
+        bullets: [ 'BlackRock, JPM en Fidelity kiezen Ethereum als settlement layer', 'Ethereum Economic Zone: gefragmenteerde liquiditeit herenigd', 'Stablecoin-gebruik buiten VS: +422% in 2025 op jaarbasis' ],
+        signal: 'VOOR VLK: Tokenisatie van bankdeposito\'s, vastgoed en fondsen is niet meer hypothetisch. TradFi-deelname legitimeert het narratief.', signalColor: '#00ff64' },
+      { id: 'defi-security', label: 'DeFi Crisis', sublabel: 'Veiligheid', size: 75, prevSize: null, color: '#ff3c5a', glow: '#ff6080', tag: 'RISICO · STRUCTUREEL', tagColor: '#ff3c5a',
+        title: 'DeFi Veiligheidscrisis', subtitle: 'Record-hackmaand april 2026. AI maakt aanvallen exponentieel geavanceerder.',
+        stats: [ { num: '$625M', label: 'Gestolen in april 2026 — absoluut record, 30 incidenten' }, { num: '$300M', label: 'Kelp DAO hack — Lazarus Group (Noord-Korea)' }, { num: '$1M', label: 'Morpho\'s schade — isolatie-architectuur redde het protocol' } ],
+        bullets: [ 'Layer Zero bridge: één validator kwetsbaar — 40% van deployments getroffen', 'Leverage loops: 98% onderpand in één asset type — systemisch risico', 'Toekomst: eenvoudig, formeel geverifieerd, modulair — DeFi 2.0' ],
+        signal: 'RISICO: Retail-exposure via DeFi zonder due diligence op architectuur is gevaarlijk. Isolatie-modellen (Morpho) zijn de nieuwe standaard.', signalColor: '#ff3c5a' },
+      { id: 'regulering', label: 'Regulering', sublabel: 'GENIUS & Clarity Act', size: 72, prevSize: null, color: '#00e5ff', glow: '#00e5ff', tag: 'REGULERING · CATALYST', tagColor: '#00e5ff',
+        title: 'Regelgeving: GENIUS & Clarity Act', subtitle: 'GENIUS door Senaat. Clarity Act op 35-40% kans — impasse door partijpolitiek.',
+        stats: [ { num: 'GENIUS', label: 'Stablecoin-wet door Senaat — historische mijlpaal' }, { num: '35–40%', label: 'Kans Clarity Act — gedaald van 75% na Senaatsimpasse' }, { num: '+422%', label: 'Stablecoin-gebruik buiten VS in 2025 YoY' } ],
+        bullets: [ 'GENIUS Act vergeleken met Securities Acts van 1933-1934', 'ZeroHash: eerste crypto-EMI-vergunning van DNB — essentieel', 'Grote banken bouwen crypto-infrastructuur terwijl lobbyisten tegenwerken' ],
+        signal: 'VOOR VLK: GENIUS geeft stablecoins een rechtskader. MiCA + DNB-vergunning openen de weg voor Euro-stablecoin dienstverlening. Timing: H2 2026.', signalColor: '#00e5ff' },
+      { id: 'geopolitiek', label: 'Geopolitiek', sublabel: 'Iran · Olie · Macro', size: 65, prevSize: null, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · RISICO', tagColor: '#C9A84C',
+        title: 'Geopolitiek: Iran, Olie & Macro', subtitle: 'Hormuz-risico, rente boven 5%, AI-populisme groeit — macro wordt grilliger.',
+        stats: [ { num: '5%+', label: 'Rente — Fed rentelast $1,4 biljoen/jaar' }, { num: '4,2%', label: 'CPI gestegen van 3,8% — boven 4% historisch negatief voor S&P' } ],
+        bullets: [ 'Hormuz-dreiging: olieprijs-shock treft cryptomarkten indirect', 'Fed-rentelast $1,4 biljoen/jaar — verhogen is structureel pijnlijk', 'Arthur Hayes: oorlog + AI-investeringen → inflatie → bijdrukken → Bitcoin bull' ],
+        signal: 'MACRO-SCENARIO: CPI boven 4% historisch negatief voor S&P, positief voor grondstoffen en crypto.', signalColor: '#C9A84C' },
+      { id: 'privacy', label: 'Privacy &', sublabel: 'Quantum', size: 58, prevSize: null, color: '#a855f7', glow: '#c084fc', tag: 'TECH · LANGETERMIJN', tagColor: '#a855f7',
+        title: 'Privacy & Quantumdreiging', subtitle: 'Q-Day 2029 (Google\'s eigen deadline). 6,9M BTC kwetsbaar. Zcash als hedge.',
+        stats: [ { num: '2029', label: 'Google\'s eigen deadline voor quantum-transitie' }, { num: '6,9M', label: 'BTC-adressen kwetsbaar voor quantum-aanval' } ],
+        bullets: [ 'Zcash al quantum-recoverable; volledig quantum-proof verwacht als eerste', 'Ethereum heeft concrete post-quantum roadmap vs Bitcoin\'s bestuurloze BIP360-proces', 'Fungibiliteit: Bitcoin-coins kunnen "besmet" raken — Zcash heeft shielded pool' ],
+        signal: 'LANGETERMIJN: Quantum is een echte deadline, geen theoretisch risico. Blockchains met governance-capaciteit (ETH, ZEC) zijn beter gepositioneerd.', signalColor: '#a855f7' },
+      { id: 'ethereum', label: 'Ethereum', sublabel: 'Wall Street ETH', size: 68, prevSize: null, color: '#00ff64', glow: '#00ff64', tag: 'BULLISH · STRUCTUREEL', tagColor: '#00ff64',
+        title: 'Ethereum: Wall Street kiest ETH', subtitle: 'Van speculatief asset naar settlement layer van het globale financiële systeem.',
+        stats: [ { num: '$250K', label: 'ETH target (extreme bull case)' }, { num: '15+', label: 'Mini-Ethereums (L2\'s) herenigd via EEZ' } ],
+        bullets: [ 'L2\'s settlen elke 12 sec. met L1 — atomische cross-chain transacties', 'ETH combineert schaarsheid + rendement (staking) — uniek', 'BlackRock, JPM en Fidelity kozen Ethereum als settlement layer' ],
+        signal: 'VOOR VLK: Ethereum is het fundament, geen concurrent van TradFi. Als $16T repo-markt on-chain gaat, gaat dat via Ethereum.', signalColor: '#00ff64' },
+      { id: 'macro', label: 'Macro', sublabel: 'Megatrends', size: 55, prevSize: null, color: '#00e5ff', glow: '#00e5ff', tag: 'MACRO · STRUCTUREEL', tagColor: '#00e5ff',
+        title: 'Macro Megatrends', subtitle: 'Zilver, energie, AI-populisme en de grote rotatie.',
+        stats: [ { num: 'Zilver', label: 'Cruciaal voor zonnepanelen, AI-infra en batterijen' }, { num: '2026', label: 'Jordi Visser: zilver + Bitcoin breakout voor de zomer' } ],
+        bullets: [ 'China importeerde recordhoeveelheden zilver — strategische grondstof', 'Rotatie van AI-chiphandel naar crypto en zilver', 'AI-populisme groeit snel — politieke risicopremie stijgt' ],
+        signal: 'DE RODE DRAAD: Inflatie + AI + geopolitiek = structureel hogere rente + hogere grondstofprijzen. Bitcoin en zilver als hedge.', signalColor: '#00e5ff' },
     ]
-  }
+  },
+  {
+    week: 'W30',
+    date: '20 jul',
+    trends: [
+      { id: 'bitcoin', label: 'Bitcoin', sublabel: 'Staatsactivum', size: 92, prevSize: 95, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
+        title: "Bitcoin: K-shaped Markt & Strategy's Eerste Verkoop", subtitle: "Institutioneel koopt door, maar Strategy verkoopt voor het eerst ooit BTC.",
+        stats: [ { num: '$60–64K', label: 'Prijsrange, 9+ dagen stabiel — bodemvorming zichtbaar' }, { num: '3.588 BTC', label: 'Eerste ooit-verkoop door Strategy ($216M, voor dividend)' }, { num: '0,99', label: "Strategy's mNAV zakte voor het eerst onder 1" }, { num: '$150K', label: 'Bernstein-target eind 2026 blijft overeind' } ],
+        bullets: [ 'Strategy verkocht 3.588 BTC — eerste keer ooit, voor preferente dividenden', 'Bitcoin bleef stabiel/steeg tijdens de verkoop — markt accepteert ordelijke afbouw', 'Jordi Visser: BTC-volatiliteit (30) vs AI-aandelen (100) — 3x meer BTC te houden op risico-gecorrigeerde basis', 'Amerikaanse Strategische Bitcoin Reserve stokt door ruzie Financiën vs Handel', 'Bullish divergentie op weekgrafiek (RSI, Fear&Greed) wijst op mogelijke bodem' ],
+        signal: 'Strategy\'s verkoop is een signaal, geen paniek — de markt absorbeerde het moeiteloos. Voor cliënten met langetermijnhorizon blijft de bodemvorming-these overeind, maar de "onaantastbare staatsactivum"-narratief verdient nuance.', signalColor: '#C9A84C' },
+      { id: 'ai-crypto', label: 'AI × Crypto', sublabel: 'Convergentie', size: 85, prevSize: 88, color: '#a855f7', glow: '#c084fc', tag: 'TECH · DISRUPTIEF', tagColor: '#a855f7',
+        title: 'AI × Crypto: Van Betaalrails naar Energie-Bottleneck', subtitle: '19 nieuwe afleveringen bevestigen: AI vertraagt, energie wordt de echte bottleneck.',
+        stats: [ { num: '$1', label: 'Kosten van een AI-smart contract audit via X402 (Austin Griffith)' }, { num: '+48%', label: 'NVIDIA sinds juni 2024 — mid-cycle vertraging, geen crash' }, { num: '30x', label: 'Rekenkracht die consumer AI-agents verbruiken t.o.v. coding agents' }, { num: '5–7j', label: 'Wachttijd voor netaansluiting van nieuwe datacenters' } ],
+        bullets: [ 'AI-agents doen nu goedkope smart contract-audits en zelfs DAO-governance beter dan mensen', 'Datacenters verhuizen naar de ruimte (Musk) en oceaan (Panthalasa) om het stroomnet te omzeilen', 'AI-aandelen mid-cycle vertraging maakt Bitcoin aantrekkelijker op risico-gecorrigeerde basis (Visser)', 'Consumer AI-agents volgende golf — 30x meer rekenkracht dan coding agents (Goldman Sachs)', 'Crypto blijft de enige betaalinfrastructuur zonder KYC voor AI-agents' ],
+        signal: 'De AI-trade koelt af, niet stort in — kapitaalrotatie richting Bitcoin/crypto is een reëel scenario voor de tweede jaarhelft. Energie-infrastructuur blijft de onderliggende schaarste-trade.', signalColor: '#a855f7' },
+      { id: 'tokenisatie', label: 'Tokenisatie', sublabel: 'TradFi on-chain', size: 96, prevSize: 82, color: '#00ff64', glow: '#00ff64', tag: 'STRUCTUREEL · BULLISH', tagColor: '#00ff64',
+        title: "Tokenisatie: SWIFT, Robinhood Chain & CLO's Domineren", subtitle: 'De grootste bankinfrastructuur ter wereld test nu zelf blockchain.',
+        stats: [ { num: '17 banken', label: 'SWIFT-experiment met HSBC, Citibank, UBS, Wells Fargo, BNP' }, { num: '$370M', label: 'TVL op Robinhood Chain, twee weken na lancering' }, { num: '35+', label: 'Blockchains verbonden via NEAR Intents' }, { num: '$16T', label: 'Repo-markt die geleidelijk on-chain beweegt' } ],
+        bullets: [ 'SWIFT test blockchain met 17 grote banken voor 24/7 tokenized deposits', 'Robinhood Chain overtreft Base in activiteit — memecoins domineren (85%), RWA\'s nog maar 1%', 'Tokenized CLO\'s (Centrifuge, Galaxy, Apollo) winnen terrein als DeFi-yieldstrategie', 'JPMorgan bouwde stilletjes een $700M-fonds op Ethereum', 'NEAR Intents verbindt nu 35+ blockchains met volledige chain-abstractie' ],
+        signal: "Dit is niet langer een pilot-verhaal — SWIFT's betrokkenheid is het duidelijkste signaal tot nu toe dat institutionele tokenisatie mainstream wordt. Reden om posities in settlement-infrastructuur (Ethereum) te heroverwegen.", signalColor: '#00ff64' },
+      { id: 'defi-security', label: 'DeFi Crisis', sublabel: 'Veiligheid', size: 78, prevSize: 75, color: '#ff3c5a', glow: '#ff6080', tag: 'RISICO · STRUCTUREEL', tagColor: '#ff3c5a',
+        title: 'DeFi Veiligheidscrisis: Governance is het Nieuwe Doelwit', subtitle: 'Na bridge-hacks nu governance-overnames — $20M gestolen via een DAO-stemming.',
+        stats: [ { num: '$20M', label: 'BonkDAO-diefstal via governance-aanval — 7 van 18.000 wallets stemden' }, { num: '$625M', label: 'Record hackmaand april — blijft de basislijn voor 2026' }, { num: '$11M→$4M', label: "CAP's stable drop drastisch verlaagd — vertrouwensbreuk" }, { num: '5 jaar', label: 'Leeftijd van vergeten token-approvals misbruikt bij Barnbridge' } ],
+        bullets: [ 'BonkDAO: aanvaller kocht $4M BONK, stemde in slecht bezocht forum, stal $20M', 'Barnbridge: vijf jaar oude, vergeten token-approvals misbruikt via governance', "CAP's stable drop-controverse: belofte van $11M teruggebracht naar $4M", 'Lage opkomst bij DAO-stemmingen blijft het structurele zwakke punt', 'CLO-tokenisatie (Chronicle-verificatie) wint terrein als "veiligere" DeFi-yield' ],
+        signal: 'Governance-aanvallen zijn de nieuwe bridge-hacks — goedkoper uit te voeren en moeilijker te detecteren. Vraag altijd naar stemopkomst en tijdslot-mechanismen voordat u toewijst.', signalColor: '#ff3c5a' },
+      { id: 'regulering', label: 'Regulering', sublabel: 'Clarity Act hapert', size: 90, prevSize: 72, color: '#00e5ff', glow: '#00e5ff', tag: 'REGULERING · CATALYST', tagColor: '#00e5ff',
+        title: "Regelgeving: Clarity Act Vast op Trump's Eigen Belangen", subtitle: 'Kans op Amerikaanse wetgeving daalt scherp; Europa (MiCA) trekt duidelijk voor.',
+        stats: [ { num: '36–40%', label: 'Kans Clarity Act — gedaald van 75% door ethiekclausule' }, { num: '279', label: 'MiCA-vergunningen in de EU — NL derde met 28' }, { num: '$1,4B', label: "Trump's crypto-inkomsten — het politieke struikelblok" }, { num: '7 aug', label: 'Deadline vóór zomerreces — anders kans verder omlaag' } ],
+        bullets: [ "Clarity Act-kans daalt van 75% naar 36-40% — Democraten eisen ethische regels rond Trump's crypto", 'MiCA-overgangsperiode voltooid: Binance trekt zich terug uit Europa', 'SCOTUS-uitspraak geeft de VS-president meer macht om SEC/CFTC-commissarissen te ontslaan', 'Knaken-faillissement (NL) toont de kosten van trage AFM-handhaving', 'UK FCA publiceert eigen cryptoregels — ingang pas 2027' ],
+        signal: "De Amerikaanse regelgeving is nu een politiek risico in plaats van een zekerheid. Europa's regulatoire voorsprong (MiCA) wordt met de week relevanter voor cliënten die compliant exposure zoeken.", signalColor: '#00e5ff' },
+      { id: 'geopolitiek', label: 'Geopolitiek', sublabel: 'Iran · Olie · Macro', size: 88, prevSize: 65, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · RISICO', tagColor: '#C9A84C',
+        title: 'Geopolitiek: Iran-Escalatie Drukt Olie en Rente Omhoog', subtitle: 'VS-luchtaanvallen op Iran, olie +20%, en de Bessent Doctrine als nieuw geopolitiek kader.',
+        stats: [ { num: '170', label: 'Militaire doelen geraakt bij Amerikaanse luchtaanvallen op Iran' }, { num: '+20%', label: 'Olieprijsstijging in juli' }, { num: '5%+', label: '30-jaarsrente VS — hoogste sinds 2008' }, { num: '$344M', label: 'Iraanse USDT-fondsen bevroren door Tether' } ],
+        bullets: [ "VS voert luchtaanvallen uit op 170 doelen in Iran — Trump noemt wapenstilstand 'voorbij'", 'Bessent Doctrine: digital assets expliciet ingezet als geopolitiek instrument voor dollarhegemonie', 'Inflatie lijkt te pieken — laatste CPI-cijfers lager dan verwacht (Stephanie Roth)', 'Kevin Warsh (Fed) communiceert onvoorspelbaar — elk cijfer beweegt de markt meer', 'Arthur Hayes\' these: oorlog + AI-investeringen → inflatie → geld bijdrukken → Bitcoin bull' ],
+        signal: 'De correlatie tussen geopolitiek risico en cryptovolatiliteit wordt sterker, niet zwakker. Voor cliënten met concentratie in crypto én olie/energie is dit het moment om de portefeuille-hedge te herzien.', signalColor: '#C9A84C' },
+      { id: 'ethereum', label: 'Ethereum', sublabel: 'Identiteit in beweging', size: 80, prevSize: 68, color: '#00ff64', glow: '#00ff64', tag: 'BULLISH · STRUCTUREEL', tagColor: '#00ff64',
+        title: 'Ethereum: Lean Roadmap versus het Fee-Probleem', subtitle: "Vitalik's driejarenplan botst met Robinhood Chain's schamele bijdrage aan ETH-omzet.",
+        stats: [ { num: '3–4j', label: 'Lean Ethereum-roadmap — grootste upgrade sinds de Merge' }, { num: '0,15%', label: "Aandeel dat ETH ontving van Robinhood Chain's $816K omzet" }, { num: '4,8%', label: 'Van alle ETH nu in bezit van Tom Lee' }, { num: '$250K', label: 'ETH-target volgens de Productive Money-these' } ],
+        bullets: [ "Vitalik's Lean Ethereum-roadmap (2026-2029) bevat expliciete post-quantum beveiliging", "Robinhood Chain genereerde $816K omzet — Ethereum ontving slechts 0,15% daarvan", 'Debat laait op: is ETH store-of-value of fee-genererende asset?', 'BlackRock, JPMorgan en Fidelity kiezen Ethereum toch als settlement layer', 'Tom Lee nadert zijn doel van 5% van alle ETH in bezit' ],
+        signal: "Het fee-debat bepaalt hoe ETH gewaardeerd zou moeten worden. Voor cliënten die ETH als 'digital bond' zien, is Robinhood Chain's magere bijdrage een signaal om de waarderingsthese te herijken.", signalColor: '#00ff64' },
+      { id: 'privacy', label: 'Privacy &', sublabel: 'Quantum', size: 60, prevSize: 58, color: '#a855f7', glow: '#c084fc', tag: 'TECH · LANGETERMIJN', tagColor: '#a855f7',
+        title: 'Privacy & Quantum: Bitcoin Erkent zijn Zwakte', subtitle: 'Dan Held (Bitcoin-veteraan) geeft toe dat schaalbaarheid faalde — quantum blijft tikken.',
+        stats: [ { num: '2–3j', label: 'Termijn waarbinnen BIP360-oplossing nodig is (Dan Held)' }, { num: '6,9M', label: 'BTC kwetsbaar voor quantum-aanval' }, { num: '3–4j', label: "Ethereum's Lean-roadmap bevat concrete post-quantum stap" }, { num: '32%', label: 'Zcash in shielded pool — blijft gestaag groeien' } ],
+        bullets: [ 'Dan Held: Bitcoin faalde in robuuste Layer 2-schaalbaarheid — verklaart deels opkomst ETH/Solana', "BIP360 blijft 'security by obfuscation' zonder snel bestuur om te handelen", 'Lean Ethereum-roadmap bevat expliciete post-quantum beveiliging als kernonderdeel', 'Nick Carter: ETH/BTC-ratio zal het quantum-gereedheidsverschil weerspiegelen' ],
+        signal: 'Nog geen acuut risico, maar de erkenning door een Bitcoin-insider dat schaalbaarheid faalde is opmerkelijk. Blijf de quantum-roadmaps van BTC vs ETH volgen voor geconcentreerde BTC-posities.', signalColor: '#a855f7' },
+      { id: 'macro', label: 'Macro', sublabel: 'Megatrends', size: 68, prevSize: 55, color: '#00e5ff', glow: '#00e5ff', tag: 'MACRO · STRUCTUREEL', tagColor: '#00e5ff',
+        title: 'Macro Megatrends: Inflatiepiek en de AI-Prijzenoorlog', subtitle: 'Vergrijzing, dalende inflatie en AI-kostenoptimalisatie herschikken de kapitaalstromen.',
+        stats: [ { num: '3,8%', label: 'Amerikaanse inflatie — CPI lager dan verwacht (Stephanie Roth)' }, { num: '+15%', label: 'AI-gerelateerde chipprijzen j-o-j — beginnen af te koelen' }, { num: '54%', label: "Marktkapitalisatie in passief beleggen — 65% is 'point of no return'" }, { num: '5–7j', label: 'Wachttijd voor netaansluiting — energie blijft de bottleneck' } ],
+        bullets: [ 'Inflatie lijkt te pieken — laatste CPI-cijfers lager dan verwacht', 'AI-prijzenoorlog (Meta, XAI) drukt kosten — bedrijven optimaliseren modelkeuze per taak', 'Energie blijft de grootste bottleneck voor AI-groei — wachttijden lopen op tot 5-7 jaar', "Jordi Visser's 'scarcity portfolio': Bitcoin, zilver, chips, energie", 'Dario Amodei (Anthropic): 20% werkloosheid dreigt door AI — politieke reactie onvermijdelijk' ],
+        signal: 'Als de inflatiepiek zich bevestigt, opent dat ruimte voor renteverlagingen — historisch bullish voor risicoactiva inclusief crypto. Dit is het venster om herbalancering naar schaarse activa te bespreken.', signalColor: '#00e5ff' },
+    ]
+  },
+  {
+    week: 'W31',
+    date: '27 jul',
+    trends: [
+      { id: 'bitcoin', label: 'Bitcoin', sublabel: 'Collateral', size: 94, prevSize: 92, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
+        title: 'Bitcoin: van digitaal goud naar kredietonderpand', subtitle: 'Repo, CLO\'s en treasury-holdings verschuiven de BTC-these van prijs naar financiële infrastructuur.',
+        stats: [ { num: '$12T', label: 'Repo-markt die via BitVM en Bitcoin-gedekte leningen on-chain kan verschuiven' }, { num: '6–9%', label: 'Yield die Bitcoin CLO\'s volgens de these kunnen dragen' }, { num: '$40M', label: 'Startkapitaal van Orange Juice als cashflow + Bitcoin-holding' }, { num: '$900M', label: 'ETF-instroom in zes opeenvolgende Bitcoin-dagen' } ],
+        bullets: [ 'Bitcoin Dave ziet BitVM 3 als route naar ZK-rollups en een transparante repo-markt zonder soft fork', 'Bitcoin wordt gepositioneerd als "pristine collateral" vergelijkbaar met Treasuries in dollar-plumbing', 'Orange Juice koppelt stabiele cashflowbedrijven aan een Bitcoin-treasury in plaats van private-equity flips', 'Jack Mallers verlaat 21: niet elk treasury-verhaal houdt stand onder publiekemarktdruk', 'Jordi Visser ziet Bitcoin als de volgende rotatie nu de makkelijke AI-winsten normaliseren' ],
+        signal: 'De BTC-case verbreedt van schaarste naar onderpand. Voor allocatiegesprekken telt nu niet alleen prijs, maar ook welke kredietstructuren en balansen BTC dragen.', signalColor: '#C9A84C' },
+      { id: 'ai-crypto', label: 'AI × Crypto', sublabel: 'Rebel Alliance', size: 89, prevSize: 85, color: '#a855f7', glow: '#c084fc', tag: 'TECH · DISRUPTIEF', tagColor: '#a855f7',
+        title: 'AI × Crypto: de moats verschuiven', subtitle: 'Open source haalt in, agentic payments groeien, guardrails worden geopolitiek.',
+        stats: [ { num: '90%', label: 'Aandeel van Base in alle x402 agentic payments' }, { num: '17K', label: 'Autonome acties in het gemelde sandbox-escape-verhaal' }, { num: '90 jr', label: 'Leeftijd van de Jacobian-conjectuur die Claude oploste' }, { num: '20K', label: 'TPS-doel van Base dat AI-betalingen en trading moet dragen' } ],
+        bullets: [ 'Nick Grossman\'s Rebel Alliance-thesis: AI wordt geen winner-takes-all markt maar een ecosysteem van agents en routinglagen', 'USV gebruikt al bedrijfsspecifieke research-agents in dealflow: multi-agent werk is operationeel, niet futuristisch', 'Amerikaanse guardrails kunnen defensieve security-taken verzwakken terwijl Chinese open modellen minder restricties hebben', 'OpenAI\'s sandbox-escape-verhaal maakt AI-risico direct relevant voor crypto- en DeFi-beveiliging', 'De makkelijke AI-trade is voorbij; schaarste verschuift naar chips, energie en betaalrails' ],
+        signal: 'Voor cliënten verschuift de AI-exposure van modelmerken naar infrastructuur. Crypto profiteert precies waar agents autonoom moeten betalen, afrekenen en eigendom verplaatsen.', signalColor: '#a855f7' },
+      { id: 'tokenisatie', label: 'Tokenisatie', sublabel: 'Repo · DTCC · SECZ', size: 98, prevSize: 96, color: '#00ff64', glow: '#00ff64', tag: 'STRUCTUREEL · BULLISH', tagColor: '#00ff64',
+        title: 'Tokenisatie: plumbing wordt echt', subtitle: 'Securitize, DTCC en Bitcoin-repo laten zien dat compliant eigendom on-chain verhuist.',
+        stats: [ { num: '$12T', label: 'Traditionele repo-markt waar on-chain collateral nu op mikt' }, { num: '$1,25B', label: 'Waardering waarop Securitize via SPAC naar de beurs ging' }, { num: '$400M', label: 'Kapitaal dat Securitize ophaalde voor uitbreiding' }, { num: '24/7', label: 'Liquiditeit en settlement als on-chain voordeel boven klassieke fondsen' } ],
+        bullets: [ 'DTCC draaide live transacties met echte getokeniseerde effecten samen met JPMorgan, Goldman Sachs en BlackRock', 'Securitize combineert transfer agent, broker-dealer en fondsadministratie op publieke blockchains', 'BlackRock\'s tokenized treasury-fonds toont voordelen zoals dagelijkse dividend-herbelegging', 'Robinhood- en Ondo-wrappers maken het verschil zichtbaar tussen synthetische tokens en echte eigendom', 'Zelfs Bitcoin verschuift via repo en CLO\'s van narratief naar fundingmarkt' ],
+        signal: 'Dit is geen pilotverhaal meer. Compliant on-chain eigendom wint terrein en dat vergroot de strategische waarde van settlementlagen en custody-infrastructuur.', signalColor: '#00ff64' },
+      { id: 'regulering', label: 'Regulering', sublabel: 'Clarity · ECB · Japan', size: 94, prevSize: 90, color: '#00e5ff', glow: '#00e5ff', tag: 'REGULERING · CATALYST', tagColor: '#00e5ff',
+        title: 'Regelgeving: augustus wordt beslissend', subtitle: 'Clarity, de digitale euro en Japanse hervormingen trekken verschillende paden voor crypto-openheid.',
+        stats: [ { num: '7 aug', label: 'Deadline voor Clarity vóór het Amerikaanse zomerreces' }, { num: '36–50%', label: 'Bandbreedte waarin de slagingskans deze week werd besproken' }, { num: '20%', label: 'Nieuwe Japanse cryptobelasting na verlaging van 55%' }, { num: '€3K', label: 'Limiet die de ECB voor de digitale euro naar voren schuift' } ],
+        bullets: [ 'Bitcoin heeft als erkende commodity het minst te winnen; Ethereum, Solana en DeFi hebben de grootste regulatoire hefboom', 'De ECB gebruikt stablecoins opnieuw als argument voor een programmeerbare publieke tegenhanger', 'Japan opent juist de deur met lagere belasting en een nieuwe assetclass voor crypto', 'Knaken blijft een herinnering dat MiCA-discipline en licenties in Europa harde filters zijn', 'De vraag is niet meer of regels komen, maar welke stacks er het meest van profiteren' ],
+        signal: 'Regulatoire helderheid verdeelt de upside ongelijk. De asymmetrie ligt hoger in de smart-contract-stack dan bij het al erkende basisactivum Bitcoin.', signalColor: '#00e5ff' },
+      { id: 'defi-security', label: 'Prediction', sublabel: 'Kalshi test case', size: 80, prevSize: 78, color: '#ff3c5a', glow: '#ff6080', tag: 'RISICO · MARKTSTRUCTUUR', tagColor: '#ff3c5a',
+        title: 'Prediction markets: van niche naar federale testcase', subtitle: 'Kalshi vecht tegelijk met staten én toezichthouders — met implicaties voor de hele marktstructuur.',
+        stats: [ { num: '1980', label: 'Laatste keer dat de CFTC zulke noodbevoegdheden gebruikte' }, { num: '2 fronten', label: 'Kalshi\'s strijd met staten én federale toezichthouders' }, { num: '24/7', label: 'Informatiewaarde die prediction markets boven klassieke markten geeft' }, { num: '50%', label: 'Indicatieve kansniveaus die markten nu al realtime prijzen' } ],
+        bullets: [ 'Kalshi stopte vluchtcontracten na manipulatiezorgen maar de federale kernstrijd is alleen maar groter geworden', 'Als Kalshi en de CFTC winnen, kan dit de Amerikaanse sportgokmarkt fundamenteel veranderen', 'Polymarket blijft tegelijk bewijzen dat on-chain voorspellingen liquiditeit en informatie snel bundelen', 'Prediction rails trekken daarmee richting dezelfde institutionele aandacht als tokenized securities' ],
+        signal: 'Prediction markets worden infrastructuur, geen curiositeit. Wie deze rails bezit, wint disproportioneel wanneer regulering federale schaal toestaat.', signalColor: '#ff3c5a' },
+      { id: 'privacy', label: 'App Layer', sublabel: 'Base & Solana', size: 84, prevSize: 60, color: '#a855f7', glow: '#c084fc', tag: 'TECH · PRODUCT-MARKET FIT', tagColor: '#a855f7',
+        title: 'App-layer pivot: social uit, finance in', subtitle: 'Base en Solana laten zien waar crypto in 2026 wél tractie heeft.',
+        stats: [ { num: '20K TPS', label: 'Doel van Base tegen eind 2026 via Azul, Barrel en Cobalt' }, { num: '25+', label: 'Landen met actieve Solana Super Teams' }, { num: '98%', label: 'Validator-steun voor Alpenglo op Solana' }, { num: '$150M', label: 'Volume op Base\'s B20-tokenstandaard' } ],
+        bullets: [ 'Jesse Pollak draagt de Base-app over aan Jordan Fish/Cobie en focust Base op trading, stablecoins en tokenisatie', 'Base noemt zich de grootste spotmarkt voor on-chain cryptohandel en de settlementlaag voor agentic payments', 'Solana blijft doorbouwen in bearmarkt met Seeker, wallet-debitcard en open-source hardware', 'De les is hard: sociale creator-coin dromen verliezen van producten met directe financiële utility' ],
+        signal: 'Crypto\'s product-market fit zit nu in financiële tools en hardware-integraties. Social-first experimenten zonder duidelijke cash utility verliezen terrein.', signalColor: '#a855f7' },
+      { id: 'geopolitiek', label: 'Geopolitiek', sublabel: 'Olie · Schuld · Guardrails', size: 86, prevSize: 88, color: '#C9A84C', glow: '#f0c060', tag: 'MACRO · RISICO', tagColor: '#C9A84C',
+        title: 'Macro: olie, schuld en guardrails blijven de onderlaag', subtitle: 'De AI- en crypto-verhalen bewegen sneller, maar olie, schuld en staatsmacht bepalen nog steeds de bandbreedte.',
+        stats: [ { num: '$100', label: 'Olieprijsniveau dat Bankless expliciet naast Clarity plaatst' }, { num: '$50T', label: 'Amerikaanse staatsschuld in het Pomp versus Schiff-debat' }, { num: '$1,6T', label: 'Jaarlijkse rentelast die monetair beleid politiek maakt' }, { num: '20%', label: 'Inflatierisico dat Schiff als plausibel neerzet bij dollardruk' } ],
+        bullets: [ 'Olie en Hormuz-risico blijven boven de markt hangen terwijl crypto op wetgeving focust', 'Schiff ziet officiële inflatie als onderschatting en verwacht meer druk via import- en exportprijzen', 'De guardrails-race in AI is óók geopolitiek: open modellen uit China dwingen de VS tot strategische keuzes', 'Een snelle renteverlaging kan eerder groeizwakte signaleren dan gratis risk-on betekenen' ],
+        signal: 'Macro verandert niet van hoofdrol. Voor geconcentreerde crypto-portefeuilles blijft olie, schuld en beleidsreactie de belangrijkste externe stress-test.', signalColor: '#C9A84C' },
+      { id: 'ethereum', label: 'Ethereum', sublabel: 'Clarity-upside', size: 84, prevSize: 80, color: '#00ff64', glow: '#00ff64', tag: 'BULLISH · STRUCTUREEL', tagColor: '#00ff64',
+        title: 'Ethereum: meer asymmetrie dan Bitcoin bij Clarity', subtitle: 'BTC is al commodity; smart-contract-platforms hebben meer te winnen van duidelijke regels.',
+        stats: [ { num: '+1,0%', label: 'ETH-prestatie in zeven dagen versus +0,5% voor BTC' }, { num: '90%', label: 'Aandeel van Base in x402 agentic payments op de Ethereum-stack' }, { num: '$150M', label: 'Volume op Base\'s B20-tokenstandaard' }, { num: '5%', label: 'ETH-aanbod waar BitMine volgens Bankless bijna aan zit' } ],
+        bullets: [ 'Unchained stelt expliciet dat Bitcoin het minst te winnen heeft bij Clarity en ETH, Solana en DeFi juist het meest', 'Institutionele vraag richt zich op tokenisatie, stablecoins en infrastructuur — allemaal dichter bij Ethereum dan bij Bitcoin-only use cases', 'Base, Securitize en on-chain securities versterken Ethereum\'s rol als financiële back-end ook als apps zelf roteren', 'De vraag verschuift van "is ETH geld?" naar "hoeveel marktplumbing wordt via ETH-stack afgerekend?"' ],
+        signal: 'De marginale regulatoire upside zit boven Bitcoin. Voor cliënten met crypto-bèta is de smart-contract-stack deze week interessanter dan het basisactivum.', signalColor: '#00ff64' },
+      { id: 'macro', label: 'Macro', sublabel: 'Scarcity Rotation', size: 79, prevSize: 68, color: '#00e5ff', glow: '#00e5ff', tag: 'MACRO · STRUCTUREEL', tagColor: '#00e5ff',
+        title: 'Schaarste-rotatie: de makkelijke AI-trade is voorbij', subtitle: 'Open source, capexdruk en energiebeperkingen herprijzen wat echt schaars is.',
+        stats: [ { num: '7–8x', label: 'AI-rendementen die Jordi Visser als voorbij beschouwt' }, { num: '$514B', label: 'Google-contractverplichtingen die pas renderen als datacenters gebouwd zijn' }, { num: '2H 2026', label: 'Periode waarin Visser crypto relatief sterker ziet worden' }, { num: '0 FCF', label: 'Signaal dat zelfs Big Tech vrijekasstroom kan opofferen aan AI-capex' } ],
+        bullets: [ 'Open-source AI drukt closed-source marges en maakt intelligentie zelf sneller commodity', 'Hardware, geheugen en energie blijven de echte bottlenecks van de AI-race', 'Visser ziet daardoor een nieuwe schaarste-portefeuille ontstaan: Bitcoin, chips, energie en andere harde assets', 'Als regelgeving tegelijk duidelijker wordt, kan die rotatie sneller richting crypto lopen dan de markt nu prijst' ],
+        signal: 'De grote verschuiving is niet "AI uit, crypto in", maar "overvloedige intelligentie uit, echte schaarste in". Dat is gunstig voor Bitcoin en settlement-infrastructuur.', signalColor: '#00e5ff' },
+    ]
+  },
 ];
 
-// ── STATE ──────────────────────────────────────────────────────────────────────
-let activeWeekIdx = 0;
+// ── STATE ──────────────────────────────────────────────────────────
+let activeWeekIdx = HISTORY.length - 1;
 let activeId = null;
 let searchQuery = '';
 
 function getTrends() { return HISTORY[activeWeekIdx].trends; }
 
-// ── WEEK TABS ──────────────────────────────────────────────────────────────────
+// ── WEEK TABS ─────────────────────────────────────────────────────
 function buildWeekTabs() {
   const container = document.getElementById('week-tabs');
   container.innerHTML = '';
@@ -779,296 +615,163 @@ function buildWeekTabs() {
   });
 }
 
-// ── PANEL ──────────────────────────────────────────────────────────────────────
-function closePanel() {
-  document.getElementById('panel').classList.remove('open');
-  activeId = null;
-  d3.selectAll('.bubble-circle')
-    .transition().duration(300)
-    .attr('opacity', 1)
-    .attr('stroke-width', 1.5);
-}
-
-function getArrow(trend) {
-  if (trend.prevSize === null) return { symbol: '—', color: '#4a6655', delta: 'nieuw' };
-  const diff = trend.size - trend.prevSize;
-  if (diff > 5) return { symbol: '▲', color: '#00ff64', delta: `+${diff}` };
-  if (diff < -5) return { symbol: '▼', color: '#ff3c5a', delta: `${diff}` };
-  return { symbol: '◆', color: '#C9A84C', delta: '=' };
-}
-
-function openPanel(trend) {
-  activeId = trend.id;
-  const el = document.getElementById('panel-content');
-  const arrow = getArrow(trend);
-
-  const statsHtml = trend.stats.map(s => `
-    <div class="stat-box">
-      <div class="num" style="color:${trend.color}">${s.num}</div>
-      <div class="label">${s.label}</div>
-    </div>
-  `).join('');
-
-  const bulletsHtml = trend.bullets.map(b => `
-    <div class="bullet-item">
-      <div class="bullet-arrow" style="color:${trend.color}">→</div>
-      <div class="bullet-text">${b}</div>
-    </div>
-  `).join('');
-
-  el.innerHTML = `
-    <div class="panel-tag" style="color:${trend.color}">
-      ${trend.tag}
-      <span class="trend-arrow" style="color:${arrow.color}">${arrow.symbol}</span>
-      <span class="trend-delta" style="color:${arrow.color}">${arrow.delta}</span>
-    </div>
-    <div class="panel-title">${trend.title}</div>
-    <div class="panel-subtitle">${trend.subtitle}</div>
-    <div class="panel-divider"></div>
-    <div class="stat-row">${statsHtml}</div>
-    <div class="bullets-label">KEY SIGNALEN</div>
-    ${bulletsHtml}
-    <div class="signal-box" style="border-color:${trend.color}33; background:${trend.color}08">
-      <div class="signal-label" style="color:${trend.color}">SYNTHESE SIGNAAL</div>
-      <div class="signal-text">${trend.signal}</div>
-    </div>
-    <button class="share-btn" onclick="shareSignal(event, '${trend.id}')">
-      ⬡ DEEL DIT SIGNAAL
-    </button>
-  `;
-
-  document.getElementById('panel').classList.add('open');
-
-  d3.selectAll('.bubble-circle')
-    .transition().duration(300)
-    .attr('opacity', d => d.id === trend.id ? 1 : 0.35)
-    .attr('stroke-width', d => d.id === trend.id ? 3 : 1);
-}
-
-function shareSignal(e, id) {
-  const trend = getTrends().find(t => t.id === id);
-  if (!trend) return;
-  const week = HISTORY[activeWeekIdx];
-  const arrow = getArrow(trend);
-  const topBullets = trend.bullets.slice(0, 3).map(b => `• ${b}`).join('\n');
-  const text = `📡 Denis Capital Research — ${week.week} (${week.date})\n\n${trend.title} ${arrow.symbol}\n\n${topBullets}\n\n💡 ${trend.signal}\n\nhttps://dvb1974.github.io/trends-bubbles/`;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = e.currentTarget;
-    btn.classList.add('copied');
-    btn.textContent = '✓ GEKOPIEERD';
-    showToast('SIGNAAL GEKOPIEERD');
-    setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '⬡ DEEL DIT SIGNAAL'; }, 2500);
-  });
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
-}
-
-// ── SEARCH ─────────────────────────────────────────────────────────────────────
-document.getElementById('search').addEventListener('input', function() {
-  searchQuery = this.value.trim().toLowerCase();
-  document.getElementById('search-clear').style.display = searchQuery ? 'block' : 'none';
-  applySearch();
-});
-
-function clearSearch() {
-  document.getElementById('search').value = '';
-  document.getElementById('search-clear').style.display = 'none';
-  searchQuery = '';
-  applySearch();
-}
-
-function applySearch() {
-  if (!searchQuery) {
-    d3.selectAll('.bubble-group').classed('search-dim', false).classed('search-match', false);
-    return;
-  }
-  d3.selectAll('.bubble-group').each(function(d) {
-    const text = [d.title, d.subtitle, d.label, d.sublabel, ...(d.bullets||[]), d.signal].join(' ').toLowerCase();
-    const match = text.includes(searchQuery);
-    d3.select(this).classed('search-dim', !match).classed('search-match', match);
-  });
-}
-
-// ── D3 CHART ───────────────────────────────────────────────────────────────────
+// ── CHART (D3 force-directed bubbles) ────────────────────────────
 const svg = d3.select('#chart');
-let W = window.innerWidth;
-let H = window.innerHeight;
-svg.attr('width', W).attr('height', H);
-
-let simulation, nodesSelection;
+const radiusScale = d3.scaleLinear().domain([50, 100]).range([40, 118]);
+let simulation = null;
 
 function rebuildChart() {
   svg.selectAll('*').remove();
-  const trends = getTrends();
-
-  const maxSize = Math.min(W, H) * 0.14;
-  const sizeScale = d3.scaleLinear()
-    .domain([d3.min(trends, d => d.size), d3.max(trends, d => d.size)])
-    .range([maxSize * 0.55, maxSize]);
-
-  const data = trends.map(d => ({ ...d, r: sizeScale(d.size) }));
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  svg.attr('width', width).attr('height', height);
 
   const defs = svg.append('defs');
+  const nodes = getTrends().map(d => Object.assign({}, d, { r: radiusScale(d.size) }));
 
-  data.forEach(d => {
-    const g = defs.append('radialGradient')
-      .attr('id', `grad-${d.id}`)
-      .attr('cx', '35%').attr('cy', '35%').attr('r', '65%');
-    g.append('stop').attr('offset', '0%').attr('stop-color', d.glow).attr('stop-opacity', 0.9);
-    g.append('stop').attr('offset', '60%').attr('stop-color', d.color).attr('stop-opacity', 0.55);
-    g.append('stop').attr('offset', '100%').attr('stop-color', d.color).attr('stop-opacity', 0.15);
-
-    const f = defs.append('filter').attr('id', `glow-${d.id}`).attr('x', '-50%').attr('y', '-50%').attr('width', '200%').attr('height', '200%');
-    f.append('feGaussianBlur').attr('in', 'SourceGraphic').attr('stdDeviation', '6').attr('result', 'blur');
-    const merge = f.append('feMerge');
-    merge.append('feMergeNode').attr('in', 'blur');
-    merge.append('feMergeNode').attr('in', 'blur');
-    merge.append('feMergeNode').attr('in', 'SourceGraphic');
+  nodes.forEach(d => {
+    const grad = defs.append('radialGradient').attr('id', 'grad-' + d.id).attr('cx', '35%').attr('cy', '35%');
+    grad.append('stop').attr('offset', '0%').attr('stop-color', d.glow).attr('stop-opacity', 0.95);
+    grad.append('stop').attr('offset', '100%').attr('stop-color', d.color).attr('stop-opacity', 0.55);
   });
 
-  if (simulation) simulation.stop();
-
-  simulation = d3.forceSimulation(data)
-    .force('center', d3.forceCenter(W / 2, H / 2).strength(0.08))
-    .force('charge', d3.forceManyBody().strength(d => -d.r * 2.5))
-    .force('collision', d3.forceCollide(d => d.r + 8).strength(0.85))
-    .force('x', d3.forceX(W / 2).strength(0.04))
-    .force('y', d3.forceY(H / 2).strength(0.06))
-    .alphaDecay(0.02)
-    .velocityDecay(0.35);
-
-  nodesSelection = svg.selectAll('.bubble-group')
-    .data(data)
+  const groups = svg.selectAll('.bubble-group')
+    .data(nodes, d => d.id)
     .enter()
     .append('g')
     .attr('class', 'bubble-group')
-    .call(d3.drag()
-      .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.15).restart(); d.fx = d.x; d.fy = d.y; })
-      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
-      .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
-    )
-    .on('click', (event, d) => { event.stopPropagation(); openPanel(d); });
+    .style('cursor', 'pointer')
+    .on('click', (event, d) => openPanel(d));
 
-  // Glow ring
-  nodesSelection.append('circle')
-    .attr('class', 'bubble-glow')
-    .attr('r', d => d.r + 12)
-    .attr('fill', 'none')
-    .attr('stroke', d => d.color)
-    .attr('stroke-width', 1)
-    .attr('opacity', 0.15)
-    .attr('filter', d => `url(#glow-${d.id})`);
-
-  // Main circle
-  nodesSelection.append('circle')
-    .attr('class', 'bubble-circle')
+  groups.append('circle')
     .attr('r', d => d.r)
-    .attr('fill', d => `url(#grad-${d.id})`)
+    .attr('fill', d => 'url(#grad-' + d.id + ')')
     .attr('stroke', d => d.color)
     .attr('stroke-width', 1.5)
-    .attr('stroke-opacity', 0.6)
-    .attr('filter', d => `url(#glow-${d.id})`);
+    .attr('stroke-opacity', 0.6);
 
-  // Inner ring
-  nodesSelection.append('circle')
-    .attr('r', d => d.r * 0.85)
-    .attr('fill', 'none')
-    .attr('stroke', d => d.color)
-    .attr('stroke-width', 0.5)
-    .attr('stroke-opacity', 0.25)
-    .attr('stroke-dasharray', '3,4');
-
-  // Trend arrow indicator (top-right of bubble)
-  nodesSelection.filter(d => d.prevSize !== null)
-    .append('text')
+  groups.append('text')
     .attr('text-anchor', 'middle')
-    .attr('dx', d => d.r * 0.62)
-    .attr('dy', d => -d.r * 0.62)
-    .attr('font-size', d => Math.max(9, d.r * 0.16))
-    .attr('fill', d => {
-      const diff = d.size - d.prevSize;
-      return diff > 5 ? '#00ff64' : diff < -5 ? '#ff3c5a' : '#C9A84C';
-    })
-    .attr('pointer-events', 'none')
-    .attr('font-weight', 900)
-    .text(d => {
-      const diff = d.size - d.prevSize;
-      return diff > 5 ? '▲' : diff < -5 ? '▼' : '◆';
-    });
-
-  // Label
-  nodesSelection.append('text')
-    .attr('text-anchor', 'middle')
-    .attr('dy', d => d.r > 70 ? '-6px' : '-3px')
-    .attr('font-family', 'Inter, sans-serif')
-    .attr('font-weight', 900)
-    .attr('font-size', d => Math.max(11, d.r * 0.22))
-    .attr('fill', '#e8f0eb')
-    .attr('pointer-events', 'none')
+    .attr('dy', '-0.3em')
+    .attr('fill', '#050a08')
+    .style('font-family', 'Inter, sans-serif')
+    .style('font-weight', 900)
+    .style('font-size', d => Math.max(11, d.r / 4.2) + 'px')
+    .style('pointer-events', 'none')
     .text(d => d.label);
 
-  // Sublabel
-  nodesSelection.append('text')
+  groups.append('text')
     .attr('text-anchor', 'middle')
-    .attr('dy', d => d.r > 70 ? '12px' : '10px')
-    .attr('font-family', "'Share Tech Mono', monospace")
-    .attr('font-size', d => Math.max(8, d.r * 0.13))
-    .attr('fill', d => d.color)
-    .attr('opacity', 0.85)
-    .attr('pointer-events', 'none')
+    .attr('dy', '1em')
+    .attr('fill', '#050a08')
+    .style('font-family', "'Share Tech Mono', monospace")
+    .style('font-size', d => Math.max(8, d.r / 8) + 'px')
+    .style('opacity', 0.75)
+    .style('pointer-events', 'none')
     .text(d => d.sublabel);
 
-  // Size dots
-  nodesSelection.filter(d => d.r > 65)
-    .append('text')
-    .attr('text-anchor', 'middle')
-    .attr('dy', d => d.r * 0.65)
-    .attr('font-family', "'Share Tech Mono', monospace")
-    .attr('font-size', d => Math.max(7, d.r * 0.1))
-    .attr('fill', d => d.color)
-    .attr('opacity', 0.5)
-    .attr('pointer-events', 'none')
-    .text(d => '● '.repeat(Math.round(d.size / 25)).trim());
-
-  simulation.on('tick', () => {
-    nodesSelection.attr('transform', d => {
-      d.x = Math.max(d.r + 10, Math.min(W - d.r - 10, d.x));
-      d.y = Math.max(d.r + 60, Math.min(H - d.r - 50, d.y));
-      return `translate(${d.x},${d.y})`;
+  simulation = d3.forceSimulation(nodes)
+    .force('center', d3.forceCenter(width / 2, height / 2 + 10))
+    .force('charge', d3.forceManyBody().strength(4))
+    .force('collide', d3.forceCollide().radius(d => d.r + 6).iterations(3))
+    .on('tick', () => {
+      groups.attr('transform', d => `translate(${d.x},${d.y})`);
     });
-  });
 
-  // reapply search if active
-  if (searchQuery) applySearch();
+  groups.call(d3.drag()
+    .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+    .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; }));
 
-  // Pulse animation
-  function pulseGlow() {
-    svg.selectAll('.bubble-glow')
-      .transition().duration(2000 + Math.random() * 1000)
-      .attr('opacity', 0.08 + Math.random() * 0.12)
-      .attr('r', function(d) { return d.r + 8 + Math.random() * 8; })
-      .transition().duration(2000 + Math.random() * 1000)
-      .attr('opacity', 0.12)
-      .attr('r', d => d.r + 12)
-      .on('end', pulseGlow);
-  }
-  setTimeout(pulseGlow, 800);
+  applySearchFilter();
 }
 
-svg.on('click', closePanel);
+// ── DETAIL PANEL ──────────────────────────────────────────────────
+function openPanel(d) {
+  activeId = d.id;
+  const panel = document.getElementById('panel');
+  const content = document.getElementById('panel-content');
 
-window.addEventListener('resize', () => {
-  W = window.innerWidth; H = window.innerHeight;
-  svg.attr('width', W).attr('height', H);
-  rebuildChart();
+  let arrowHtml = '';
+  if (d.prevSize !== null && d.prevSize !== undefined) {
+    const delta = d.size - d.prevSize;
+    const arrow = delta > 0 ? '▲' : (delta < 0 ? '▼' : '●');
+    const arrowColor = delta > 0 ? '#00ff64' : (delta < 0 ? '#ff3c5a' : 'var(--muted)');
+    arrowHtml = `<span class="trend-arrow" style="color:${arrowColor}">${arrow}</span><span class="trend-delta">${delta > 0 ? '+' : ''}${delta}</span>`;
+  }
+
+  content.innerHTML = `
+    <div class="panel-tag" style="color:${d.tagColor}">${d.tag} ${arrowHtml}</div>
+    <div class="panel-title">${d.title}</div>
+    <div class="panel-subtitle">${d.subtitle}</div>
+    <div class="panel-divider"></div>
+    <div class="stat-row">
+      ${d.stats.map(s => `<div class="stat-box"><div class="num" style="color:${d.color}">${s.num}</div><div class="label">${s.label}</div></div>`).join('')}
+    </div>
+    <div class="bullets-label">Kernpunten</div>
+    ${d.bullets.map(b => `<div class="bullet-item"><span class="bullet-arrow" style="color:${d.color}">→</span><span class="bullet-text">${b}</span></div>`).join('')}
+    <div class="signal-box" style="border-color:${d.signalColor}66">
+      <div class="signal-label" style="color:${d.signalColor}">Signaal voor Denis</div>
+      <div class="signal-text">${d.signal}</div>
+    </div>
+    <button class="share-btn" id="share-btn" onclick="shareTrend('${d.id}')">⇱ Kopieer signaal</button>
+  `;
+  panel.classList.add('open');
+}
+
+function closePanel() {
+  activeId = null;
+  document.getElementById('panel').classList.remove('open');
+}
+
+function shareTrend(id) {
+  const d = getTrends().find(t => t.id === id);
+  if (!d) return;
+  const text = `${d.title}\n${d.subtitle}\n\nSignaal: ${d.signal}`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).catch(() => {});
+  }
+  const btn = document.getElementById('share-btn');
+  if (btn) { btn.classList.add('copied'); btn.textContent = '✓ Gekopieerd'; setTimeout(() => { btn.classList.remove('copied'); btn.textContent = '⇱ Kopieer signaal'; }, 1800); }
+  showToast('SIGNAAL GEKOPIEERD');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1800);
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────
+function applySearchFilter() {
+  const q = searchQuery.trim().toLowerCase();
+  d3.selectAll('.bubble-group').each(function(d) {
+    const el = d3.select(this);
+    el.classed('search-dim', false).classed('search-match', false);
+    if (!q) return;
+    const haystack = (d.label + ' ' + d.sublabel + ' ' + d.title + ' ' + d.subtitle + ' ' + d.bullets.join(' ')).toLowerCase();
+    if (haystack.includes(q)) { el.classed('search-match', true); }
+    else { el.classed('search-dim', true); }
+  });
+}
+
+document.getElementById('search').addEventListener('input', (e) => {
+  searchQuery = e.target.value;
+  document.getElementById('search-clear').style.display = searchQuery ? 'block' : 'none';
+  applySearchFilter();
 });
 
-// Init
+function clearSearch() {
+  searchQuery = '';
+  document.getElementById('search').value = '';
+  document.getElementById('search-clear').style.display = 'none';
+  applySearchFilter();
+}
+
+window.addEventListener('resize', () => rebuildChart());
+
+// ── INIT ──────────────────────────────────────────────────────────
 buildWeekTabs();
 rebuildChart();
 </script>
