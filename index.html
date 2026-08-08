@@ -445,7 +445,7 @@
 
 <header>
   <div class="header-left">
-    <div class="eyebrow">Crypto &amp; Macro · 91+ afleveringen · Apr–Aug 2026</div>
+    <div class="eyebrow">Crypto &amp; Macro · 93+ afleveringen · Apr–Aug 2026</div>
     <div class="header-title">Dominante <span>Trends</span></div>
   </div>
 
@@ -494,7 +494,7 @@
 const HISTORY = [
   {
     week: 'W32',
-    date: '7 aug',
+    date: '8 aug',
     trends: [
   {
     id: 'regulering',
@@ -536,9 +536,9 @@ const HISTORY = [
     tag: 'RISICO · STRUCTUREEL',
     tagColor: '#ff3c5a',
     title: 'Security: Coldcard maakt Self-Custody conditioneel',
-    subtitle: 'Nederlandse slachtoffers, een 41-minuten-raid en AI-audits herprijzen wat veilige bewaring echt betekent.',
+    subtitle: 'Nederlandse slachtoffers, geen waarschuwingspad en AI-audits herprijzen wat veilige bewaring echt betekent.',
     stats: [
-      { num: '>$100M', label: 'Geschatte schade uit de Coldcard-kwetsbaarheid' },
+      { num: '>$130M', label: 'Geschatte schade uit de Coldcard-kwetsbaarheid' },
       { num: '1.600 BTC', label: 'Volgens de forensics al buitgemaakt uit kwetsbare seeds' },
       { num: '41 min', label: 'Waarin op 30 juli meer dan 1.000 BTC verdween' },
       { num: '$2', label: 'Rekenkosten waartegen AI volgens Unchained vergelijkbare bugs kan vinden' },
@@ -546,11 +546,12 @@ const HISTORY = [
     bullets: [
       'De zwakke pseudo-random generator beperkte de sleutelruimte tot een praktisch doorzoekbaar bereik',
       'De aanval trof ook Nederlandse gebruikers en vereiste geen fysieke toegang; chain-data, entropy-analyse en rekenkracht waren genoeg',
+      'Omdat Coldcard bewust geen gebruikersdata bewaart, bestaat er na de firmwarefout nauwelijks een direct waarschuwings- of herstelkanaal',
       'Passphrases, multi-sig en collaborative custody hielden een deel van de gebruikers buiten directe gevarenzone',
-      'Self-custody verwijdert vertrouwen niet, maar verplaatst het naar fabrikant, engineers, auditors en reviewcultuur',
+      'Self-custody verwijdert vertrouwen niet, maar verplaatst het naar fabrikant, engineers, auditors, releaseproces en reviewcultuur',
       'AI-gedreven kwetsbaarheidsdetectie maakt audittempo, bug-bounties en continue firmware-review nog urgenter',
     ],
-    signal: 'CUSTODY WORDT KWALITEITSFILTER: Beveiliging verschuift van hardwaremerk naar softwarekwaliteit, reviewproces, passphrase-discipline, verzekering en operationele checks.',
+    signal: 'CUSTODY WORDT INCIDENT RESPONSE: Beveiliging verschuift van hardwaremerk naar softwarekwaliteit, reviewproces, passphrase-discipline, verzekering, waarschuwingstrajecten en operationele checks.',
     signalColor: '#ff3c5a',
   },
   {
@@ -593,10 +594,11 @@ const HISTORY = [
     tag: 'MACRO · BULLISH',
     tagColor: '#C9A84C',
     title: 'Bitcoin: Securityrisico omhoog, markt blijft koel',
-    subtitle: 'Zelfs na Coldcard blijft institutionele vraag intact; het verschil zit nu explicieter in custody-keuze en kwaliteitsfilters.',
+    subtitle: 'Zelfs na Coldcard en Strategy-verkoop blijft de bid intact; het verschil zit nu explicieter in custody-keuze en kwaliteitsfilters.',
     stats: [
       { num: '1.600+', label: 'Bitcoin die volgens de forensics al is buitgemaakt' },
-      { num: '~1%', label: 'Prijsreactie ondanks de hack en publiciteit' },
+      { num: '1.638 BTC', label: 'Bitcoin die Strategy verkocht zonder duidelijke marktbreuk' },
+      { num: '~1%', label: 'Prijsreactie ondanks hack, publiciteit en treasury-verkoop' },
       { num: '2021', label: 'Kwetsbare firmware-update leeft al sinds maart 2021' },
       { num: 'ETF', label: 'Voor veel gebruikers worden ETF- en custodian-lagen rationeler dan pure self-custody' },
     ],
@@ -604,6 +606,7 @@ const HISTORY = [
       'Blockchain Capital verdubbelt op crypto terwijl sentiment onder veteranen nog lauw is',
       'Wall Street-vraag via BlackRock, Fidelity en fintechs laat zien dat allocators exposure willen, ook zonder pure self-custody',
       'Coldcard herwaardeert het verschil tussen asset-these en custody-implementatie',
+      'Dat Strategy 1.638 BTC kon verkopen zonder merkbare paniek suggereert dat de spot-bid volwassener wordt',
       'Satoshi Radio en Pomp zetten passphrases, multi-sig en verzekerde bewaarlagen centraal in plaats van slogans',
       'De marktabsorptie van de hack laat zien dat Bitcoin als asset volwassener is dan de custody-laag eromheen',
       'Hardware-wallet trust zonder aantoonbaar reviewproces is niet langer genoeg voor serieuze allocatie',
@@ -644,8 +647,8 @@ const HISTORY = [
     id: 'ai-crypto',
     label: 'AI × Crypto',
     sublabel: 'Agents · governance',
-    size: 90,
-    prevSize: 84,
+    size: 92,
+    prevSize: 90,
     color: '#a855f7',
     glow: '#c084fc',
     tag: 'TECH · DISRUPTIEF',
@@ -661,26 +664,27 @@ const HISTORY = [
     bullets: [
       'YC en meerdere crypto-hosts zien stablecoins en machine-to-machine payments als de echte AI-crypto use case',
       'AI maakt het tegelijk makkelijker om broncode, firmware en afhankelijkheden op zwakke plekken te scannen',
+      'Volgens Unchained zijn gespecialiseerde crackers, niet alleen staatsactors, nu geloofwaardige AI-gedreven tegenpartijen',
       'Open source alleen is geen moat meer als aanvallers voor dollars aan compute een complete codebase kunnen doorzoeken',
       'De waarde verschuift van modelbezit naar routing, workflows, data, permissioning en settlement',
       'Crypto blijft logisch waar AI zelfstandig wil betalen, afwikkelen en rechten controleren',
       'Logging, kill-switches en begrensde agentrechten worden net zo belangrijk als modelkwaliteit',
     ],
-    signal: 'AUTOMATION ZONDER AUDITABILITY IS GEEN PRODUCT: AI vergroot de vraag naar programmeerbare rails, maar alleen partijen met containment, logs en security-discipline houden de waarde vast.',
+    signal: 'AUTOMATION ZONDER ADVERSARIAL DEFENSE IS GEEN PRODUCT: AI vergroot de vraag naar programmeerbare rails, maar alleen partijen met containment, logs, incident response en security-discipline houden de waarde vast.',
     signalColor: '#a855f7',
   },
   {
     id: 'ethereum',
     label: 'Ethereum',
     sublabel: 'EVM + Solana',
-    size: 85,
-    prevSize: 79,
+    size: 89,
+    prevSize: 85,
     color: '#00ff64',
     glow: '#00ff64',
     tag: 'BULLISH · STRUCTUREEL',
     tagColor: '#00ff64',
-    title: 'Ethereum blijft basislaag, Solana wint de flow',
-    subtitle: 'Institutionele settlement blijft EVM-first, maar EIP-8361 opent strijd over staking-economie terwijl Solana de retailflow houdt.',
+    title: 'Ethereum blijft basislaag, maar de issuance war is open',
+    subtitle: 'Institutionele settlement blijft EVM-first, maar EIP-A361 opent strijd over staking-economie terwijl Solana en Robinhood Chain de flow houden.',
     stats: [
       { num: '50%', label: 'Stakingniveau waar EIP-8361 ETH-yield naar nul kan laten tenderen' },
       { num: '0%', label: 'Doelyield van EIP-8361 zodra staking te geconcentreerd wordt' },
@@ -690,14 +694,16 @@ const HISTORY = [
     ],
     bullets: [
       'Permissioned pools, stablecoins, vaults en kredietproducten landen nog steeds het vaakst op Ethereum- of EVM-rails',
-      'EIP-8361 laat zien dat Ethereum intern worstelt met de vraag hoe ver de keten staking-concentratie en yield-politiek moet sturen',
+      'EIP-A361 laat zien dat Ethereum intern worstelt met de vraag hoe ver de keten staking-concentratie en yield-politiek moet sturen',
+      'DeFi-bouwers waarschuwen dat abrupte issuance-cuts juist massale unstaking en extra verkoopdruk kunnen uitlokken',
       'Securitize op Solana en Avalanche laat zien dat institutionele issuance multi-chain wordt zodra rechten en compliance goed zijn geregeld',
       'Robinhood Chain, prediction markets en memecoin-cycli tonen dat producttiming en distributie soms belangrijker zijn dan pure chain-ideologie',
+      'Uniswap gebruikt die energie nu direct met pools.trade en een vrijwel totale greep op Robinhood Chain DEX-volume',
       'Solana behoudt een voorsprong in consumentenspeculatie en hoge on-chain activiteit',
       'Ethereum houdt voordeel in tools, mindshare en settlementliquiditeit, maar bezit geen monopolie op groei of aandacht',
       'De grootste open vraag blijft hoe privacy, compliance, staking-economie en distributie samenkomen zonder de flow te verliezen',
     ],
-    signal: 'EVM VOOR SETTLEMENT, SOLANA VOOR FLOW: Ethereum houdt het institutionele zwaartepunt, maar de hoogste consumentendynamiek verschuift naar snellere distributielagen en venues met betere productfit.',
+    signal: 'EVM VOOR SETTLEMENT, PRODUCTLAGEN VOOR FLOW: Ethereum houdt het institutionele zwaartepunt, maar de hoogste consumentendynamiek verschuift naar snellere distributielagen en venues met betere launch- en trading-productfit.',
     signalColor: '#00ff64',
   },
   {
