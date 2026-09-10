@@ -1,37 +1,37 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-08-26T06:10:55.383906+00:00",
+  "generated_at": "2026-09-10T00:00:00+00:00",
   "signals": [
     {
-      "id": "trend-bitcoin",
-      "title": "Bitcoin beleeft zijn beste week in de geschiedenis",
-      "summary": "BITCOIN BEVESTIGT ZICHZELF: Een historische week, een echte yen-interventie en institutionele allocatiesteun vallen samen. Sterk bullish signaal voor schaarste-allocaties bij macro-onzekerheid.",
+      "id": "trend-ai-china",
+      "title": "China commoditiseert AI via prijs en open weights",
+      "summary": "AI WORDT EEN PRIJS- EN DISTRIBUTIEOORLOG: Efficiënte Chinese modellen en open weights zetten margedruk op gesloten modelproviders zonder sterke moat.",
       "type": "trend",
       "impact": "high",
-      "confidence": 95,
-      "tone": "opportunity",
+      "confidence": 92,
+      "tone": "neutral",
       "url": "https://dvb1974.github.io/trends-bubbles/",
       "source_name": "Trends Bubble Map",
       "trend_size": 100.0,
-      "tag": "MACRO · BULLISH",
-      "week": "W35",
-      "date": "26 aug"
+      "tag": "TECH · DISRUPTIEF",
+      "week": "W37",
+      "date": "9 sep"
     },
     {
-      "id": "trend-tokenisatie",
-      "title": "Tokenisatie wordt nu een 24/7 brokerageproduct",
-      "summary": "TOKENISATIE WORDT BROKERAGE-INFRA: De volgende premie zit bij platforms die aandelen, stablecoins, collateral en globale toegang al in één productlaag samenbrengen.",
+      "id": "trend-ai-energy",
+      "title": "Energiecapaciteit wordt de harde valuta van AI",
+      "summary": "ENERGIE WORDT AI-MOAT: China's stroom- en netcapaciteit versterkt de case voor fysieke AI-infrastructuur boven pure modelpremie.",
       "type": "trend",
       "impact": "high",
       "confidence": 95,
-      "tone": "opportunity",
+      "tone": "neutral",
       "url": "https://dvb1974.github.io/trends-bubbles/",
       "source_name": "Trends Bubble Map",
       "trend_size": 96.0,
-      "tag": "STRUCTUREEL · BULLISH",
-      "week": "W35",
-      "date": "26 aug"
+      "tag": "MACRO · STRUCTUREEL",
+      "week": "W37",
+      "date": "9 sep"
     },
     {
       "id": "trend-macro",
