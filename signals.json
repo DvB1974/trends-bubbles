@@ -1,52 +1,40 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-11T00:00:00+02:00",
+  "generated_at": "2026-09-13T00:00:00+02:00",
   "signals": [
     {
-      "id": "trend-bitcoin-regime",
-      "title": "Bitcoin verschuift naar een institutionele absorptiebodem",
-      "summary": "BTC-REGIME DRAAIT BULLISH: accumulatie versterkt de schaarstecase; $83K blijft het technische bevestigingsniveau.",
-      "type": "trend",
-      "impact": "high",
-      "confidence": 90,
-      "tone": "opportunity",
-      "url": "https://dvb1974.github.io/trends-bubbles/",
-      "source_name": "Trends Bubble Map",
-      "trend_size": 100.0,
-      "tag": "BULLISH · BEVESTIGING",
+      "id": "trend-duration-schaarste",
+      "title": "Durationstress versterkt de vraag naar liquide schaarste",
+      "summary": "De 30-jaarsrente staat op 5,3% ondanks $6 miljard wekelijkse buybacks; Bitcoin consolideert rond $78–80K en $83K blijft de technische bevestiging.",
+      "why_it_matters": "De obligatiemarkt vraagt een hogere geloofwaardigheidspremie terwijl nieuwe fiscale stimulans de inflatie- en financieringsdruk kan vergroten.",
+      "investment_implication": "Bullish voor BTC en goudachtige schaarste zodra durationdiscipline verder verzwakt; houd $83K als bevestigingsniveau.",
+      "theme": "macro",
       "week": "W37",
-      "date": "10 sep"
+      "confidence": 0.84,
+      "direction": "macro"
     },
     {
-      "id": "trend-tokenisatie-rechten",
-      "title": "Stock tokens maken het verschil tussen prijs en eigendom zichtbaar",
-      "summary": "TOKENISATIE MOET RECHTEN EXPLICIET MAKEN: positief voor transparante, volledig gedekte rails; risicovol wanneer prijsvolging als eigendom wordt verkocht.",
-      "type": "trend",
-      "impact": "high",
-      "confidence": 92,
-      "tone": "risk",
-      "url": "https://dvb1974.github.io/trends-bubbles/",
-      "source_name": "Trends Bubble Map",
-      "trend_size": 94.0,
-      "tag": "STRUCTUREEL · RISICO",
+      "id": "trend-tokenisatie-access",
+      "title": "Tokenisatie wordt access-architectuur",
+      "summary": "Issuer-sponsored, custodial en synthetische stock tokens hebben fundamenteel andere rechten; Robinhood Chain verdient circa $30 miljoen per week.",
+      "why_it_matters": "FOMO levert meer dan 70% van de actieve wallets, terwijl KYC en issuer opt-out de toegang en legitimiteit van de markt gaan bepalen.",
+      "investment_implication": "Bullish voor issuer-backed en transparant gedekte rails; prijs synthetische exposure, KYC en governance afzonderlijk.",
+      "theme": "tokenisation",
       "week": "W37",
-      "date": "10 sep"
+      "confidence": 0.9,
+      "direction": "bullish"
     },
     {
-      "id": "trend-governance-principes",
-      "title": "Zelfverstoring en bottom-up macht worden operationele moats",
-      "summary": "PRINCIPES WORDEN EEN EXECUTIE-MOAT: sterke bedrijven verstoren zichzelf, selecteren op bijdrage en decentraliseren beslissingen.",
-      "type": "trend",
-      "impact": "medium",
-      "confidence": 86,
-      "tone": "opportunity",
-      "url": "https://dvb1974.github.io/trends-bubbles/",
-      "source_name": "Trends Bubble Map",
-      "trend_size": 86.0,
-      "tag": "BEDRIJF · STRUCTUREEL",
+      "id": "trend-security-data-soevereiniteit",
+      "title": "AI-security en data-soevereiniteit convergeren",
+      "summary": "De Liquid-hack kostte 4.000 BTC en de OpenAI-wiskundecontroverse vergroot zorgen over hergebruik van privédata.",
+      "why_it_matters": "AI versnelt exploit discovery, terwijl frontiermodellen nieuwe vragen creëren over trainingsdata, eigendom en bewijs van datascheiding.",
+      "investment_implication": "Bullish voor private inference, continue auditing en sterke custody; bearish voor platforms zonder aantoonbare data- en securitygrenzen.",
+      "theme": "security-ai",
       "week": "W37",
-      "date": "10 sep"
+      "confidence": 0.84,
+      "direction": "risk"
     }
   ]
 }
