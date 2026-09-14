@@ -1,17 +1,17 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-13T00:00:00+02:00",
+  "generated_at": "2026-09-14T00:00:00+02:00",
   "signals": [
     {
       "id": "trend-duration-schaarste",
-      "title": "Durationstress versterkt de vraag naar liquide schaarste",
-      "summary": "De 30-jaarsrente staat op 5,3% ondanks $6 miljard wekelijkse buybacks; Bitcoin consolideert rond $78–80K en $83K blijft de technische bevestiging.",
-      "why_it_matters": "De obligatiemarkt vraagt een hogere geloofwaardigheidspremie terwijl nieuwe fiscale stimulans de inflatie- en financieringsdruk kan vergroten.",
-      "investment_implication": "Bullish voor BTC en goudachtige schaarste zodra durationdiscipline verder verzwakt; houd $83K als bevestigingsniveau.",
+      "title": "AI-productiviteit test de klassieke macrogevoeligheid",
+      "summary": "Durationstress blijft reëel, maar 30%+ digitale winstgroei kan volgens Visser rente- en olieschokken tijdelijk overstemmen.",
+      "why_it_matters": "De allocatievraag verschuift van het Fed-pad alleen naar de vraag of AI-productiviteit hogere kapitaalkosten aantoonbaar compenseert.",
+      "investment_implication": "Bullish voor BTC en digitale groeiactiva als winstgroei standhoudt; behoud durationdiscipline en gebruik $83K als technische bevestiging.",
       "theme": "macro",
       "week": "W37",
-      "confidence": 0.84,
+      "confidence": 0.82,
       "direction": "macro"
     },
     {
