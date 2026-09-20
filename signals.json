@@ -1,40 +1,40 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-14T00:00:00+02:00",
+  "generated_at": "2026-09-20T08:30:00+02:00",
   "signals": [
     {
-      "id": "trend-duration-schaarste",
-      "title": "AI-productiviteit test de klassieke macrogevoeligheid",
-      "summary": "Durationstress blijft reëel, maar 30%+ digitale winstgroei kan volgens Visser rente- en olieschokken tijdelijk overstemmen.",
-      "why_it_matters": "De allocatievraag verschuift van het Fed-pad alleen naar de vraag of AI-productiviteit hogere kapitaalkosten aantoonbaar compenseert.",
-      "investment_implication": "Bullish voor BTC en digitale groeiactiva als winstgroei standhoudt; behoud durationdiscipline en gebruik $83K als technische bevestiging.",
-      "theme": "macro",
-      "week": "W37",
-      "confidence": 0.82,
-      "direction": "macro"
-    },
-    {
-      "id": "trend-tokenisatie-access",
-      "title": "Tokenisatie wordt access-architectuur",
-      "summary": "Issuer-sponsored, custodial en synthetische stock tokens hebben fundamenteel andere rechten; Robinhood Chain verdient circa $30 miljoen per week.",
-      "why_it_matters": "FOMO levert meer dan 70% van de actieve wallets, terwijl KYC en issuer opt-out de toegang en legitimiteit van de markt gaan bepalen.",
-      "investment_implication": "Bullish voor issuer-backed en transparant gedekte rails; prijs synthetische exposure, KYC en governance afzonderlijk.",
-      "theme": "tokenisation",
-      "week": "W37",
-      "confidence": 0.9,
+      "id": "trend-ai-agent-rails",
+      "title": "AI-agents activeren de blockchainrails",
+      "summary": "Autonome software wordt de ontbrekende gebruiker van 24/7 betalingen, programmeerbaar onderpand en finale settlement.",
+      "why_it_matters": "Tokenisatie kan een deel van circa $900 biljoen aan wereldwijde activa inzetbaar maken in een machine-economie.",
+      "investment_implication": "Bullish voor programmeerbare settlement, tokenisatie en privacy; bewaak de arbeidsarme verdeling van AI-productiviteit.",
+      "theme": "ai-crypto",
+      "week": "W38",
+      "confidence": 0.88,
       "direction": "bullish"
     },
     {
-      "id": "trend-security-data-soevereiniteit",
-      "title": "AI-security en data-soevereiniteit convergeren",
-      "summary": "De Liquid-hack kostte 4.000 BTC en de OpenAI-wiskundecontroverse vergroot zorgen over hergebruik van privédata.",
-      "why_it_matters": "AI versnelt exploit discovery, terwijl frontiermodellen nieuwe vragen creëren over trainingsdata, eigendom en bewijs van datascheiding.",
-      "investment_implication": "Bullish voor private inference, continue auditing en sterke custody; bearish voor platforms zonder aantoonbare data- en securitygrenzen.",
-      "theme": "security-ai",
-      "week": "W37",
-      "confidence": 0.84,
-      "direction": "risk"
+      "id": "trend-regulated-onchain-access",
+      "title": "Compliant front-ends openen permissionless liquiditeit",
+      "summary": "De SEC-vrijstelling en Krakens Hyperliquid-route brengen tokenized stocks en perpetuals onshore met KYC en toezicht.",
+      "why_it_matters": "Praktische markttoegang groeit ondanks het stranden van CLARITY; distributie, security en publieke settlement convergeren.",
+      "investment_implication": "Bullish voor gereguleerde front-ends, smart-contract security en publieke rails; prijs KYC- en volumefrictie in.",
+      "theme": "regulation",
+      "week": "W38",
+      "confidence": 0.91,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-bull-market-structure",
+      "title": "Slecht nieuws verliest neerwaartse kracht",
+      "summary": "Rente- en wetgevingstegenvallers worden geabsorbeerd terwijl opties en onshore producten de marktstructuur verbreden.",
+      "why_it_matters": "Asymmetrische prijsreactie en nieuwe risicoproducten passen bij een vroege bullmarkt, mits de technische band houdt.",
+      "investment_implication": "Voorzichtig bullish tussen het 200-daags en 50-weeks gemiddelde; gebruik opties voor convex risicobeheer.",
+      "theme": "market-structure",
+      "week": "W38",
+      "confidence": 0.81,
+      "direction": "bullish"
     }
   ]
 }
