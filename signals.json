@@ -1,8 +1,19 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-20T08:30:00+02:00",
+  "generated_at": "2026-09-22T08:30:00+02:00",
   "signals": [
+    {
+      "id": "trend-robinhood-tokenized-market",
+      "title": "Tokenisatie bewijst 24/7 product-market fit",
+      "summary": "Robinhood Chain telt $2,1 miljard aan assets en ziet circa 70% van het handelsvolume buiten reguliere beursuren.",
+      "why_it_matters": "De SEC-vrijstelling opent de VS, terwijl stemrechten en in-kind redemption tokens dichter bij volwaardig digitaal eigendom brengen.",
+      "investment_implication": "Bullish voor Ethereum-settlement, stablecoins en gereguleerde tokenisatie; prijs vijfjaars- en liquiditeitsrisico in.",
+      "theme": "tokenization",
+      "week": "W39",
+      "confidence": 0.93,
+      "direction": "bullish"
+    },
     {
       "id": "trend-ai-agent-rails",
       "title": "AI-agents activeren de blockchainrails",
