@@ -1,8 +1,30 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-22T08:30:00+02:00",
+  "generated_at": "2026-09-23T08:30:00+02:00",
   "signals": [
+    {
+      "id": "trend-stablecoin-governance-risk",
+      "title": "Stablecoin-transparantie vervangt geen governance",
+      "summary": "De Poolse Tether-oliedeal toont dat publieke settlement sanctieomzeiling faciliteert, maar transacties en tussenpersonen achteraf juist beter reconstrueerbaar maakt.",
+      "why_it_matters": "De waarde van dollarrails groeit samen met de noodzaak voor tegenpartijcontrole, approval workflows en forensische capaciteit buiten de chain.",
+      "investment_implication": "Constructief voor compliant stablecoin-infra en forensics; vermijd allocaties zonder governance, custody-controls en duidelijke jurisdictie.",
+      "theme": "stablecoins",
+      "week": "W39",
+      "confidence": 0.88,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ai-open-source-security",
+      "title": "AI maakt open-source security een race vóór de patch",
+      "summary": "ColdCard en Liquid illustreren dat AI oude key-generationfouten kan vinden en dat een gepubliceerde fix direct als routekaart voor aanvallers kan dienen.",
+      "why_it_matters": "Open-sourceprotocols hebben kortere disclosure- en herstelvensters nodig, plus review die AI-output volledig verklaarbaar houdt.",
+      "investment_implication": "Bullish voor security tooling, audits en professionele custody; verhoog het risico-disconto voor zwak onderhouden wallet- en protocolcode.",
+      "theme": "security",
+      "week": "W39",
+      "confidence": 0.92,
+      "direction": "cautious"
+    },
     {
       "id": "trend-robinhood-tokenized-market",
       "title": "Tokenisatie bewijst 24/7 product-market fit",
