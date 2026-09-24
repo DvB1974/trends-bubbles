@@ -1,8 +1,41 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-23T08:30:00+02:00",
+  "generated_at": "2026-09-24T08:30:00+02:00",
   "signals": [
+    {
+      "id": "trend-bitcoin-fundamentals-50w",
+      "title": "Bitcoin krijgt een fundamenteler bullmarkt-signaal",
+      "summary": "Een slot boven het 50-weeks gemiddelde en veerkracht bij macro-tegenwind verschuiven de case van short squeeze naar structurele vraag.",
+      "why_it_matters": "Als Amerikaanse retail nog niet breed terug is, blijft extra spotvraag een open opwaartse optie.",
+      "investment_implication": "Voorzichtig bullish voor BTC als schaarste-allocatie; bevestig de trend met aanhoudende organische vraag.",
+      "theme": "bitcoin",
+      "week": "W39",
+      "confidence": 0.84,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-privacy-near-zcash",
+      "title": "Privacy wordt institutionele blockchain-infra",
+      "summary": "Zcash en NEAR combineren private transacties, intents en programmeerbare vertrouwelijkheid voor gebruik dat publieke DeFi niet kan dragen.",
+      "why_it_matters": "Selectieve disclosure is voor gereguleerde instellingen vaak een vereiste, geen luxe.",
+      "investment_implication": "Constructief voor ZK-, MPC- en veilige routing-infra; toets security en governance per implementatie.",
+      "theme": "privacy",
+      "week": "W39",
+      "confidence": 0.86,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-meme-equity-liquidity",
+      "title": "Memecoin-flow verdiept tokenized-equity liquiditeit",
+      "summary": "Aandelengekoppelde memecoins brengen speculatieve flow naar Robinhood Chain; tooling kan asymmetrie reduceren maar niet elimineren.",
+      "why_it_matters": "Liquiditeit en juridische eigendomsrechten blijven afzonderlijke risico- en waardelagen.",
+      "investment_implication": "Bullish voor settlement en screeningtools; zeer selectief bij meme-exposure en tokenclaims.",
+      "theme": "tokenization",
+      "week": "W39",
+      "confidence": 0.82,
+      "direction": "cautious"
+    },
     {
       "id": "trend-stablecoin-governance-risk",
       "title": "Stablecoin-transparantie vervangt geen governance",
