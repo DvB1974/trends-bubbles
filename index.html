@@ -494,7 +494,7 @@
 const HISTORY = [
   {
     week: 'W39',
-    date: '23 sep',
+    date: '24 sep',
     trends: [
   {
     id: 'robinhood-tokenized-market', label: 'Tokenisatie', sublabel: 'Robinhood · SEC · Ethereum',
@@ -559,6 +559,66 @@ const HISTORY = [
     ],
     signal: 'PATCH SNELLER DAN DE AANVALLER: Bullish voor security tooling, audit en professionele custody; behandel open-source maintenance als kernrisico, niet als bijzaak.',
     signalColor: '#ff3c5a',
+  },
+  {
+    id: 'bitcoin-fundamentals', label: 'Bitcoin', sublabel: '50W · schaarste',
+    size: 97, prevSize: 90, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
+    title: 'Bitcoin krijgt een fundamenteler bullmarkt-signaal',
+    subtitle: 'Unchained ziet een slot boven het 50-weeks gemiddelde als aanwijzing dat de markt van technische druk naar structurele vraag draait.',
+    stats: [
+      { num: '$81.160', label: 'Genoemd 50-weeks niveau waarboven Bitcoin sloot' },
+      { num: '45 wk', label: 'Eerste slot boven dit gemiddelde in de aangehaalde periode' },
+      { num: 'Retail', label: 'Coinbase-premie suggereert dat brede Amerikaanse instroom nog niet dominant is' },
+      { num: 'Schaarste', label: 'Bitcoin en sportteams worden als inflatiehedges naast elkaar gezet' },
+    ],
+    bullets: [
+      'De combinatie van een technische doorbraak en veerkracht bij macro-tegenwind ondersteunt een fundamentelere waardering van Bitcoin',
+      'Als retail nog niet volledig is teruggekeerd, blijft verdere vraag een optie in plaats van een reeds uitgeputte katalysator',
+      'De hedge-case wordt breder: digitale schaarste en fysieke schaarse franchises profiteren beide van langetermijnkapitaal dat geldontwaarding wil ontwijken',
+    ],
+    signal: 'FUNDAMENTEN KRIJGEN MEER GEWICHT: Voorzichtig bullish voor BTC als schaarste-allocatie; bewaak dat organische spotvraag de technische doorbraak blijft dragen.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'privacy-near-zcash', label: 'Privacy', sublabel: 'NEAR · Zcash',
+    size: 88, prevSize: 68, color: '#a855f7', glow: '#c084fc',
+    tag: 'TECH · HERLEEFT', tagColor: '#a855f7',
+    title: 'Privacy verschuift van niche naar institutionele voorwaarde',
+    subtitle: 'Zcash en NEAR koppelen private transacties, cross-chain intents en programmeerbare vertrouwelijkheid voor gebruik dat publieke DeFi niet kan dragen.',
+    stats: [
+      { num: '25 sec', label: 'Genoemde bloktijd na de komende Zcash NU7-upgrade' },
+      { num: 'NEAR', label: 'Intent-laag die swaps tussen ketens zonder handmatige bridges afhandelt' },
+      { num: 'MPC + ZK', label: 'Combinatie voor vertrouwelijke, programmeerbare finance' },
+      { num: 'Instituten', label: 'Gebruikers die klantdata niet op publieke rails mogen openbaren' },
+    ],
+    bullets: [
+      'Privacy wordt een retentie- en compliancefunctie: instellingen kunnen publieke DeFi vaak niet gebruiken wanneer klantinformatie zichtbaar blijft',
+      'NEAR Intents abstraheert bridges en routing, terwijl Zcash een expliciete private waardeopslaglaag toevoegt',
+      'AI-gedreven monitoring kan verdachte flow eerder stoppen, maar verhoogt ook de noodzaak om de vertrouwens- en control-laag scherp te beoordelen',
+    ],
+    signal: 'PRIVACY HERLEEFT ALS B2B-INFRA: Constructief voor selectieve disclosure, ZK en veilige routing; weeg de security- en governanceclaims per implementatie afzonderlijk.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'meme-equity-liquidity', label: 'Tokenisatie', sublabel: 'Meme · equities',
+    size: 91, prevSize: 100, color: '#00ff64', glow: '#00ff64',
+    tag: 'ADOPTIE · HOOG RISICO', tagColor: '#00ff64',
+    title: 'Speculatieve flow geeft tokenized equities liquiditeit',
+    subtitle: 'Aan aandelen gekoppelde memecoins brengen aandacht en liquiditeit naar Robinhood Chain, maar verwarren verhandelbaarheid niet met eigendomsrechten.',
+    stats: [
+      { num: '$350M', label: 'Genoemde marktkapitalisatie van de aan Nvidia gekoppelde AI-memecoin' },
+      { num: '$14M', label: 'Genoemde liquiditeit rond Nvidia op Robinhood Chain' },
+      { num: 'FOMO', label: 'Sociale portefeuilledata als transparantie- en discoverylaag' },
+      { num: 'AI', label: 'Screening van bundeling en rode vlaggen verlaagt informatie-asymmetrie' },
+    ],
+    bullets: [
+      'Speculatie kan de marktinfrastructuur onverwacht financieren: memecoin-flow verdiept liquiditeit rond tokenized aandelen',
+      'Sociale transparantie en AI-screening zijn nuttige guardrails, maar veranderen de asymmetrische risicostructuur van memecoins niet',
+      'De investeerbare les blijft onderscheid maken tussen prijswrapper, liquiditeitsspel en werkelijk juridisch eigendom',
+    ],
+    signal: 'LIQUIDITEIT KOMT, RECHTEN NIET AUTOMATISCH: Bullish voor de settlement- en toolinglaag; zeer selectief bij memecoin-exposure en tokenclaims.',
+    signalColor: '#00ff64',
   },
     ]
   },
@@ -2525,7 +2585,7 @@ const HISTORY = [
 ];
 
 // ── STATE ──────────────────────────────────────────────────────────────────────
-let activeWeekIdx = HISTORY.findIndex(h => h.date === '3 sep');
+let activeWeekIdx = HISTORY.findIndex(h => h.date === '24 sep');
 if (activeWeekIdx < 0) activeWeekIdx = HISTORY.length - 1;
 let activeId = null;
 let searchQuery = '';
