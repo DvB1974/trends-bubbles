@@ -445,7 +445,7 @@
 
 <header>
   <div class="header-left">
-    <div class="eyebrow">Crypto &amp; Macro · 184+ afleveringen · Apr–Sep 2026</div>
+    <div class="eyebrow">Crypto &amp; Macro · 202+ afleveringen · Apr–Sep 2026</div>
     <div class="header-title">Dominante <span>Trends</span></div>
   </div>
 
@@ -493,8 +493,96 @@
 // Formaat: { week: 'W23', date: '2 jun', trends: [...TRENDS array...] }
 const HISTORY = [
   {
+    week: 'W40',
+    date: '30 sep',
+    trends: [
+  {
+    id: 'bitcoin-83k-risk-band', label: 'Bitcoin', sublabel: '$83K · bulltest',
+    size: 100, prevSize: 97, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
+    title: 'Bitcoin-bullcase krijgt een harde risicoband',
+    subtitle: 'Ben Cowen wordt constructief nadat Bitcoin het mei-hoogtepunt boven $85.000 doorbrak, maar maakt een weekslot boven $83.000 de technische voorwaarde.',
+    stats: [
+      { num: '$85K+', label: 'Doorbraak boven het mei-hoogtepunt' },
+      { num: '$83K', label: 'Niveau dat op weekbasis moet houden' },
+      { num: '9 mnd', label: 'Duur van de recente bearmarkt volgens Cowen' },
+      { num: '53%', label: 'Genoemde maximale Bitcoin-drawdown' },
+    ],
+    bullets: [
+      'De korte bearmarkt en beperkte drawdown wijzen op een veerkrachtiger cyclus dan eerdere Bitcoin-correcties',
+      'Bitcoin stijgt ondanks hogere rentes, een sterkere dollar en hogere energieprijzen; dat versterkt het signaal, maar verklaart het niet volledig',
+      'Lagere mondiale liquiditeit verklaart waarom een brede altseason nog niet is bevestigd en houdt de rotatie selectief',
+      'Een breuk onder $83K op weekbasis maakt zwakte in het vierde kwartaal opnieuw het relevante risicoscenario',
+    ],
+    signal: 'BULLISH, MAAR MET EEN STOPLIJN: Houd BTC als schaarste-allocatie boven $83K; verlaag beta en leverage als de weeksluiting dat niveau verliest.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'uncorrelated-real-assets-infra', label: 'Allocatie', sublabel: 'Moats · correlatie',
+    size: 91, prevSize: null, color: '#00e5ff', glow: '#00e5ff',
+    tag: 'MACRO · DISCIPLINE', tagColor: '#00e5ff',
+    title: 'Diversificatie verschuift naar ongecorreleerde moats',
+    subtitle: 'Christopher Zook vertaalt risicobeheer naar vooraf bepaalde portefeuillegewichten en picks-and-shovels in crypto-infra, energie, defensie en live sport.',
+    stats: [
+      { num: '8–15', label: 'Ongecorreleerde activa in Zooks kader' },
+      { num: '80%', label: 'Genoemde potentiële risicoreductie' },
+      { num: '$13B', label: 'Vermogen onder beheer bij CAZ Investments' },
+      { num: '95%', label: 'Genoemd slagingspercentage over deals' },
+    ],
+    bullets: [
+      'Alloceren in percentages in plaats van bedragen vermindert emotionele, procyclische besluitvorming',
+      'De crypto-case verbetert wanneer de exposure naar infrastructuur en value capture gaat, niet alleen naar losse prijsbèta',
+      'Energie, defensietechnologie en live sport bieden verschillende vraagdrivers en kunnen als satellieten naast digitale activa fungeren',
+      'Een moat is geen vervanging voor waarderingsdiscipline: test cashflow, correlatie en governance juist wanneer verhalen breed worden omarmd',
+    ],
+    signal: 'CORRELATIE IS HET RISICO: Combineer crypto met cashflow- en infrastructuurmoats; bepaal gewichten vooraf en herijk pas op basis van fundamentele verandering.',
+    signalColor: '#00e5ff',
+  },
+  {
+    id: 'bitcoin-two-of-three-confirmation', label: 'Bitcoin', sublabel: '50W · hogere bodem',
+    size: 98, prevSize: 100, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · BEVESTIGING', tagColor: '#C9A84C',
+    title: 'Bitcoin-bullcase wacht nog op een hogere bodem',
+    subtitle: 'BNR ziet twee van drie technische signalen op groen: boven het 50-weeks gemiddelde en met een hogere top boven $83.000.',
+    stats: [
+      { num: '2 / 3', label: 'Technische bullmarktsignalen op groen' },
+      { num: '50W', label: 'Gemiddelde waarboven Bitcoin noteert' },
+      { num: '$83K+', label: 'Genoemde hogere top die is gezet' },
+      { num: 'Hogere bodem', label: 'Ontbrekende bevestiging' },
+    ],
+    bullets: [
+      'De prijsstructuur is sterker dan een losse uitbraak omdat trend en topvorming tegelijk verbeteren',
+      'Zonder hogere bodem blijft de technische bullmarktbevestiging onvolledig en gevoelig voor macrostress',
+      'De relevante allocatieles is risicobudgettering: schaarste-exposure kan, maar leverage loopt vooruit op de bevestiging',
+    ],
+    signal: 'CONSTRUCTIEF, NOG NIET VOLTOOID: Houd BTC als gecontroleerde schaarste-allocatie; vergroot risico pas wanneer de hogere bodem standhoudt.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'ai-agent-controlled-finance', label: 'AI × Crypto', sublabel: '24/7 · permissions',
+    size: 94, prevSize: 88, color: '#a855f7', glow: '#c084fc',
+    tag: 'TECH · INFRA', tagColor: '#a855f7',
+    title: 'AI-agents maken financiële rails nuttig, niet autonoom',
+    subtitle: '24/7 markten maken agent-uitvoering praktisch, terwijl stablecoins en Bitcoin programmeerbare settlement en onderpand leveren.',
+    stats: [
+      { num: '24/7', label: 'Marktvenster dat agents operationeel maakt' },
+      { num: 'Stablecoins', label: 'Machine-native betaalmiddel' },
+      { num: 'BTC', label: 'Programmeerbaar onderpand' },
+      { num: 'Mandaten', label: 'Menselijke control-laag' },
+    ],
+    bullets: [
+      'Agents kunnen binnen limieten uitvoeren terwijl beleggers slapen, maar ze vervangen geen risicokader of oordeel',
+      'De investeerbare laag zit in settlement, custody, permissions en monitoring, niet in de belofte van foutloze autonome trading',
+      'Smart contracts kunnen recovery goedkoper maken dan bij fysiek onderpand, met blijvend oracle- en liquidatierisico',
+    ],
+    signal: 'AUTOMATISEER BINNEN GRENZEN: Constructief voor programmeerbare settlement en control tooling; prijs operationeel risico expliciet in.',
+    signalColor: '#a855f7',
+  },
+    ]
+  },
+  {
     week: 'W39',
-    date: '24 sep',
+    date: '26 sep',
     trends: [
   {
     id: 'robinhood-tokenized-market', label: 'Tokenisatie', sublabel: 'Robinhood · SEC · Ethereum',
@@ -565,9 +653,9 @@ const HISTORY = [
     size: 97, prevSize: 90, color: '#C9A84C', glow: '#f0c060',
     tag: 'MACRO · BULLISH', tagColor: '#C9A84C',
     title: 'Bitcoin krijgt een fundamenteler bullmarkt-signaal',
-    subtitle: 'Unchained ziet een slot boven het 50-weeks gemiddelde als aanwijzing dat de markt van technische druk naar structurele vraag draait.',
+    subtitle: 'Bankless ziet Bitcoin rond $85.000 en boven het 200-weeks gemiddelde als aanwijzing dat de markt van technische druk naar structurele vraag draait.',
     stats: [
-      { num: '$81.160', label: 'Genoemd 50-weeks niveau waarboven Bitcoin sloot' },
+      { num: '$85K', label: 'Genoemde Bitcoinprijs in de nieuwe Bankless-rollup' },
       { num: '45 wk', label: 'Eerste slot boven dit gemiddelde in de aangehaalde periode' },
       { num: 'Retail', label: 'Coinbase-premie suggereert dat brede Amerikaanse instroom nog niet dominant is' },
       { num: 'Schaarste', label: 'Bitcoin en sportteams worden als inflatiehedges naast elkaar gezet' },
@@ -575,6 +663,7 @@ const HISTORY = [
     bullets: [
       'De combinatie van een technische doorbraak en veerkracht bij macro-tegenwind ondersteunt een fundamentelere waardering van Bitcoin',
       'Als retail nog niet volledig is teruggekeerd, blijft verdere vraag een optie in plaats van een reeds uitgeputte katalysator',
+      'De nieuwe bullfase lijkt niet alleen Bitcoin-beta te belonen: tokens met zichtbare inkomsten en gebruik nemen volgens de hosts de leiding',
       'De hedge-case wordt breder: digitale schaarste en fysieke schaarse franchises profiteren beide van langetermijnkapitaal dat geldontwaarding wil ontwijken',
     ],
     signal: 'FUNDAMENTEN KRIJGEN MEER GEWICHT: Voorzichtig bullish voor BTC als schaarste-allocatie; bewaak dat organische spotvraag de technische doorbraak blijft dragen.',
@@ -585,9 +674,9 @@ const HISTORY = [
     size: 88, prevSize: 68, color: '#a855f7', glow: '#c084fc',
     tag: 'TECH · HERLEEFT', tagColor: '#a855f7',
     title: 'Privacy verschuift van niche naar institutionele voorwaarde',
-    subtitle: 'Zcash en NEAR koppelen private transacties, cross-chain intents en programmeerbare vertrouwelijkheid voor gebruik dat publieke DeFi niet kan dragen.',
+    subtitle: 'Zcash bereikt volgens Bankless circa $26 miljard marktkapitalisatie, terwijl NEAR private transacties en programmeerbare vertrouwelijkheid toevoegt voor gebruik dat publieke DeFi niet kan dragen.',
     stats: [
-      { num: '25 sec', label: 'Genoemde bloktijd na de komende Zcash NU7-upgrade' },
+      { num: '$26B', label: 'Genoemde marktkapitalisatie van Zcash in de nieuwe Bankless-rollup' },
       { num: 'NEAR', label: 'Intent-laag die swaps tussen ketens zonder handmatige bridges afhandelt' },
       { num: 'MPC + ZK', label: 'Combinatie voor vertrouwelijke, programmeerbare finance' },
       { num: 'Instituten', label: 'Gebruikers die klantdata niet op publieke rails mogen openbaren' },
@@ -669,24 +758,24 @@ const HISTORY = [
     signalColor: '#00e5ff',
   },
   {
-    id: 'bull-market-structure', label: 'Marktstructuur', sublabel: 'Bulltest · opties',
-    size: 92, prevSize: 88, color: '#00ff64', glow: '#00ff64',
+    id: 'bull-market-structure', label: 'Marktstructuur', sublabel: 'Bulltest · cashflow',
+    size: 96, prevSize: 92, color: '#00ff64', glow: '#00ff64',
     tag: 'MARKT · BULLISH', tagColor: '#00ff64',
     title: 'Slecht nieuws verliest zijn neerwaartse kracht',
-    subtitle: 'Bankless ziet een vroege bullmarkt omdat rente- en wetgevingstegenvallers worden geabsorbeerd, terwijl positief nieuws direct doorwerkt.',
+    subtitle: 'Bankless ziet een bevestigde vroege bullmarkt: Bitcoin rond $85K houdt stand, maar cashflow-tokens leiden de rotatie en Kalshi onderstreept dat volume kwaliteit nodig heeft.',
     stats: [
-      { num: '$69,9K', label: 'Genoemd 200-daags gemiddelde van Bitcoin' },
-      { num: '$80,4K', label: 'Genoemd 50-weeks gemiddelde als bovenzijde van de band' },
-      { num: '3,75–4%', label: 'Nieuwe Fed-band na de aangehaalde renteverhoging' },
-      { num: 'Opties', label: 'Volgende DeFi-productgolf na perpetuals' },
+      { num: '$85K', label: 'Genoemde Bitcoinprijs in de nieuwe Bankless-rollup' },
+      { num: '$65,5K', label: 'Genoemd 200-weeks gemiddelde van Bitcoin' },
+      { num: '+30–40%', label: 'Genoemde outperformance van revenue-tokens als Ondo en Uniswap' },
+      { num: '$5.500', label: 'Herhaalde Kalshi-trade die vragen oproept over organisch volume' },
     ],
     bullets: [
       'Prijsreactie is asymmetrisch: negatieve katalysatoren breken de markt niet, positieve katalysatoren trekken kapitaal aan',
-      'De band tussen het 200-daags en 50-weeks gemiddelde fungeert als technische bullmarkt-test',
-      'Opties bieden bescherming tegen volatiliteit zonder de automatische liquidatie die perpetuals kenmerkt',
-      'De marktstructuur verbreedt van directionele leverage naar programmeerbaar risicobeheer',
+      'De huidige rotatie beloont aantoonbare inkomsten en gebruik: Ethena, Uniswap, Ondo en Jupiter lopen volgens de hosts voor op de grote blue chips',
+      'Kalshi illustreert de tegenproef: headline volume zonder spreiding, open interest of onafhankelijke vraag is geen betrouwbaar kwaliteitsbewijs',
+      'BlackRock en Ondo verbinden intelligente portefeuilles aan machine-native money, waardoor assetmanagement en programmeerbare settlement verder convergeren',
     ],
-    signal: 'DE MARKT ABSORBEERT TEGENWIND: Voorzichtig bullish zolang de technische band houdt; opties en gereguleerde on-chain toegang verbreden de cyclus.',
+    signal: 'CASHFLOW WORDT DE SELECTIELAAG: Voorzichtig bullish zolang BTC boven zijn structurele trend blijft; verkies verifieerbare inkomsten boven incentivegedreven volume.',
     signalColor: '#00ff64',
   },
     ]
@@ -2585,7 +2674,7 @@ const HISTORY = [
 ];
 
 // ── STATE ──────────────────────────────────────────────────────────────────────
-let activeWeekIdx = HISTORY.findIndex(h => h.date === '24 sep');
+let activeWeekIdx = HISTORY.findIndex(h => h.date === '26 sep');
 if (activeWeekIdx < 0) activeWeekIdx = HISTORY.length - 1;
 let activeId = null;
 let searchQuery = '';
