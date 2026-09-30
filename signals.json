@@ -1,8 +1,118 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-24T08:30:00+02:00",
+  "generated_at": "2026-09-30T08:30:00+02:00",
   "signals": [
+    {
+      "id": "trend-bitcoin-two-of-three-confirmation",
+      "title": "Bitcoin-bullcase wacht nog op een hogere bodem",
+      "summary": "BNR ziet twee van drie technische signalen op groen: Bitcoin staat boven het 50-weeks gemiddelde en zette een hogere top boven $83.000.",
+      "why_it_matters": "De prijsstructuur wordt robuuster, maar zonder hogere bodem blijft de bullmarktbevestiging onvolledig en gevoelig voor macrostress.",
+      "investment_implication": "Voorzichtig bullish voor BTC als schaarste-allocatie; houd risico en leverage beperkt totdat de hogere bodem is bevestigd.",
+      "theme": "bitcoin",
+      "week": "W40",
+      "confidence": 0.88,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-ai-agent-controlled-finance",
+      "title": "AI-agents maken financiële rails nuttig, niet autonoom",
+      "summary": "24/7 markten maken agents nuttig voor uitvoering, terwijl stablecoins en Bitcoin programmeerbare settlement en onderpand leveren.",
+      "why_it_matters": "De waarde verschuift naar permissions, limieten, custody en betrouwbare afwikkeling; menselijke mandaten blijven nodig.",
+      "investment_implication": "Constructief voor programmeerbare settlement en control tooling; vermijd de aanname dat autonome trading foutloos is.",
+      "theme": "ai-crypto",
+      "week": "W40",
+      "confidence": 0.86,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-mica-reserve-controls",
+      "title": "MiCA maakt reservecontrole investeerbare infrastructuur",
+      "summary": "Het Knaken-faillissement toont hoe vergunningstoetsing onvoldoende Bitcoin-dekking en zwakke compliance zichtbaar kan maken.",
+      "why_it_matters": "Adoptie van crypto-infra hangt af van aantoonbare klanttegoeden, governance en herstelprocessen, niet van marketing of volume alleen.",
+      "investment_implication": "Kies platforms en custody met toetsbare reserves, segregatie en governance; zie toezicht als kwaliteitsfilter.",
+      "theme": "regulation",
+      "week": "W40",
+      "confidence": 0.9,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-83k-risk-band",
+      "title": "Bitcoin-bullcase krijgt een harde risicoband",
+      "summary": "Ben Cowen wordt constructief na de uitbraak boven het mei-hoogtepunt rond $85.000, maar koppelt de trendbevestiging aan een weekslot boven $83.000.",
+      "why_it_matters": "De korte drawdown en prijsveerkracht ondersteunen het cyclische herstel, terwijl lage mondiale liquiditeit en macro-tegenwind een Q4-correctie mogelijk houden.",
+      "investment_implication": "Voorzichtig bullish voor BTC boven $83.000; behandel een verlies van dat niveau als een signaal om beta en leverage terug te brengen.",
+      "theme": "bitcoin",
+      "week": "W40",
+      "confidence": 0.87,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-uncorrelated-real-assets-infra",
+      "title": "Diversificatie verschuift naar ongecorreleerde moats",
+      "summary": "Christopher Zook pleit voor 8–15 ongecorreleerde posities en een picks-and-shovels-aanpak in crypto-infra, energie, defensie en live sport.",
+      "why_it_matters": "Vooraf bepaalde portefeuillegewichten verminderen emotionele procycliciteit en koppelen rendement aan structurele vraag, niet aan één enkele markt.",
+      "investment_implication": "Gebruik crypto als één allocatielaag naast infrastructuur en schaarse cashflow-assets; toets per positie de moat, waardering en correlatie in stress.",
+      "theme": "macro",
+      "week": "W40",
+      "confidence": 0.84,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-revenue-tokens-lead-bull",
+      "title": "Cashflow-tokens nemen de leiding in de bullmarkt",
+      "summary": "Ethena, Uniswap, Ondo en Jupiter overtreffen volgens Bankless de grote crypto-assets, terwijl protocolinkomsten en gebruik weer selectiecriteria worden.",
+      "why_it_matters": "De rotatie verschuift de bullcase van louter beta naar aantoonbare fee-pools, token-economie en duurzaam productgebruik.",
+      "investment_implication": "Constructief voor protocollen met verifieerbare inkomsten; toets value capture, emissies en de kwaliteit van het gerapporteerde volume.",
+      "theme": "market-structure",
+      "week": "W39",
+      "confidence": 0.85,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-kalshi-volume-quality",
+      "title": "Volume zonder marktkwaliteit blijft een zwak signaal",
+      "summary": "De gemelde identieke Kalshi-trades van $5.500 wijzen op mogelijk incentivegedreven volume en scherpen het onderscheid tussen omzet en organische liquiditeit aan.",
+      "why_it_matters": "Een hoge print kan market-makingkortingen weerspiegelen in plaats van onafhankelijke vraag, prijsontdekking of houdbare fee-inkomsten.",
+      "investment_implication": "Blijf selectief bij venues en tokens: controleer open interest, tegenpartijconcentratie en incentive-structuren naast headline volume.",
+      "theme": "market-structure",
+      "week": "W39",
+      "confidence": 0.82,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-etf-collateral",
+      "title": "Bitcoin krijgt tegelijk ETF-vraag en collateral-nut",
+      "summary": "De $84K-beweging combineert sterke ETF-instroom met nieuwe Bitcoin-backed leningen via Coinbase en Morpho op Base.",
+      "why_it_matters": "Spotvraag is constructief, maar collateral-producten introduceren rente-, oracle- en liquidatierisico in dezelfde bullcase.",
+      "investment_implication": "Constructief voor BTC en betrouwbare lending-infra; vermijd hefboom zonder heldere liquidatieparameters.",
+      "theme": "bitcoin",
+      "week": "W39",
+      "confidence": 0.86,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-regulatory-executive-gap",
+      "title": "Uitvoerende crypto-regels vullen het CLARITY-vacuüm",
+      "summary": "Na het stranden van de Clarity Act zetten SEC en CFTC hun eigen regelpakket door, waardoor toegang mogelijk blijft zonder volledig wettelijk anker.",
+      "why_it_matters": "De markt krijgt operationele duidelijkheid, maar de route kan bij een volgend politiek regime weer veranderen.",
+      "investment_implication": "Positief voor compliant platforms; reken een hogere beleids- en jurisdictierisicopremie in.",
+      "theme": "regulation",
+      "week": "W39",
+      "confidence": 0.9,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ai-social-finance-rails",
+      "title": "AI-agents en social trading verbreden de on-chain fee-pool",
+      "summary": "Sociale handelsplatforms maken speculatieve flow zichtbaar en winstgevend, terwijl agents 24/7 machinebetalingen naar blockchainrails kunnen duwen.",
+      "why_it_matters": "Distributie, routing en settlement worden waardevoller dan een losse token of modelclaim.",
+      "investment_implication": "Bullish voor programmeerbare settlement en tooling; onderscheid duurzaam gebruik van incentivegedreven volume.",
+      "theme": "ai-crypto",
+      "week": "W39",
+      "confidence": 0.83,
+      "direction": "bullish"
+    },
     {
       "id": "trend-bitcoin-fundamentals-50w",
       "title": "Bitcoin krijgt een fundamenteler bullmarkt-signaal",
