@@ -1,8 +1,41 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-09-30T08:30:00+02:00",
+  "generated_at": "2026-10-02T08:00:00+02:00",
   "signals": [
+    {
+      "id": "trend-box3-crypto-wrapper-gap",
+      "title": "Box 3 dreigt crypto-vraag naar buitenlandse wrappers te duwen",
+      "summary": "De voorgestelde uitzondering voor financiële instrumenten behandelt spot crypto zwaarder dan Bitcoin-ETF's, ondanks uitvoerbare DAC8-rapportage.",
+      "why_it_matters": "Fiscaal productontwerp kan de distributie en concurrentiekracht van Nederlandse cryptobedrijven bepalen, los van de onderliggende Bitcoin-exposure.",
+      "investment_implication": "Houd Nederlandse crypto-exposure en wrapper-risico apart; volg de novelle, overgangsregels en effectieve belastingbehandeling vóór allocatiebeslissingen.",
+      "theme": "regulation",
+      "week": "W40",
+      "confidence": 0.89,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ai-capex-sovereign-margin-pressure",
+      "title": "AI-capex groeit, maar soevereine modellen drukken de modelmarge",
+      "summary": "De AI-investeringsgolf verbreedt naar chips, hyperscalers, software en private modellen, terwijl klanten efficiënter draaien en meer zelf trainen.",
+      "why_it_matters": "De waarde verschuift van een generieke modelclaim naar infrastructuur, distributie en controle over data, compute en integratie.",
+      "investment_implication": "Constructief voor AI-infra en selectieve software; toets waardering en prijsdruk bij pure modelaanbieders expliciet.",
+      "theme": "ai-crypto",
+      "week": "W40",
+      "confidence": 0.84,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-vendor-security-recovery-controls",
+      "title": "Vendor security en herstelcapaciteit worden custody-criteria",
+      "summary": "De Bitget-hack toont dat beveiligingssoftware van derden schade kan veroorzaken zonder compromittering van private keys.",
+      "why_it_matters": "Reserves zijn geen vervanging voor leverancierscontrole, patroonherkenning, snelle containment en gecoördineerde recovery.",
+      "investment_implication": "Kies custody en exchanges op aantoonbare vendor controls, incident drills en herstelpaden; behandel reserveclaims als één laag, niet als eindcontrole.",
+      "theme": "security",
+      "week": "W40",
+      "confidence": 0.91,
+      "direction": "cautious"
+    },
     {
       "id": "trend-bitcoin-two-of-three-confirmation",
       "title": "Bitcoin-bullcase wacht nog op een hogere bodem",
