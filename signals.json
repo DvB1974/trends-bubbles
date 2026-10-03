@@ -1,8 +1,52 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-10-02T08:00:00+02:00",
+  "generated_at": "2026-10-03T08:00:00+02:00",
   "signals": [
+    {
+      "id": "trend-bitcoin-may-highs-breakout",
+      "title": "Bitcoin breekt bearish structuur, maar rente blijft de stresstest",
+      "summary": "Bitcoin sloot volgens Bankless zowel wekelijks als maandelijks boven de mei-hoogtes, terwijl lange rentes en geopolitieke onzekerheid hoog blijven.",
+      "why_it_matters": "De prijsreactie wijst op vroege bullmarkt-asymmetrie, maar de macro-omgeving kan de vervolgbevestiging nog verstoren.",
+      "investment_implication": "Voorzichtig bullish voor BTC; behandel hogere lange rentes en verlies van de uitbraakzone als signalen om beta en leverage te beperken.",
+      "theme": "bitcoin",
+      "week": "W40",
+      "confidence": 0.86,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-exchange-vendor-security-freeze",
+      "title": "Exchange-security draait om vendor controls en herstelmacht",
+      "summary": "De Bitget/Bybit-exploit van circa $387–400 miljoen toont dat reserves alleen onvoldoende zijn zonder detectie, freeze-capaciteit en leverancierscontrole.",
+      "why_it_matters": "Gebruikersbescherming hangt af van de volledige incidentketen, inclusief cross-chain routing en de governance rond het blokkeren van verdachte fondsen.",
+      "investment_implication": "Selecteer venues op aantoonbare vendor due diligence, incident drills, segregatie en herstelpaden; zie reservefondsen als één controlelaag.",
+      "theme": "security",
+      "week": "W40",
+      "confidence": 0.93,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-prediction-market-quality-jurisdiction",
+      "title": "Predictiemarkten krijgen tegelijk een volume- en jurisdictietest",
+      "summary": "Kalshi staat onder druk door vermoedelijk incentivegedreven volume en een oplopend conflict tussen staatsregulering en federale voorrang.",
+      "why_it_matters": "Headline volume zegt weinig zonder open interest en tegenpartijdiversiteit, terwijl rechtsmacht de toegang tot het product kan bepalen.",
+      "investment_implication": "Wees selectief bij venue- en tokenexposure: toets organische liquiditeit, incentive-structuren en de juridische route per staat.",
+      "theme": "market-structure",
+      "week": "W40",
+      "confidence": 0.87,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-agentic-deposit-flight-controls",
+      "title": "AI-agents maken depositoflow een control-probleem",
+      "summary": "AI-assistenten kunnen klanten geleidelijk naar betere rendementen sturen; 24/7 markten maken permissions, limieten en betrouwbare settlement kritischer.",
+      "why_it_matters": "De waarde verschuift naar veilige agent-workflows en programmeerbare geldrails, zonder dat een abrupte bankrun het basisscenario hoeft te zijn.",
+      "investment_implication": "Constructief voor compliant settlement, custody en agent-controls; vermijd de aanname dat autonome herallocatie risicovrij of foutloos is.",
+      "theme": "ai-crypto",
+      "week": "W40",
+      "confidence": 0.84,
+      "direction": "bullish"
+    },
     {
       "id": "trend-box3-crypto-wrapper-gap",
       "title": "Box 3 dreigt crypto-vraag naar buitenlandse wrappers te duwen",
