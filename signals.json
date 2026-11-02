@@ -1,8 +1,19 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-01T09:00:00+01:00",
+  "generated_at": "2026-11-02T09:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-private-ai-security-tokenomics-w45",
+      "title": "Private inference wordt een security- én tokenomicscase",
+      "summary": "Venice meldt in zijn VVV Community Call vijf miljoen gebruikers, meer dan één biljoen tokens per dag en een maandelijkse VVV-burn boven $1 miljoen; dit zijn bedrijfsclaims.",
+      "why_it_matters": "Dataretentie, prompt-injectieweerbaarheid, modelrouting en agent-permissions worden concrete selectiecriteria naast modelkwaliteit en inferentiekosten.",
+      "investment_implication": "Selectief constructief voor privacy-first AI-infra met toetsbare retentie- en securitycontrols; valideer burnmechaniek, emissie, compute-economie, governance en infrastructuuruitvoering afzonderlijk.",
+      "theme": "ai",
+      "week": "W45",
+      "confidence": 0.72,
+      "direction": "bullish"
+    },
     {
       "id": "trend-exchange-incident-response-w44",
       "title": "Exchange-resilience blijkt uit incidentrespons, niet uit schaal",
