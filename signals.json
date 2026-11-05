@@ -1,8 +1,19 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-02T09:00:00+01:00",
+  "generated_at": "2026-11-05T09:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-tokenized-credit-ai-underwriting-w45",
+      "title": "Blockchain moet krediet goedkoper en controleerbaarder maken",
+      "summary": "Figure stelt dat AI, automatisering en blockchain hypotheek- en HELOC-processen van 45 naar 9 dagen en van $12.000 naar $1.000 terugbrengen; dit zijn bedrijfsclaims.",
+      "why_it_matters": "Tokenisatie en automatisering zijn pas relevant wanneer underwriting, fraudepreventie, servicing, juridische rechten en kapitaalmarktfinanciering samen aantoonbaar beter functioneren.",
+      "investment_implication": "Constructief voor gereguleerde kredietrails die tijd, kosten en fraude verlagen; valideer modelrisico, funding, collateral-haircuts, liquidatieprocessen en consumentenbescherming afzonderlijk.",
+      "theme": "tokenization",
+      "week": "W45",
+      "confidence": 0.71,
+      "direction": "cautious"
+    },
     {
       "id": "trend-private-ai-security-tokenomics-w45",
       "title": "Private inference wordt een security- én tokenomicscase",
@@ -13,6 +24,17 @@
       "week": "W45",
       "confidence": 0.72,
       "direction": "bullish"
+    },
+    {
+      "id": "trend-zcash-privacy-roadmap-w45",
+      "title": "Zcash maakt privacy een schaalbaarheids- en migratievraag",
+      "summary": "Bankless beschrijft de Zcash-roadmap met Tachyon, private wallet-sync via PIR/FHE en drie post-quantumpijlers; dit zijn technische plannen waarvan uitvoering en adoptie nog moeten blijken.",
+      "why_it_matters": "AI-gedreven blockchainanalyse verhoogt de waarde van private, bruikbare wallet-infrastructuur, terwijl schaalbaarheid en crypto-agility bepalen of die privacy economisch en operationeel houdbaar is.",
+      "investment_implication": "Selectief constructief voor privacy-infra met toetsbare schaalbaarheid, wallet-UX en upgradegovernance; prijs roadmap-, cryptografisch- en adoptierisico expliciet in.",
+      "theme": "privacy-security",
+      "week": "W45",
+      "confidence": 0.74,
+      "direction": "cautious"
     },
     {
       "id": "trend-exchange-incident-response-w44",
