@@ -1,8 +1,41 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-05T09:00:00+01:00",
+  "generated_at": "2026-11-06T08:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-exchange-resilience-w45",
+      "title": "Exchange-resilience blijkt uit containment en herstel",
+      "summary": "De afleveringen verschillen over details van een gemelde recordhack; de consistente les is dat identity, reserves, stablecoin-coördinatie en recovery samen de stresstest vormen.",
+      "why_it_matters": "Centrale crypto-infra houdt alleen vertrouwen wanneer detectie, containment, klantcommunicatie en herstel onder tijdsdruk aantoonbaar functioneren.",
+      "investment_implication": "Cautious voor venues zonder toetsbare identity-, reserve- en recoverycontrols; spreid operationele tegenpartijexposure en behandel freezes als zowel noodrem als issuerafhankelijkheid.",
+      "theme": "security",
+      "week": "W45",
+      "confidence": 0.84,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-us-crypto-policy-risk-w45",
+      "title": "Politieke verschuiving maakt compliance de differentiator",
+      "summary": "Unchained ziet na de midterms minder ruimte voor snelle marktstructuurwetgeving en meer nadruk op consumentenbescherming en DeFi-controls; dit is een scenarioanalyse.",
+      "why_it_matters": "Veranderende politieke verhoudingen kunnen productdistributie, toezicht en juridische frictie beïnvloeden voordat formele regels veranderen.",
+      "investment_implication": "Constructief voor gereguleerde rails met aantoonbare segregatie, governance en klantbescherming; prijs beleids- en uitvoeringsrisico afzonderlijk in.",
+      "theme": "regulation",
+      "week": "W45",
+      "confidence": 0.72,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-debt-hedge-w45",
+      "title": "De schuldenhedge vraagt risicobudget, geen koerscall",
+      "summary": "Van Eck koppelt Amerikaanse schulddruk aan goud en Bitcoin, terwijl BNR een post-midtermrally bespreekt; beide zijn marktvisies met onzekere timing.",
+      "why_it_matters": "Koopkracht-, duration- en liquiditeitsrisico maken schaarste-assets relevant, maar goud en Bitcoin dragen verschillende volatiliteits- en custodyrisico's.",
+      "investment_implication": "Houd goud en BTC gedoseerd binnen harde risico-, liquiditeits- en drawdownlimieten; vermijd alles-of-niets macroposities.",
+      "theme": "macro",
+      "week": "W45",
+      "confidence": 0.71,
+      "direction": "cautious"
+    },
     {
       "id": "trend-tokenized-credit-ai-underwriting-w45",
       "title": "Blockchain moet krediet goedkoper en controleerbaarder maken",
