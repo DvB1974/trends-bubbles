@@ -1,8 +1,19 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-06T08:00:00+01:00",
+  "generated_at": "2026-11-07T08:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-crypto-agility-frontier-capital-w45",
+      "title": "Crypto-agility en compute bepalen de volgende infrastructuurtoets",
+      "summary": "Bankless noemt een post-quantumdoel voor Ethereum; Unchained en Pomp bespreken frontier-kapitaal, institutionele randvoorwaarden en datacenterdruk. Dit zijn bronclaims en scenario’s.",
+      "why_it_matters": "Cryptografische upgradepaden, custody en compute-intensiteit worden tegelijk technische, operationele en kapitaalallocatievragen.",
+      "investment_implication": "Selectief constructief voor infrastructuur met toetsbare key-rotatie, upgradegovernance, betrouwbare custody en kapitaaldiscipline; behandel roadmapdata niet als zekerheid.",
+      "theme": "security-ai",
+      "week": "W45",
+      "confidence": 0.7,
+      "direction": "cautious"
+    },
     {
       "id": "trend-exchange-resilience-w45",
       "title": "Exchange-resilience blijkt uit containment en herstel",
