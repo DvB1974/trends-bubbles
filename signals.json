@@ -1,8 +1,41 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-07T08:00:00+01:00",
+  "generated_at": "2026-11-11T08:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-latin-america-local-currency-rails-w45",
+      "title": "Lokale valuta on-chain vragen reservekwaliteit én bruikbare FX-liquiditeit",
+      "summary": "Ripio beschrijft getokeniseerde valuta uit zes Latijns-Amerikaanse landen als één betalings- en liquiditeitslaag; groei- en kostencijfers zijn bedrijfsclaims.",
+      "why_it_matters": "Lokale stablecoins zijn pas bruikbaar wanneer inwisselbaarheid, reserves, FX-executie, compliance en interoperabiliteit samen aantoonbaar functioneren.",
+      "investment_implication": "Selectief constructief voor gereguleerde payment- en FX-infra met toetsbare reserves, redemption en liquiditeit; prijs issuer-, bank- en jurisdictioneel risico afzonderlijk in.",
+      "theme": "tokenization-payments",
+      "week": "W45",
+      "confidence": 0.7,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ai-energy-tokenization-infrastructure-w45",
+      "title": "AI-capex maakt energie, datasecurity en eigendomsrechten één infrastructuurtoets",
+      "summary": "Tillman Holloway koppelt AI-datacenters, gedistribueerde batterijen en tokenisatie aan een minder geconcentreerd financieel en energienet; dit is een marktvisie.",
+      "why_it_matters": "Neteconomie, energie-infra, cybersecurity, juridische rechten en kapitaalintensiteit bepalen of gedecentraliseerde AI- en tokenisatierails werkelijk schaalbaar zijn.",
+      "investment_implication": "Constructief voor energie- en tokenisatierails met aantoonbare economics, security en rechtenstructuur; vermijd allocatie op decentralisatie alleen.",
+      "theme": "ai-infrastructure",
+      "week": "W45",
+      "confidence": 0.66,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-equity-relative-value-w45",
+      "title": "Bitcoin-aandelenvergelijking vraagt relatieve waardering én risicodiscipline",
+      "summary": "Jordi Visser verwacht dat AI-disruptie, regulering en lagere groei grote beursbedrijven raken terwijl Bitcoin van betere liquiditeit profiteert; dit is een marktvisie, geen voorspelling.",
+      "why_it_matters": "AI kan marges, waarderingen en concentratierisico in aandelen tegelijk veranderen, maar Bitcoin houdt een wezenlijk ander volatiliteits-, custody- en liquiditeitsprofiel.",
+      "investment_implication": "Vergelijk beide exposures op waardering, winst- of netwerkfundamentals, liquiditeit en concentratie; houd BTC alleen gedoseerd binnen een expliciet drawdown- en custodybudget.",
+      "theme": "macro-bitcoin",
+      "week": "W45",
+      "confidence": 0.68,
+      "direction": "cautious"
+    },
     {
       "id": "trend-crypto-agility-frontier-capital-w45",
       "title": "Crypto-agility en compute bepalen de volgende infrastructuurtoets",
