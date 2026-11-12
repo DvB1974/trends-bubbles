@@ -1,8 +1,52 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-11T08:00:00+01:00",
+  "generated_at": "2026-11-12T08:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-crypto-product-protection-w46",
+      "title": "Crypto-regels bewijzen zich in de beschermingslaag rond het product",
+      "summary": "BNR en Unchained bespreken een mogelijke politieke route in de VS en beperkingen rond MiCA-diensten; uitkomsten en timing zijn scenario’s.",
+      "why_it_matters": "Een vergunning beschermt niet automatisch staking, lending of DeFi: segregation, disclosure, governance en herstelprocessen bepalen de feitelijke productkwaliteit.",
+      "investment_implication": "Constructief voor crypto-infra met toetsbare segregation, disclosure en governance; prijs risico buiten de vergunde productlaag expliciet in.",
+      "theme": "regulation",
+      "week": "W46",
+      "confidence": 0.74,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-custody-layered-resilience-w46",
+      "title": "Custody vraagt gelaagde weerbaarheid, geen standaardallocatie",
+      "summary": "De Bitcoin Amsterdam-input koppelt multi-signature, code-review en AI-gedreven kwetsbaarheidsdetectie aan grote incidenten; details zijn bronclaims.",
+      "why_it_matters": "Signing-governance, leveranciersketen, phishingweerbaarheid en geteste recovery bepalen samen de operationele kwaliteit van custody.",
+      "investment_implication": "Cautious voor partijen zonder aantoonbare signing-, leveranciers- en recoverycontrols; spreid alleen binnen een expliciet operationeel risicokader.",
+      "theme": "security",
+      "week": "W46",
+      "confidence": 0.82,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-onchain-trading-quality-w46",
+      "title": "On-chain trading verdient een cashflow- én marktstructuurtoets",
+      "summary": "Een Hyperliquid-trader onderscheidt omzetdragende tokens van schaarste-assets en noemt buybacks als mogelijk vangnet; dit is een handelsvisie.",
+      "why_it_matters": "Fee-kwaliteit, tokenemissie, liquiditeitsdiepte, margining en liquidatielogica bepalen of 24/7 execution duurzaam schaalbaar is.",
+      "investment_implication": "Selectief constructief voor executionrails met duurzame fees, transparante tokenomics en geteste risicocontroles.",
+      "theme": "market-structure",
+      "week": "W46",
+      "confidence": 0.69,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ethereum-ai-governance-w46",
+      "title": "Ethereum en AI vragen governance boven krantenkoppen",
+      "summary": "Unchained en Pomp koppelen ETH-waardevangst, L2’s, quantumparaatheid en AI-leiderschap; persoonsclaims en waarderingen zijn niet onafhankelijk vastgesteld.",
+      "why_it_matters": "Fee- en security-economie, upgradegovernance, succession planning en kapitaaldiscipline zijn zwaardere selectiecriteria dan één narratief.",
+      "investment_implication": "Toets ETH- en AI-exposure op aantoonbare economie, upgradevermogen, succession planning en waardering.",
+      "theme": "governance",
+      "week": "W46",
+      "confidence": 0.67,
+      "direction": "cautious"
+    },
     {
       "id": "trend-latin-america-local-currency-rails-w45",
       "title": "Lokale valuta on-chain vragen reservekwaliteit én bruikbare FX-liquiditeit",
