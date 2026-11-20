@@ -445,7 +445,7 @@
 
 <header>
   <div class="header-left">
-    <div class="eyebrow">Crypto &amp; Macro · 284+ afleveringen · Apr–Nov 2026</div>
+    <div class="eyebrow">Crypto &amp; Macro · 291+ afleveringen · Apr–Nov 2026</div>
     <div class="header-title">Dominante <span>Trends</span></div>
   </div>
 
@@ -493,9 +493,235 @@
 // Formaat: { week: 'W23', date: '2 jun', trends: [...TRENDS array...] }
 const HISTORY = [
   {
-    week: 'W46',
-    date: '11 nov',
+    week: 'W47',
+    date: '18 nov',
     trends: [
+  {
+    id: 'bitcoin-correction-liquidity-w47', label: 'Bitcoin-correctie', sublabel: 'liquiditeit · leverage · scenario',
+    size: 97, prevSize: 94, color: '#C9A84C', glow: '#f0c060',
+    tag: 'BITCOIN · RISICOBEHEER', tagColor: '#C9A84C',
+    title: 'Een Bitcoin-correctie vraagt om liquiditeitstoets, niet om één oorzaak',
+    subtitle: 'BNR bespreekt een scherpe Bitcoin-daling zonder eenduidige oorzaak; macrodruk, weekendliquiditeit en paniekverkopen zijn mogelijke verklaringen, geen vastgestelde causaliteit.',
+    stats: [
+      { num: '14%', label: 'Genoemde daling in de aflevering; een bronclaim, geen allocatiesignaal' },
+      { num: '3 dagen', label: 'Venster waarin de beweging volgens de aflevering versnelde' },
+      { num: 'Leverage', label: 'Liquidaties kunnen een beweging versterken wanneer marktdiepte afneemt' },
+      { num: 'Bodem', label: 'Een hogere bodem is een scenario, geen technische zekerheid' },
+    ],
+    bullets: [
+      'Analyseer sterke prijsstress via marktdiepte, leverage, financieringskosten en gedwongen liquidaties voordat één headline als verklaring geldt',
+      'Prijsniveaus kunnen een scenario falsificeren, maar zijn geen zelfstandige koop- of verkoopregel',
+      'Houd directe Bitcoin en BTC-gerelateerde aandelen binnen vooraf bepaalde liquiditeits- en drawdownlimieten',
+    ],
+    signal: 'LIQUIDITEIT VÓÓR VERHAAL: cautious voor ongedekte risicoposities; gebruik prijsstress als toets van leverage, marktdiepte en risicobudget.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'debasement-separate-budgets-w47', label: 'Debasement', sublabel: 'schuld · goud · Bitcoin',
+    size: 93, prevSize: 90, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · SCHAARSTE', tagColor: '#C9A84C',
+    title: 'Geldontwaarding is macrocontext, geen identieke goud- en Bitcoin-allocatie',
+    subtitle: 'BNR koppelt schulddynamiek, herfinanciering en deglobalisering aan de debasement-these; timing en beleidsreacties blijven scenario’s.',
+    stats: [
+      { num: 'Schuld', label: 'Hogere rentelasten maken herfinanciering structureel gevoeliger' },
+      { num: 'Goud', label: 'Schaarste-allocatie met een ander volatiliteitsprofiel dan BTC' },
+      { num: 'BTC', label: 'Hogere liquiditeitsgevoeligheid en grotere drawdownruimte' },
+      { num: '2 budgetten', label: 'Liquiditeit en drawdown verdienen per asset eigen limieten' },
+    ],
+    bullets: [
+      'Behandel de debasement-these als langetermijncontext, niet als timinginstrument voor één trade',
+      'Goud en Bitcoin kunnen complementair zijn, maar mogen niet als één identieke macropositie worden beheerd',
+      'Toets ook beleidsreactie, reële rente en liquiditeit naast de schuldendynamiek',
+    ],
+    signal: 'SCHAARSTE MET APARTE LIMITEN: houd goud en Bitcoin gedoseerd met eigen volatiliteits-, liquiditeits- en drawdownbudgetten.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'bitcoin-holders-ai-capex-w47', label: 'BTC & AI-capex', sublabel: 'miners · cashflow · financiering',
+    size: 91, prevSize: 88, color: '#a855f7', glow: '#c084fc',
+    tag: 'KAPITAALSTRUCTUUR · AI', tagColor: '#a855f7',
+    title: 'Bitcoin-houdersbasis en AI-capex houden kapitaalstructuur centraal',
+    subtitle: 'The Pomp Podcast ziet minder verkoopdruk van grote houders, terwijl miners en grote bezitters richting AI en datacenters bewegen; dit zijn marktclaims.',
+    stats: [
+      { num: 'BTC', label: 'Directe Bitcoin kent geen bedrijfsbalans of capex-verplichting' },
+      { num: 'Miners', label: 'AI-datacenters voegen uitvoerings- en financieringsrisico toe' },
+      { num: 'Cashflow', label: 'Beslissend naast de omvang van een Bitcoinvoorraad' },
+      { num: 'Custody', label: 'Blijft een afzonderlijke operationele risicolaag' },
+    ],
+    bullets: [
+      'Een gezondere houdersbasis maakt directe BTC niet gelijk aan een miner of treasury-aandeel',
+      'Toets capex, financiering, verwatering, indexgevoeligheid en kasstroom wanneer een bedrijf naar AI-infra draait',
+      'Marktclaims over minder verkoopdruk vragen onafhankelijke bevestiging voordat zij als kernscenario tellen',
+    ],
+    signal: 'CONSTRUCTIE BOVEN NARRATIEF: selectief voor transparant gefinancierde BTC- en AI-infra; directe Bitcoin, miners en treasury-aandelen blijven aparte exposures.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'tokenized-equities-rights-w47', label: 'Tokenized equities', sublabel: 'issuerrechten · custody · 24/7',
+    size: 96, prevSize: 93, color: '#00ff64', glow: '#55ff99',
+    tag: 'TOKENISATIE · RECHTEN', tagColor: '#00ff64',
+    title: 'Tokenized equities winnen pas met issuerrechten én marktkwaliteit',
+    subtitle: 'Unchained onderscheidt aandelen met stem- en dividendrechten van synthetische tokens en bespreekt een experimentele Amerikaanse handelsroute; details blijven bronclaims.',
+    stats: [
+      { num: 'Rights', label: 'Stemrecht en dividend onderscheiden eigendom van prijsblootstelling' },
+      { num: 'KYC', label: 'Toegang en distributie worden onderdeel van productontwerp' },
+      { num: '24/7', label: 'Markttijden vragen betrouwbare referentieprijzen en liquiditeit' },
+      { num: 'Custody', label: 'Segregatie en corporate actions bepalen de operationele kwaliteit' },
+    ],
+    bullets: [
+      'Issuer-toestemming, juridische aanspraak en corporate-actionprocessen zijn belangrijker dan het tokenformaat alleen',
+      'Synthetische wrappers en echte aandelen dragen fundamenteel verschillende tegenpartij- en rechtenrisico’s',
+      'Weekendprijzen, KYC en custody moeten aantoonbaar werken voordat 24/7 handel institutioneel bruikbaar is',
+    ],
+    signal: 'RECHTEN VÓÓR RAILS: constructief voor issuer-supported tokenisatie met toetsbare rechten, segregatie en marktcontroles; cautious voor synthetische wrappers.',
+    signalColor: '#00ff64',
+  },
+  {
+    id: 'crypto-policy-product-protection-w47', label: 'Crypto-beleid', sublabel: 'toezicht · DeFi · bescherming',
+    size: 94, prevSize: 91, color: '#00e5ff', glow: '#55ebff',
+    tag: 'REGULERING · PRODUCTBESCHERMING', tagColor: '#00e5ff',
+    title: 'Crypto-beleid verschuift naar toezicht én productbescherming',
+    subtitle: 'Justin Slaughter schetst na de Democratische tussentijdse verkiezing meer toezicht en strengere regels voor reserves en DeFi; dit blijft een politiek scenario, geen vaststaand beleid.',
+    stats: [
+      { num: 'Reserves', label: 'Attesten en inwisselbaarheid bepalen de kwaliteit van stablecoin-bescherming' },
+      { num: 'DeFi', label: 'Productgrenzen, disclosure en toezicht blijven afzonderlijke ontwerpvragen' },
+      { num: '2028', label: 'Presidentsverkiezing houdt de beleidsroute politiek veranderlijk' },
+      { num: '24/7', label: 'On-chain markten vergroten de waarde van continue risicobeheersing' },
+    ],
+    bullets: [
+      'Behandel wetgevingsvoorstellen als scenario-input en toets producten zelfstandig op segregation, reservekwaliteit, governance en herstelprocessen',
+      'Een bredere politieke agenda kan crypto minder exclusieve aandacht geven, maar maakt aantoonbare klantbescherming juist relevanter',
+      '24/7 execution kan waarde toevoegen, mits KYC, margining, liquiditeit en klantbescherming niet achterblijven bij de technologie',
+    ],
+    signal: 'BESCHERMING BOVEN PARTIJPOLITIEK: selecteer crypto-infra op toetsbare reserves, segregation, disclosure en risicocontroles; prijs politieke vertraging als scenario in.',
+    signalColor: '#00e5ff',
+  },
+  {
+    id: 'bitcoin-etf-portfolio-discipline-w47', label: 'Bitcoin-ETF', sublabel: 'kosten · gedrag · risicobudget',
+    size: 92, prevSize: 88, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MARKTSTRUCTUUR · ALLOCATIE', tagColor: '#C9A84C',
+    title: 'Bitcoin-ETF’s maken toegang eenvoudiger, niet de allocatie vanzelf veilig',
+    subtitle: 'Eric Balchunas beschrijft recordgroei in ETF’s en relatief stabiel gedrag bij Bitcoin-ETF’s tijdens een forse daling; volumes en vergelijkingen zijn bronclaims.',
+    stats: [
+      { num: 'Kosten', label: 'Lage fees maken productselectie efficiënter, maar niet risicoloos' },
+      { num: 'Liquiditeit', label: 'ETF-structuur kan toegang en verhandelbaarheid verbeteren' },
+      { num: 'Volatiliteit', label: 'Bitcoin-risico blijft bestaan, ook binnen een bekende wrapper' },
+      { num: '85/15', label: 'Genoemde kern-satellietbenadering is een illustratie, geen persoonlijk advies' },
+    ],
+    bullets: [
+      'Scheiding tussen goedkope, breed gespreide kernexposure en beperkte thematische satellieten voorkomt dat één narratief de portefeuille domineert',
+      'ETF-stabiliteit in een daling is geen garantie: toets tracking, kosten, liquiditeit, custody en het eigen drawdownbudget',
+      'Vergelijk Bitcoin-ETF’s met spot en treasury-aandelen op structurele risico’s, niet alleen op historische instroom of merknaam',
+    ],
+    signal: 'TOEGANG IS GEEN RISICOBEHEER: constructief voor transparante, liquide ETF-rails, maar houd Bitcoin binnen een vooraf bepaald volatiliteits- en concentratiebudget.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'anthropic-liquidity-crossmarket-w47', label: 'AI & liquiditeit', sublabel: 'IPO · BTC · leverage',
+    size: 98, prevSize: 91, color: '#a855f7', glow: '#c084fc',
+    tag: 'AI · MARKTSTRUCTUUR', tagColor: '#a855f7',
+    title: 'AI-eventrisico maakt liquiditeit in crypto directer zichtbaar',
+    subtitle: 'BNR en The Chopping Block koppelen Bitcoin-stress aan macrodruk, liquidaties en kapitaal dat rond Anthropics beursgang verschuift; causaliteit en cijfers blijven bronclaims.',
+    stats: [
+      { num: 'Liquiditeit', label: 'De meest liquide risicopositie kan financieringsbron worden voor een event' },
+      { num: 'Leverage', label: 'Gedwongen liquidaties kunnen prijsbewegingen versterken' },
+      { num: 'Stablecoins', label: 'Krimpende buffers verdienen monitoring als marktsignaal' },
+      { num: 'Scenario', label: 'Een IPO is geen afdoende verklaring voor één koersbeweging' },
+    ],
+    bullets: [
+      'Toets marktstress op marktdiepte, funding, hefboom en concentratie voordat één narratief de verklaring wordt',
+      'Behandel BTC als een liquide risico-asset die tijdelijk kapitaal kan vrijmaken voor andere groeiverhalen',
+      'Gebruik eventkalenders voor scenario- en liquiditeitsplanning, niet als zelfstandige handelsregel',
+    ],
+    signal: 'LIQUIDITEIT IS DE BRUG: cautious rond grote AI-events wanneer crypto-leverage en marktdiepte verslechteren; houd risicobudgetten gescheiden.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'institutional-bitcoin-access-w47', label: 'Institutionele BTC', sublabel: 'ETF · custody · structuur',
+    size: 95, prevSize: 90, color: '#C9A84C', glow: '#f0c060',
+    tag: 'BITCOIN · TOEGANG', tagColor: '#C9A84C',
+    title: 'Meer Bitcoin-producten veranderen toegang, niet het risicoprofiel',
+    subtitle: 'BlackRock beschrijft ETF-groei, in-kind inbreng en nieuwe productvormen rond Bitcoin en Ethereum; omvang en productdetails zijn bronclaims.',
+    stats: [
+      { num: 'ETF', label: 'Kan toegang, rapportage en custody vereenvoudigen' },
+      { num: 'In-kind', label: 'Structuur en belasting verdienen aparte beoordeling' },
+      { num: 'Volatiliteit', label: 'Blijft aanwezig binnen iedere productwrapper' },
+      { num: 'Risicobudget', label: 'Bepaalt de allocatie, niet de populariteit van het product' },
+    ],
+    bullets: [
+      'Vergelijk ETF, spot, lening en yieldproduct op structuur, kosten, custody en tegenpartijrisico',
+      'Een toegankelijke wrapper maakt een grote drawdown niet minder reëel',
+      'Tokenisatie kan distributie verbeteren, maar juridische rechten en operationele controls blijven beslissend',
+    ],
+    signal: 'TOEGANG IS GEEN BESCHERMING: constructief voor transparante producten met goede custody en lage frictie; houd BTC binnen expliciete volatiliteitslimieten.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'crypto-banking-reserve-controls-w47', label: 'Crypto-bankrails', sublabel: 'stablecoins · reserves · claims',
+    size: 94, prevSize: 88, color: '#00e5ff', glow: '#55ebff',
+    tag: 'BETALINGEN · CONTROLS', tagColor: '#00e5ff',
+    title: 'De samensmelting van crypto en bankieren verhoogt de controlevraag',
+    subtitle: 'Satoshi Radio noemt Krakens bankambitie, een Wereldbank-verkenning van USDC en oplopende claims bij Knaken; dit zijn afzonderlijke bronclaims.',
+    stats: [
+      { num: 'Reserves', label: 'Kwaliteit en inwisselbaarheid blijven primair' },
+      { num: 'Segregatie', label: 'Klantactiva mogen niet opgaan in bedrijfsrisico' },
+      { num: 'Governance', label: 'Bank- of on-chain-label vervangt geen toezicht' },
+      { num: 'Recovery', label: 'Herstelproces bepaalt vertrouwen onder stress' },
+    ],
+    bullets: [
+      'Toets stablecoin- en crypto-bankproducten op juridische aanspraak, reserves, redemption en tegenpartijrisico',
+      'Groei van bankdiensten maakt compliance en operationele resilience waardevoller, niet optioneel',
+      'Gebruik faillissementscasussen als toets op transparantie en de feitelijke bescherming van klanttegoeden',
+    ],
+    signal: 'CONTROLS VÓÓR LABELS: selectief constructief voor betaalrails met toetsbare reserves, segregation en recovery; vermijd producten met onduidelijke klantbescherming.',
+    signalColor: '#00e5ff',
+  },
+  {
+    id: 'ai-continuous-cyber-resilience-w47', label: 'AI-cyberweerbaarheid', sublabel: 'monitoring · agents · governance',
+    size: 93, prevSize: 86, color: '#ff3c5a', glow: '#ff6080',
+    tag: 'AI · SECURITY', tagColor: '#ff3c5a',
+    title: 'AI maakt continue cyberweerbaarheid een producteigenschap',
+    subtitle: 'Unchained bespreekt AI als hulpmiddel voor aanvallers en verdedigers, naast Anthropics waarderings- en governancevraag; concrete details zijn bronclaims.',
+    stats: [
+      { num: '24/7', label: 'Detectie en respons moeten continu werken' },
+      { num: 'Access', label: 'Tool-permissions en identity-controls worden kritischer' },
+      { num: 'Audit', label: 'Eenmalige controles zijn onvoldoende bij adaptieve dreiging' },
+      { num: 'Governance', label: 'Groei en waardering vereisen toetsbare oversight' },
+    ],
+    bullets: [
+      'Combineer geautomatiseerde detectie met logging, escalatie en menselijk toezicht',
+      'Beoordeel AI- en cryptoproviders op incidentrespons, toegangsbeheer en auditbaarheid naast productgroei',
+      'Een nieuwe modelgeneratie of hoge waardering vervangt geen aantoonbare security-controls',
+    ],
+    signal: 'RESILIENCE MOET CONTINU ZIJN: constructief voor infrastructuur met toetsbare monitoring en recovery; prijs security- en governancegaten expliciet in.',
+    signalColor: '#ff3c5a',
+  },
+    ]
+  },
+  {
+    week: 'W46',
+    date: '14 nov',
+    trends: [
+  {
+    id: 'rates-liquidity-ai-btc-w46', label: 'Liquiditeitsstress', sublabel: 'rente · BTC · AI-waardering',
+    size: 92, prevSize: 86, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · LIQUIDITEIT', tagColor: '#C9A84C',
+    title: 'Rente en liquiditeit vormen de directe stresstest voor Bitcoin én AI',
+    subtitle: 'Jordi Visser koppelt een Bitcoin-daling aan oplopende korte rentes en bespreekt een AI-leiderschapskwestie rond NVIDIA; details en causaliteit zijn bronclaims.',
+    stats: [
+      { num: 'Rente', label: 'Korte rente beïnvloedt de discontovoet en liquiditeit voor risicovolle assets' },
+      { num: 'BTC', label: 'Prijsbeweging is geen zelfstandige verklaring voor de onderliggende liquiditeitscondities' },
+      { num: 'AI', label: 'Waardering blijft afhankelijk van cashflow, capex en bedrijfscontinuïteit' },
+      { num: 'Buffer', label: 'Financiering en liquiditeitsruimte bepalen weerbaarheid onder stress' },
+    ],
+    bullets: [
+      'Behandel sterke bewegingen in Bitcoin en AI-aandelen eerst als een liquiditeits- en waarderingsvraag, niet als bewijs dat één nieuwskop de trend bepaalt',
+      'Toets rentegevoelige exposure op financieringskosten, cash runway, waardering, positionering en marktdiepte voordat een herstel als basisscenario geldt',
+      'Leiderschaps- en reputatieclaims zijn scenario-input: succession planning en operationele continuïteit verdienen onafhankelijke verificatie',
+    ],
+    signal: 'LIQUIDITEIT VÓÓR HEADLINES: cautious voor ongedekte duration- en groeiexposure; selecteer op cashflow, financieringsbuffer, waardering en aantoonbare governance.',
+    signalColor: '#C9A84C',
+  },
   {
     id: 'crypto-product-protection-w46', label: 'Productbescherming', sublabel: 'MiCA · disclosure · segregatie',
     size: 91, prevSize: 86, color: '#00e5ff', glow: '#55ebff',
@@ -575,6 +801,66 @@ const HISTORY = [
     ],
     signal: 'GOVERNANCE BOVEN NARRATIEF: toets ETH- en AI-exposure op aantoonbare economie, upgradevermogen, succession planning en waardering.',
     signalColor: '#a855f7',
+  },
+  {
+    id: 'bitcoin-capital-structure-w46', label: 'BTC kapitaalstructuur', sublabel: 'miners · index · AI-capex',
+    size: 88, prevSize: 82, color: '#C9A84C', glow: '#f0c060',
+    tag: 'MACRO · FINANCIERING', tagColor: '#C9A84C',
+    title: 'Bitcoin-exposure vraagt een kapitaalstructuurtoets',
+    subtitle: 'BNR koppelt miner-pivots naar AI-datacenters aan indexrisico voor BTC-treasurybedrijven; bedrijfs- en marktgegevens zijn bronclaims.',
+    stats: [
+      { num: 'Capex', label: 'AI- en mininginfrastructuur concurreren om kapitaal en stroom' },
+      { num: 'Index', label: 'Indexstatus kan vraag en financieringsruimte beïnvloeden' },
+      { num: 'Treasury', label: 'BTC-voorraad is niet hetzelfde als robuuste balanskwaliteit' },
+      { num: 'Dilutie', label: 'Financiering en leverage bepalen de exposure per aandeel' },
+    ],
+    bullets: [
+      'Beoordeel miners op contracten, energiekosten, hardwarecyclus en rendement op AI-capex — niet op een thematische pivot alleen',
+      'Een BTC-treasury vraagt analyse van schuld, preferent kapitaal, verwatering, liquiditeit en indexafhankelijkheid naast de onderliggende Bitcoin-prijs',
+      'De overstap van hashrate naar andere eigenaren is geen automatisch netwerk- of beleggingssignaal zonder zicht op concentratie en economie',
+    ],
+    signal: 'STRUCTUUR BOVEN VOORRAAD: kies alleen BTC-gerelateerde aandelen met transparante financiering, liquiditeitsbuffer en toetsbare economics; directe BTC en bedrijfsrisico zijn verschillende exposures.',
+    signalColor: '#C9A84C',
+  },
+  {
+    id: 'bitcoin-quantum-migration-w46', label: 'Quantum-migratie', sublabel: 'keys · wallets · governance',
+    size: 85, prevSize: 80, color: '#a855f7', glow: '#c084fc',
+    tag: 'SECURITY · MIGRATIE', tagColor: '#a855f7',
+    title: 'Quantumparaatheid is een beheerste migratie-opgave',
+    subtitle: 'Satoshi Radio bespreekt Bitcoin-quantumrisico’s en adresmigratie; tijdlijnen en percentages blijven bronclaims en geen directe breukvoorspelling.',
+    stats: [
+      { num: 'Keys', label: 'Inventarisatie bepaalt welke adressen werkelijk kwetsbaar zijn' },
+      { num: 'Migratie', label: 'Wallet-UX en ondersteuning bepalen uitvoerbaarheid' },
+      { num: 'Upgrade', label: 'Consensus en governance moeten een veilig pad dragen' },
+      { num: 'Recovery', label: 'Behandeling van verloren coins vraagt expliciete regels' },
+    ],
+    bullets: [
+      'Meet crypto-agility aan key-inventaris, rotatie, cryptografische upgradepaden en hersteltests in plaats van een onzekere quantumdatum',
+      'Custody- en walletproviders moeten tijdig adressen, signingflows en klantcommunicatie kunnen migreren zonder nieuwe concentratierisico’s',
+      'Protocolverandering is alleen robuust met brede compatibiliteit, transparante besluitvorming en een uitvoerbaar uitrolplan',
+    ],
+    signal: 'MIGRATIE BOVEN PANIEK: constructief voor providers met aantoonbare key-governance en upgradecapaciteit; behandel quantumtiming als scenario, niet als handelsregel.',
+    signalColor: '#a855f7',
+  },
+  {
+    id: 'bitcoin-yield-credit-risk-w46', label: 'BTC-inkomen', sublabel: 'preferreds · leverage · liquiditeit',
+    size: 83, prevSize: 78, color: '#ff3c5a', glow: '#ff6080',
+    tag: 'KREDIET · RISICO', tagColor: '#ff3c5a',
+    title: 'Bitcoin-inkomen blijft krediet- en structuurrisico',
+    subtitle: 'The Pomp Podcast presenteert perpetual preferreds met Bitcoin als onderpand en hoge dividenden; dit is een bedrijfsthese, geen rendementsgarantie.',
+    stats: [
+      { num: 'Coupon', label: 'Hoge uitkering compenseert vaak complexiteit en achterstelling' },
+      { num: 'Collateral', label: 'BTC-onderpand kan tegelijk met financiering onder druk komen' },
+      { num: 'Buffer', label: 'Cash, looptijd en covenantruimte bepalen overlevingskracht' },
+      { num: 'Call', label: 'Opschorting, aflossing en herfinanciering vormen kernrisico’s' },
+    ],
+    bullets: [
+      'Vergelijk een preferred niet met spot-Bitcoin maar met hybride krediet: rangorde, couponvoorwaarden, callrechten en conversie zijn bepalend',
+      'Een liquiditeitsbuffer helpt alleen wanneer de omvang, looptijd en toegang tot nieuw kapitaal aantoonbaar zijn',
+      'Hoge nominale coupon is geen bescherming tegen drawdown, verwatering of een stressperiode waarin onderpand en financiering tegelijk verslechteren',
+    ],
+    signal: 'KASSTROOM VÓÓR COUPON: cautious voor BTC-gedekte inkomensproducten zonder heldere dekking, covenant- en herfinancieringsanalyse; behandel ze als krediet, niet als veilige BTC-yield.',
+    signalColor: '#ff3c5a',
   },
     ]
   },
