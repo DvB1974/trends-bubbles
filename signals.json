@@ -1,8 +1,107 @@
 {
   "schema": "denis-capital.signals.v1",
   "source": "Trends Bubble Map",
-  "generated_at": "2026-11-12T08:00:00+01:00",
+  "generated_at": "2026-11-20T09:00:00+01:00",
   "signals": [
+    {
+      "id": "trend-bitcoin-correction-liquidity-w47",
+      "title": "Bitcoin-correctie vraagt een liquiditeits- en positioneringstoets",
+      "summary": "BNR bespreekt een scherpe Bitcoin-daling zonder eenduidige oorzaak; macrodruk, weekendliquiditeit en paniekverkopen zijn mogelijke verklaringen en geen vastgestelde causaliteit.",
+      "why_it_matters": "Marktdiepte, leverage, financieringscondities en gedwongen liquidaties bepalen hoe een prijsbeweging doorwerkt in directe BTC- en gerelateerde aandelenexposure.",
+      "investment_implication": "Cautious voor ongedekte risicoposities; gebruik prijsniveaus als scenario en houd harde limieten voor leverage, liquiditeit en drawdown.",
+      "theme": "macro-bitcoin",
+      "week": "W47",
+      "confidence": 0.78,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-anthropic-liquidity-crossmarket-w47",
+      "title": "AI-eventrisico maakt liquiditeit in crypto directer zichtbaar",
+      "summary": "BNR en The Chopping Block koppelen Bitcoin-stress aan macrodruk, liquidaties en kapitaal dat rond Anthropics beursgang verschuift; causaliteit en cijfers blijven bronclaims.",
+      "why_it_matters": "Marktdiepte, leverage, stablecoinliquiditeit en concentratie bepalen hoe een groot AI-event doorwerkt in liquide crypto-exposure.",
+      "investment_implication": "Cautious rond grote AI-events wanneer crypto-leverage en marktdiepte verslechteren; houd risicobudgetten gescheiden.",
+      "theme": "market-structure",
+      "week": "W47",
+      "confidence": 0.74,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-institutional-bitcoin-access-w47",
+      "title": "Meer Bitcoin-producten veranderen toegang, niet het risicoprofiel",
+      "summary": "BlackRock beschrijft ETF-groei, in-kind inbreng en nieuwe productvormen rond Bitcoin en Ethereum; omvang en productdetails zijn bronclaims.",
+      "why_it_matters": "Productstructuur, custody, kosten, belasting en tegenpartijrisico bepalen of institutionele toegang daadwerkelijk geschikt is.",
+      "investment_implication": "Constructief voor transparante producten met goede custody en lage frictie; houd BTC binnen expliciete volatiliteitslimieten.",
+      "theme": "macro-bitcoin",
+      "week": "W47",
+      "confidence": 0.76,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-crypto-banking-reserve-controls-w47",
+      "title": "De samensmelting van crypto en bankieren verhoogt de controlevraag",
+      "summary": "Satoshi Radio noemt Krakens bankambitie, een Wereldbank-verkenning van USDC en oplopende claims bij Knaken; dit zijn afzonderlijke bronclaims.",
+      "why_it_matters": "Juridische aanspraak, reserves, segregation, inwisselbaarheid en herstelproces bepalen de werkelijke bescherming van klanttegoeden.",
+      "investment_implication": "Selectief constructief voor betaalrails met toetsbare reserves, segregation en recovery; vermijd producten met onduidelijke klantbescherming.",
+      "theme": "stablecoins",
+      "week": "W47",
+      "confidence": 0.80,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-ai-continuous-cyber-resilience-w47",
+      "title": "AI maakt continue cyberweerbaarheid een producteigenschap",
+      "summary": "Unchained bespreekt AI als hulpmiddel voor aanvallers en verdedigers, naast Anthropics waarderings- en governancevraag; concrete details zijn bronclaims.",
+      "why_it_matters": "Continue detectie, toegangsbeheer, logging, recovery en menselijk toezicht worden kerncriteria voor digitale infrastructuur.",
+      "investment_implication": "Constructief voor infrastructuur met toetsbare monitoring en recovery; prijs security- en governancegaten expliciet in.",
+      "theme": "security",
+      "week": "W47",
+      "confidence": 0.78,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-debasement-separate-risk-budgets-w47",
+      "title": "Geldontwaarding is macrocontext, geen identieke goud- en Bitcoin-allocatie",
+      "summary": "BNR koppelt schulddynamiek, herfinanciering en deglobalisering aan de debasement-these; timing en beleidsreacties blijven scenario’s.",
+      "why_it_matters": "Goud en Bitcoin kunnen beide als schaarste-assets fungeren, maar hebben wezenlijk verschillende volatiliteits-, liquiditeits- en custodyprofielen.",
+      "investment_implication": "Houd goud en Bitcoin als afzonderlijke, gedoseerde allocaties met eigen liquiditeits- en drawdownbudgetten; vermijd een alles-of-niets macropositie.",
+      "theme": "macro",
+      "week": "W47",
+      "confidence": 0.73,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-holders-ai-capex-w47",
+      "title": "Bitcoin-houdersbasis en AI-capex houden kapitaalstructuur centraal",
+      "summary": "The Pomp Podcast ziet minder verkoopdruk van grote houders, terwijl miners en grote bezitters richting AI en datacenters bewegen; dit zijn marktclaims.",
+      "why_it_matters": "Directe BTC, miners en treasury-aandelen combineren verschillende risico’s rond cashflow, capex, financiering, verwatering en custody.",
+      "investment_implication": "Selectief voor BTC-gerelateerde bedrijven met transparante cashflow en financiering; behandel directe Bitcoin niet als equivalent van bedrijfs- of AI-infra-exposure.",
+      "theme": "credit-structure",
+      "week": "W47",
+      "confidence": 0.70,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-tokenized-equities-rights-market-quality-w47",
+      "title": "Tokenized equities vragen issuerrechten én marktkwaliteit",
+      "summary": "Unchained onderscheidt aandelen met stem- en dividendrechten van synthetische tokens en bespreekt een experimentele Amerikaanse handelsroute; details blijven bronclaims.",
+      "why_it_matters": "Juridische aanspraak, corporate actions, KYC, custody en betrouwbare referentieprijzen bepalen of 24/7 tokenhandel economisch en operationeel bruikbaar wordt.",
+      "investment_implication": "Constructief voor issuer-supported tokenisatie met toetsbare rechten, segregatie en marktcontroles; cautious voor synthetische wrappers en onduidelijke tegenpartijen.",
+      "theme": "tokenization",
+      "week": "W47",
+      "confidence": 0.79,
+      "direction": "bullish"
+    },
+    {
+      "id": "trend-rates-liquidity-ai-btc-w46",
+      "title": "Rente en liquiditeit vormen de directe stresstest voor Bitcoin én AI",
+      "summary": "Jordi Visser koppelt een Bitcoin-daling aan oplopende korte rentes en bespreekt een AI-leiderschapskwestie rond NVIDIA; details en causaliteit zijn bronclaims.",
+      "why_it_matters": "Korte rente, financieringskosten, waardering, cashflow en liquiditeitsbuffers bepalen de weerbaarheid van risicovolle crypto- en AI-exposure onder stress.",
+      "investment_implication": "Cautious voor ongedekte duration- en groeiexposure; selecteer op cashflow, financieringsbuffer, waardering en aantoonbare governance.",
+      "theme": "macro-liquidity",
+      "week": "W46",
+      "confidence": 0.72,
+      "direction": "cautious"
+    },
     {
       "id": "trend-crypto-product-protection-w46",
       "title": "Crypto-regels bewijzen zich in de beschermingslaag rond het product",
@@ -45,6 +144,39 @@
       "theme": "governance",
       "week": "W46",
       "confidence": 0.67,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-capital-structure-w46",
+      "title": "Bitcoin-exposure vraagt een kapitaalstructuurtoets",
+      "summary": "BNR koppelt miner-pivots naar AI-datacenters aan indexrisico voor BTC-treasurybedrijven; bedrijfs- en marktgegevens zijn bronclaims.",
+      "why_it_matters": "De waarde van miner- en treasury-exposure hangt af van capex, financiering, indexstatus, verwatering, liquiditeit en balanskwaliteit — niet van de BTC-voorraad alleen.",
+      "investment_implication": "Selectief voor BTC-gerelateerde aandelen met transparante financiering, liquiditeitsbuffer en toetsbare economics; directe BTC en bedrijfsrisico blijven verschillende exposures.",
+      "theme": "macro-bitcoin",
+      "week": "W46",
+      "confidence": 0.73,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-quantum-migration-w46",
+      "title": "Quantumparaatheid is een beheerste migratie-opgave",
+      "summary": "Satoshi Radio bespreekt Bitcoin-quantumrisico’s en adresmigratie; tijdlijnen en percentages blijven bronclaims en geen directe breukvoorspelling.",
+      "why_it_matters": "Key-inventaris, wallet-ondersteuning, cryptografische upgradepaden, consensus en recovery bepalen of migratie operationeel beheerst kan plaatsvinden.",
+      "investment_implication": "Constructief voor custody- en walletproviders met aantoonbare key-governance en upgradecapaciteit; behandel quantumtiming als scenario, niet als handelsregel.",
+      "theme": "security",
+      "week": "W46",
+      "confidence": 0.78,
+      "direction": "cautious"
+    },
+    {
+      "id": "trend-bitcoin-yield-credit-risk-w46",
+      "title": "Bitcoin-inkomen blijft krediet- en structuurrisico",
+      "summary": "The Pomp Podcast presenteert perpetual preferreds met Bitcoin als onderpand en hoge dividenden; dit is een bedrijfsthese, geen rendementsgarantie.",
+      "why_it_matters": "Onderpand, liquiditeitsbuffer, couponvoorwaarden, achterstelling, callrechten en herfinanciering bepalen het risico van BTC-gedekte inkomensproducten.",
+      "investment_implication": "Cautious voor BTC-gedekte inkomensproducten zonder heldere dekking, covenant- en herfinancieringsanalyse; behandel ze als krediet, niet als veilige BTC-yield.",
+      "theme": "credit-structure",
+      "week": "W46",
+      "confidence": 0.76,
       "direction": "cautious"
     },
     {
